@@ -709,6 +709,29 @@
                         console.log('Server error occurred');
                     });
             };
+
+            // อ่าน notify
+            $('.click-read-notify').click(function(e) {
+                e.preventDefault();
+                let web_id = $(this).data("web_id");
+                let faq_id = $(this).data("faq_id");
+                console.log(web_id, faq_id);
+
+                // $.ajax({
+                //     type: "post",
+                //     url: "{{ route('read_notify_user') }}",
+                //     data: {
+                //         _token: '{{ csrf_token() }}',
+                //         web_id: web_id,
+                //         faq_id: faq_id,
+                //     },
+                //     dataType: "dataType",
+                //     success: function(response) {
+
+                //     }
+                // });
+
+            });
             //NOTIFY
 
             // SCORLL DOWN

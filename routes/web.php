@@ -46,6 +46,8 @@ Route::middleware(['auth', 'checkuser'])->group(function () {
     Route::post('/load_more_notify', [UserHomeController::class, 'load_more_notify'])->name('load_more_notify');
     Route::get('/car_mylike', [UserHomeController::class, 'car_mylike'])->name('car_mylike');
 
+    Route::post('/read_notify_user', [UserHomeController::class, 'read_notify_user'])->name('read_notify_user');
+
     Route::get('reccomment_view', [RecommentCarController::class, 'reccomment_view'])->name('reccomment_view');
     Route::post('reccoment_proccess', [RecommentCarController::class, 'reccoment_proccess'])->name('reccoment_proccess');
     Route::post('review_recomment', [RecommentCarController::class, 'review_recomment'])->name('review_recomment');

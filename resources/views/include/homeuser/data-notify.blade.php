@@ -11,7 +11,8 @@
         ->paginate(3);
 @endphp
 @foreach ($notify as $inotify)
-    <div class="row hovernoti m-1 p-2" role="button">
+    <div class="row hovernoti m-1 p-2 click-read-notify" role="button" data-web_id="{{ $inotify->web_id }}"
+        data-faq_id="{{ $inotify->faq_id }}">
         <div class="col-2 d-flex justify-content-start">
             <div class="row d-flex align-items-center">
                 <div class="col-2 p-0 ">

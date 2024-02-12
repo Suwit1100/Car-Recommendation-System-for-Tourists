@@ -241,7 +241,7 @@ class UserHomeController extends Controller
         return view('user.home.car-like', compact('car_like'));
     }
 
-    public function read_notify(Request $request)
+    public function read_notify_user(Request $request)
     {
         dd($request->all());
         $data = $request->all();
