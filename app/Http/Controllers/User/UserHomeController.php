@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator as PaginationPaginator;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx\Rels;
 
 class UserHomeController extends Controller
 {
@@ -238,5 +239,11 @@ class UserHomeController extends Controller
         // dd($car_like);
 
         return view('user.home.car-like', compact('car_like'));
+    }
+
+    public function read_notify(Request $request)
+    {
+        dd($request->all());
+        $data = $request->all();
     }
 }

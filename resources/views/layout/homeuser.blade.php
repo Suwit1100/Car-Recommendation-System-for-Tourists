@@ -590,10 +590,7 @@
 
     <script>
         $(document).ready(function() {
-            $(".noti-show").click(function() {
-                $(".box-notify").fadeToggle(300);
-            });
-
+            //CHATBOT
             // check การเปิดปิด chatbot st
             // Select the target node
             var target = $('df-messenger')[0];
@@ -673,9 +670,48 @@
                 }, 100);
             });
             // ปิด chatbot mobile ed
+            //CHATBOT
 
+            //NOTIFY
+            $(".noti-show").click(function() {
+                $(".box-notify").fadeToggle(300);
+            });
 
-            // ตรวจการ scorll ลง st
+            // โหลด notify
+            var ENDPOINT = "{{ route('load_more_notify') }}";
+            var page = 1;
+
+            $("#more-notify").click(function() {
+                page++;
+                LoadMore(page);
+            });
+
+            function LoadMore(page) {
+                $.ajax({
+                        url: "{{ route('load_more_notify') }}",
+                        type: "post",
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        data: {
+                            page: page
+                        },
+                    })
+                    .done(function(response) {
+                        console.log(response);
+                        if (response.html == '') {
+                            $('#no-noti').html("ไม่มีแจ้งเตือนเพิ่ม");
+                            return;
+                        }
+                        $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError) {
+                        console.log('Server error occurred');
+                    });
+            };
+            //NOTIFY
+
+            // SCORLL DOWN
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 300) {
                     // console.log(70);
@@ -691,8 +727,9 @@
                     scrollTop: 0
                 }, 'fast');
             });
-            // ตรวจการ scorll ลง ed
+            // SCORLL DOWN
 
+            // TOKEN
             // เช็คว่ามีการเปลี่ยนค่าที่ฟอร์มป่าว token
             var initialTokenValue = $('#tokenline').val();
             $('#tokenline').on('input', function() {
@@ -748,39 +785,7 @@
                     timerProgressBar: true,
                 });
             }
-
-            // โหลด notify
-            var ENDPOINT = "{{ route('load_more_notify') }}";
-            var page = 1;
-
-            $("#more-notify").click(function() {
-                page++;
-                LoadMore(page);
-            });
-
-            function LoadMore(page) {
-                $.ajax({
-                        url: "{{ route('load_more_notify') }}",
-                        type: "post",
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        },
-                        data: {
-                            page: page
-                        },
-                    })
-                    .done(function(response) {
-                        console.log(response);
-                        if (response.html == '') {
-                            $('#no-noti').html("ไม่มีแจ้งเตือนเพิ่ม");
-                            return;
-                        }
-                        $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
-                    })
-                    .fail(function(jqXHR, ajaxOptions, thrownError) {
-                        console.log('Server error occurred');
-                    });
-            };
+            // TOKEN
 
         });
     </script>
