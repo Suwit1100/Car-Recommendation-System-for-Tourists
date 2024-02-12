@@ -761,6 +761,29 @@
             };
             //LODE MORE NOTI
         });
+
+        $(document).on('click', '.click_read_noti_admin', function(e) {
+            e.preventDefault();
+            const web_id = $(this).data("web_id");
+            const faq_id = $(this).data("faq_id");
+            const noti_id = $(this).data("noti_id");
+            console.log(web_id, faq_id);
+
+            $.ajax({
+                type: "get",
+                url: "{{ route('read_notify_admin') }}",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    web_id: web_id,
+                    faq_id: faq_id,
+                    noti_id: noti_id,
+                },
+                success: function(response) {
+                    console.log(response);
+                    window.location.href = response.href;
+                }
+            });
+        });
     </script>
 
 

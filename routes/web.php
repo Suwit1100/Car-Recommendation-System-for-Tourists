@@ -66,6 +66,7 @@ Route::middleware(['auth', 'checkuser'])->group(function () {
 Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::get('/home_admin', [AdminHomeController::class, 'home_view'])->name('home_admin');
     Route::post('/load_more_noti_admin', [AdminHomeController::class, 'load_more_noti_admin'])->name('load_more_noti_admin');
+    Route::get('/read_notify_admin', [NotifyController::class, 'read_notify_admin'])->name('read_notify_admin');
 
     Route::prefix('faqadmin')->group(function () {
         Route::get('faq_view_am', [FAQController::class, 'faq_view_am'])->name('faq_view_am');

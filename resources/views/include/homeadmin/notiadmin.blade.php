@@ -11,9 +11,11 @@
 @endphp
 
 @foreach ($notiadmin as $inotiadmin)
-    <div class="row my-2">
+    <div class="row my-2 click_read_noti_admin" role="button" data-noti_id="{{ $inotiadmin->id }}"
+        data-web_id="{{ $inotiadmin->web_id }}" data-faq_id="{{ $inotiadmin->faq_id }}">
         <div class="col-1 d-flex justify-content-center align-items-center">
-            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle"
+                {{ $inotiadmin->faq_id != null ? ($inotiadmin->to_admin_type_read == 'read' ? 'hidden' : '') : ($inotiadmin->to_user_id_read == 'read' ? 'hidden' : '') }}></i>
         </div>
         <div class="col-2 d-flex justify-content-center align-items-center">
             <img class="img-noti" src="{{ asset('assets/imguser/' . $inotiadmin->imgprofile) }}" alt="">
