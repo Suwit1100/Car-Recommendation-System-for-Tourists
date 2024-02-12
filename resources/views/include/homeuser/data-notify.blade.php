@@ -15,7 +15,7 @@
         <div class="col-2 d-flex justify-content-start">
             <div class="row d-flex align-items-center">
                 <div class="col-2 p-0 ">
-                    <p class="notyetread m-0 p-0"></p>
+                    <p class="notyetread m-0 p-0"{{ $inotify->to_user_id_read == 'read' ? 'hidden' : '' }}></p>
                 </div>
                 <div class="col-10 p-0 ps-2 d-flex justify-content-start">
                     <div class="notiprofile">
