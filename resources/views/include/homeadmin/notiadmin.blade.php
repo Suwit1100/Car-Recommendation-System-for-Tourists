@@ -6,7 +6,8 @@
         ->where('to_user_id', Auth::user()->id)
         ->orwhere('to_admin_type', 1)
         ->select('users.name', 'users.lastname', 'users.imgprofile', 'notify.*', 'faq.title As faqtitle', 'post.title As posttitle')
-        ->paginate(4);
+        ->orderBy('notify.created_at', 'DESC')
+        ->paginate(3);
 @endphp
 
 @foreach ($notiadmin as $inotiadmin)
@@ -27,6 +28,3 @@
     </div>
     <hr>
 @endforeach
-<button class="btn btn-light form-control">
-    โหลดแจ้งเตือนเพิ่ม
-</button>

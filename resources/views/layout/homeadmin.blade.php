@@ -20,9 +20,6 @@
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style4.css">
-
     {{-- awesomeicon st --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -729,6 +726,41 @@
             });
         }
         //token
+
+        $(document).ready(function() {
+            //LODE MORE NOTI
+            var page = 1;
+            $("#more-notify-admin").click(function() {
+                page++;
+                LoadMore(page);
+            });
+
+            function LoadMore(page) {
+                $.ajax({
+                        url: "{{ route('load_more_noti_admin') }}",
+                        type: "post",
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        data: {
+                            page: page
+                        },
+                    })
+                    .done(function(response) {
+                        console.log(response);
+                        if (response.html == '') {
+                            $('#no-noti').html("ไม่มีแจ้งเตือนเพิ่ม");
+                            $('#more-notify-admin').hide();
+                            return;
+                        }
+                        $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError) {
+                        console.log('Server error occurred');
+                    });
+            };
+            //LODE MORE NOTI
+        });
     </script>
 
 

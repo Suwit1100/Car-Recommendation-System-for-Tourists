@@ -75,6 +75,10 @@
     .content-profile {
         left: -110px !important;
     }
+
+    #no-noti {
+        text-align: center;
+    }
 </style>
 <nav class="navbar navbar-expand-lg row d-flex align-items-center justify-content-center">
     <div class="col-8">
@@ -91,12 +95,29 @@
         <div class="row">
             <div class="col-5 d-flex align-items-center justify-content-end">
                 <div class="dropdown ">
-                    <span class="btn btn-light" role="button" data-bs-toggle="dropdown">
+                    <span class="btn btn-light position-relative" role="button" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside">
                         <i class="bi bi-bell-fill"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            @php
+                                $countnotiweb = DB::table('notify')
+                                    ->where('to_user_id', Auth::user()->id)
+                                    ->where('to_user_id_read', 'new')
+                                    ->count();
+                                $countnotifaq = DB::table('notify')->where('to_admin_type', 1)->where('to_admin_type_read', 'new')->count();
+                            @endphp
+                            {{ $countnotiweb + $countnotifaq }}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
                     </span>
                     <div class="dropdown-menu box-notify-admin">
                         <div class="container">
                             @include('include.homeadmin.notiadmin')
+                            <div class="" id="data-wrapper"></div>
+                            <div class="" id="no-noti"></div>
+                            <a class="btn btn-light form-control loremore-noti" id="more-notify-admin">
+                                โหลดแจ้งเตือนเพิ่ม
+                            </a>
                         </div>
                     </div>
                 </div>

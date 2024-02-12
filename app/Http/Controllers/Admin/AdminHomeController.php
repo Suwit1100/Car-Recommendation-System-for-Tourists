@@ -84,4 +84,23 @@ class AdminHomeController extends Controller
         $num_rec = ReviewRecomment::all(); // จำการใช้แนะนำ
         return view('admin.home', compact('log_user', 'user_dashboard', 'num_user', 'testdata', 'num_visit_web', 'total_faq', 'num_reccomment'));
     }
+
+    public function load_more_noti_admin(Request $request)
+    {
+        // dd($request->all());
+        $page = $request->page;
+        $ofset = ($page - 1) * 3;
+        $notiadmin = DB::table('notify')
+            ->leftJoin('users', 'notify.user_send_id', '=', 'users.id')
+            ->leftJoin('post', 'notify.web_id', '=', 'post.id')
+            ->leftJoin('faq', 'notify.faq_id', '=', 'faq.id')
+            ->where('to_user_id', Auth::user()->id)
+            ->orwhere('to_admin_type', 1)
+            ->select('users.name', 'users.lastname', 'users.imgprofile', 'notify.*', 'faq.title As faqtitle', 'post.title As posttitle')
+            ->orderBy('notify.created_at', 'DESC')
+            ->skip($ofset)
+            ->take(3);
+        $view = view('include.homeadmin.notiadmin', compact('notiadmin'))->render();
+        return response()->json(['html' => $view]);
+    }
 }
