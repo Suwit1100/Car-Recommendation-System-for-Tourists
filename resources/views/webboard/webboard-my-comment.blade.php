@@ -1,4 +1,4 @@
-@extends('layout.homeuser')
+@extends(Auth::user()->type == 0 ? 'layout.homeuser' : 'layout.homeadmin')
 @section('style')
     <style>
         .box-my {
