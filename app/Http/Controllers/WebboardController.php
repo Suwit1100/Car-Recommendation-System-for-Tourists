@@ -124,9 +124,9 @@ class WebboardController extends Controller
         $condition2 = $token != null;
         $condition3 = $user->id != Auth::user()->id;
 
-        if ($condition1 &&  $condition2 &&  $condition3) {
-            //บันทึกลงตาราง notify
-            $notify = new Notify([
+        //บันทึก Notify
+        if ($condition3) {
+            Notify::create([
                 'type_notify' => 'web',
                 'web_id' => $data['post_id'],
                 'faq_id' => null,
@@ -137,10 +137,9 @@ class WebboardController extends Controller
                 'to_user_id_read' => 'new',
                 'to_admin_type_read' => null
             ]);
-            $notify->save();
+        }
 
-
-
+        if ($condition1 &&  $condition2 &&  $condition3) {
             $url        = 'https://notify-api.line.me/api/notify';
             $token      = $token->token_text;
             $headers    = [
