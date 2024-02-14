@@ -207,6 +207,21 @@ class WebboardController extends Controller
         $condition3 = $user->id != Auth::user()->id;
         $condition4 = $checklike == null;
 
+        //บันทึก Notify
+        if ($condition3 &&  $condition4) {
+            Notify::create([
+                'type_notify' => 'web',
+                'web_id' => $data['id_post'],
+                'faq_id' => null,
+                'text_detail' => 'ได้ถูกใจกระทู้ของคุณ',
+                'user_send_id' => Auth::user()->id,
+                'to_user_id' =>  $user->id,
+                'to_admin_type' => null,
+                'to_user_id_read' => 'new',
+                'to_admin_type_read' => null
+            ]);
+        }
+
         if ($condition1 && $condition2 && $condition3 && $condition4) {
             $url        = 'https://notify-api.line.me/api/notify';
             $token      = $token->token_text;
@@ -224,19 +239,6 @@ class WebboardController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $result = curl_exec($ch);
             curl_close($ch);
-
-            $notify = new Notify([
-                'type_notify' => 'web',
-                'web_id' => $data['id_post'],
-                'faq_id' => null,
-                'text_detail' => 'ได้ถูกใจกระทู้ของคุณ',
-                'user_send_id' => Auth::user()->id,
-                'to_user_id' =>  $user->id,
-                'to_admin_type' => null,
-                'to_user_id_read' => 'new',
-                'to_admin_type_read' => null
-            ]);
-            $notify->save();
         }
 
         // บันทึกไลค์
