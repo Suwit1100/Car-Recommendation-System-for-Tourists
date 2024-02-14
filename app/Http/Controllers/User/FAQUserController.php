@@ -338,7 +338,7 @@ class FAQUserController extends Controller
         Notify::create([
             'type_notify' => 'faq',
             'web_id' => null,
-            'faq_id' => null,
+            'faq_id' => $data['letter_id'],
             'text_detail' => 'ได้ตอบกลับข้อความ',
             'user_send_id' => Auth::user()->id,
             'to_user_id' =>  null,
