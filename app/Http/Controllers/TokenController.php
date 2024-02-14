@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\TokenLine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,13 @@ class TokenController extends Controller
                 'status_token' => ($request->tokenline == null) ? 'off' : 'on'
             ]
         );
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้เพิ่ม Token Line',
+        ]);
 
         return redirect()->back()->with('save_token', 'บันทึกโทเคนสำเร็จ');
     }

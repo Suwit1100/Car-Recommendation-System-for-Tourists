@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Notify;
 use App\Models\Post;
 use App\Models\PostComment;
@@ -64,6 +65,13 @@ class WebboardController extends Controller
             $post->save();
         }
         $data['success'] = 'โพสต์สำเร็จ';
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้สร้างกระทู้',
+        ]);
         return redirect()->route('webboard_view')->with('success', 'โพสต์สำเร็จ');
     }
 
@@ -158,6 +166,13 @@ class WebboardController extends Controller
             var_dump($result);
             $result = json_decode($result, TRUE);
         }
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แสดงความคิดเห็นบนกระทู้',
+        ]);
 
         return redirect()->back()->with('success_comment', 'คอมเม้นกระทู้แล้ว');
     }
@@ -271,6 +286,13 @@ class WebboardController extends Controller
             $message = 'ลดไลค์แล้ว';
         }
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้กดถูกใจกระทู้',
+        ]);
+
         return response()->json(
             [
                 'status' => 200,
@@ -349,6 +371,13 @@ class WebboardController extends Controller
             ]);
         }
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แก้ไขกระทู้',
+        ]);
+
         return redirect()->back()->with('success_edit_post', 'แก้ไขกระทู้สำเร็จ');
     }
 
@@ -376,6 +405,13 @@ class WebboardController extends Controller
         $comment = Db::table('post_comment')->where('post_id', $id_post);
         $comment->delete();
         $post->delete();
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ลบกระทู้',
+        ]);
 
         return redirect()->back()->with('success-delete-post', 'ลบกระทู้สำเร็จ');
     }

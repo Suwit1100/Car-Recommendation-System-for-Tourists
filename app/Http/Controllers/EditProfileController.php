@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -110,6 +111,13 @@ class EditProfileController extends Controller
 
             ]);
         }
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แก้ไขข้อมูลส่วนตัว',
+        ]);
         return redirect()->back()->with('success-updateprofile', 'อัปเดตโปรไฟล์เรียบร้อย');
     }
 }
