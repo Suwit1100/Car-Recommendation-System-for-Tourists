@@ -334,6 +334,7 @@ class FAQUserController extends Controller
                 'statusAdmin' => 'new',
             ]);
 
+
         //บันทึก Notify
         Notify::create([
             'type_notify' => 'faq',

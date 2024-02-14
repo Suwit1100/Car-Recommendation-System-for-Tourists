@@ -120,7 +120,7 @@ class WebboardController extends Controller
         $user = User::find($post->post_by);
         $token = TokenLine::where('user_id', $user->id)->first();
         // 2.เงื่อนไข
-        $condition1 = $token->status_token == 'on';
+        $condition1 = $token ? $token->status_token == 'on' : '';
         $condition2 = $token != null;
         $condition3 = $user->id != Auth::user()->id;
 
@@ -201,7 +201,7 @@ class WebboardController extends Controller
             ->where('post_id', $data['id_post'])
             ->first();
         // 3.เงื่อนไข
-        $condition1 = $token->status_token == 'on';
+        $condition1 = $token ? $token->status_token == 'on' : '';
         $condition2 = $token != null;
         $condition3 = $user->id != Auth::user()->id;
         $condition4 = $checklike == null;
