@@ -58,6 +58,13 @@ class ManageUserController extends Controller
             'zipcode' => $data['zipcode'],
         ]);
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้เพิ่มข้อมูลสมาชิก',
+        ]);
+
         return redirect()->back()->with('success-add-user', 'เพิ่มข้อมูลสมาชิกสำเร็จ');
     }
 
@@ -74,6 +81,13 @@ class ManageUserController extends Controller
         }
 
         $forcedelete_user->delete();
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ลบข้อมูลสมาชิก',
+        ]);
 
 
 
@@ -195,6 +209,13 @@ class ManageUserController extends Controller
 
             ]);
         }
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แก้ไขข้อมูลสมาชิก',
+        ]);
         return redirect()->back()->with('success-updateprofile', 'อัปเดตโปรไฟล์เรียบร้อย');
     }
 }

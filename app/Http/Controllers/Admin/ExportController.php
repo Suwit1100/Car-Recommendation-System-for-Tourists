@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\ReviewExport;
 use App\Http\Controllers\Controller;
+use App\Models\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -55,6 +57,13 @@ class ExportController extends Controller
         $monthvalue = $request->input('monthvalue');
         $datestartvalue = $request->input('datestartvalue');
         $dateendvalue = $request->input('dateendvalue');
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'Export รายงาน',
+        ]);
 
         return Excel::download(new ReviewExport($yearvalue, $monthvalue, $datestartvalue, $dateendvalue,), 'ReviewExport.xlsx');
     }

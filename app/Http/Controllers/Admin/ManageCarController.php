@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CarDataset;
+use App\Models\Log;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -147,6 +148,13 @@ class ManageCarController extends Controller
 
         $car_dataset->save();
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้เพิ่มข้อมูลรถยนต์',
+        ]);
+
         return redirect()->back()->with('success', 'เพิ่มข้อมูลรถยนต์สำเร็จ');
     }
 
@@ -282,6 +290,13 @@ class ManageCarController extends Controller
             'created_by' => Auth::user()->id,
         ]);
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แก้ไขข้อมูลรถยนต์',
+        ]);
+
 
         return redirect()->route('view_managecar')->with('success-updatecar', 'อัปเดตข้อมูลรถยนต์สำเร็จ');
     }
@@ -303,6 +318,13 @@ class ManageCarController extends Controller
         }
 
         $forcedeletecar->delete();
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ลบข้อมูลรถยนต์',
+        ]);
         return redirect()->back()->with('success-forcedeletecar', 'ลบข้อมูลถาวรสำเร็จ');
     }
 }

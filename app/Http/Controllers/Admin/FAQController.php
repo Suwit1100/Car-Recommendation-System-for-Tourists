@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\FaqReply;
+use App\Models\Log;
 use App\Models\Notify;
 use App\Models\TokenLine;
 use App\Models\User;
@@ -117,6 +118,13 @@ class FAQController extends Controller
             $faq->delete();
         }
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ลบข้อความ',
+        ]);
+
         return response()->json(['status' => 200, 'message' => 'ลบข้อมูลสำเร็จ']);
     }
 
@@ -219,6 +227,13 @@ class FAQController extends Controller
                 'statusUser' => 'new',
                 'statusAdmin' => 'send',
             ]);
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ตอบกลับข้อความ',
+        ]);
 
         return redirect()->back()->with('success-reply', 'ตอบกลับสำเร็จ');
     }
