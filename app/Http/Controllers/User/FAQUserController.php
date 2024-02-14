@@ -256,7 +256,7 @@ class FAQUserController extends Controller
         // dd($idLetter);
         PaginationPaginator::useBootstrap();
 
-        $letter_title = Faq::find($idLetter)->first();
+        $letter_title = DB::table('faq')->where('id', $idLetter)->first();
         // dd($letter_title->title);
 
         $letter_main = DB::table('faq_reply')
@@ -306,6 +306,19 @@ class FAQUserController extends Controller
                 'statusUser' => 'send',
                 'statusAdmin' => 'new',
             ]);
+
+        //บันทึก Notify
+        Notify::create([
+            'type_notify' => 'faq',
+            'web_id' => null,
+            'faq_id' => null,
+            'text_detail' => 'ได้ตอบกลับข้อความ',
+            'user_send_id' => Auth::user()->id,
+            'to_user_id' =>  null,
+            'to_admin_type' => 1,
+            'to_user_id_read' => 'read',
+            'to_admin_type_read' => 'new'
+        ]);
 
         return redirect()->back()->with('success-reply', 'ตอบกลับสำเร็จ');
     }

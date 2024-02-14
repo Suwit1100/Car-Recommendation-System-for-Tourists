@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator as PaginationPaginator;
 
+use function Laravel\Prompts\table;
+
 class FAQController extends Controller
 {
     public function faq_view_am(Request $request)
@@ -124,7 +126,7 @@ class FAQController extends Controller
         // dd($idLetter);
         PaginationPaginator::useBootstrap();
 
-        $letter_title = Faq::find($idLetter)->first();
+        $letter_title = DB::table('faq')->where('id', $idLetter)->first();
         // dd($letter_title->title);
 
         $letter_main = DB::table('faq_reply')
@@ -151,7 +153,7 @@ class FAQController extends Controller
 
     public function faq_reply_post_am(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
 
         $data = $request->all();
 
