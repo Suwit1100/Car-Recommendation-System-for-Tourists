@@ -134,7 +134,7 @@ class FAQController extends Controller
             ->leftJoin('users', 'faq_reply.reply_by', '=', 'users.id')
             ->where('faq.id', $idLetter)
             ->where('faq_reply.check_first', 'first')
-            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile')
+            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile', 'users.type')
             ->first();
         // dd($letter_main);
 
@@ -143,7 +143,7 @@ class FAQController extends Controller
             ->leftJoin('users', 'faq_reply.reply_by', '=', 'users.id')
             ->where('faq.id', $idLetter)
             ->where('faq_reply.check_first', 'no')
-            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile', 'users.id AS user_id')
+            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile', 'users.id AS user_id', 'users.type')
             ->orderBy('faq_reply.created_at', 'ASC')
             ->paginate(3);
         // dd($letter_reply);

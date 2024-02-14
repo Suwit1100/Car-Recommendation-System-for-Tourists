@@ -12,13 +12,17 @@
                         alt="">
                     <div class="ms-2 text-content-reply form-control">
                         <p class="m-0 text-black">
+                            <span>{</span><span>{{ $letter_main->name }}
+                                {{ $letter_main->lastname }}</span><span>}
+                            </span>
                             {{ $letter_main->content }}
                         </p>
                     </div>
                 </div>
                 <div class="col-12 mt-1 d-flex justify-content-between">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-dark btn-viewimg" data-bs-toggle="modal"
+                    <button {{ $letter_main->imgfile == null ? 'hidden' : '' }} type="button"
+                        class="btn btn-outline-dark btn-viewimg" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">
                         คลิกดูภาพ <i class="bi bi-image-fill"></i>
                     </button>

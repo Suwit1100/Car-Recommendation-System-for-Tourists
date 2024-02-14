@@ -8,6 +8,8 @@
                             alt="">
                         <div class="ms-2 text-content-reply form-control">
                             <p class="m-0 text-black">
+                                <span>
+                                    {<span>{{ $iletter_reply->type == 1 ? 'แอดมิน' : $iletter_reply->name . ' ' . $iletter_reply->lastname }}</span>}</span>
                                 {{ $iletter_reply->content }}
                             </p>
                         </div>
