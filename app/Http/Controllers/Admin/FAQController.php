@@ -166,6 +166,7 @@ class FAQController extends Controller
         $condition1 = $token ? $token->status_token == 'on' : '';
         $condition3 = $user->id != Auth::user()->id;
 
+        //บันทึก Notify
         $notify = Notify::create([
             'type_notify' => 'faq',
             'web_id' => null,
