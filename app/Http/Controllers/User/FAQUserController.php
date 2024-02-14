@@ -287,6 +287,33 @@ class FAQUserController extends Controller
 
         $data = $request->all();
 
+        // แจ้งเตือนไปยังแอดมิน
+        //1. ดึงข้อมูล
+        $faqcheck = Faq::find($data['letter_id']);
+        $tokencheck = TokenLine::where('user_type', 1)
+            ->where('status_token', 'on')
+            ->get();
+        // // 3.เงื่อนไข
+        foreach ($tokencheck as $key => $itokencheck) {
+            $url        = 'https://notify-api.line.me/api/notify';
+            $token      = $itokencheck->token_text;
+            $headers    = [
+                'Content-Type: application/x-www-form-urlencoded',
+                'Authorization: Bearer ' . $token
+            ];
+            $fields     = 'message=' . Auth::user()->name . ' ได้ส่งคำขอช่วยเหลือถึงคุณ เรื่อง ' . $faqcheck->title;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($ch);
+            curl_close($ch);
+            var_dump($result);
+            $result = json_decode($result, TRUE);
+        }
+
         if ($request->has('img-reply')) {
             $fileimg = $request->file('img-reply');
             $fileimgname = 'faq_reply' . time() . '_' . $fileimg->getClientOriginalName();
