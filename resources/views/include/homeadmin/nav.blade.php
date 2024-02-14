@@ -79,6 +79,11 @@
     #no-noti {
         text-align: center;
     }
+
+    .box-notify-admin {
+        overflow-y: auto;
+        max-height: 400px;
+    }
 </style>
 <nav class="navbar navbar-expand-lg row d-flex align-items-center justify-content-center">
     <div class="col-8">
