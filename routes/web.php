@@ -92,6 +92,7 @@ Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::post('queryaddress', [ManageUserController::class, 'queryaddress'])->name('queryaddress');
     Route::get('force_delete_user/{id}', [ManageUserController::class, 'force_delete_user'])->name('force_delete_user');
     Route::get('edit_user/{id}', [ManageUserController::class, 'edit_user'])->name('edit_user');
+    Route::post('/edit_profile_post_admin/{id}', [ManageUserController::class, 'edit_profile_post_admin'])->name('edit_profile_post_admin');
 });
 
 Route::middleware(['auth'])->group(function () {

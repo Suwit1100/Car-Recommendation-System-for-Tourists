@@ -33,7 +33,7 @@
     </div>
     <div class="m-auto Box my-2">
         <div class="p-2 m-auto shadow-box">
-            <form id="profile-form" action="{{ route('edit_profile_post', $user->id) }}" method="POST"
+            <form id="profile-form" action="{{ route('edit_profile_post_admin', $user->id) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="row">

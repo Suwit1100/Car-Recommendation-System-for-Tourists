@@ -121,4 +121,80 @@ class ManageUserController extends Controller
         $thai_tambons = DB::table('thai_tambons')->where('amphure_id', $thai_amphures_id->id)->get();
         return view('admin.manageuser.edit-user', compact('user', 'region', 'thai_provinces', 'thai_amphures', 'thai_tambons', 'zipcode'));
     }
+
+    public function edit_profile_post_admin(Request $request, $id)
+    {
+        // dd($request->all());
+        $olddata = DB::table('users')
+            ->where('id', $id)
+            ->first();
+        // dd($request->all());
+
+        $request->validate([
+            // 'region' => 'required',
+            // 'povinces' => 'required',
+            // 'district' => 'required',
+            // 'sub_district' => 'required',
+            // 'zipcode' => 'required',
+            'birthday' => 'required|date|before_or_equal:today|before_or_equal:-18 years',
+        ], [
+            // 'region.required' => 'คุณยังไม่ได้เลือกภาค',
+            // 'povinces.required' => 'คุณยังไม่ได้เลือกจังหวัด',
+            // 'district.required' => 'คุณยังไม่ได้เลือกอำเภอ',
+            // 'sub_district.required' => 'คุณยังไม่ได้เลือกตำบล',
+            // 'zipcode.required' => 'คุณยังไม่ได้เลือกรหัสไปรษณีย์',
+            'birthday.before_or_equal' => 'อายุไม่ถึง 18 ปี',
+        ]);
+
+
+        if ($request->has('file-upload')) {
+
+            $updateimgpofile = $request->file('file-upload');
+            $name_gen = hexdec(uniqid()); //genชื่อ
+            $img_ext = strtolower($updateimgpofile->getClientOriginalExtension()); //type ไฟล์ แล้วปรับพิมเล็ก
+            // dd($img_ext);
+            $img_profile = $name_gen . '.' . $img_ext; //ชื่อ.typeไฟล์
+            $upload_location = 'assets/imguser/'; //ที่ต้องการอัพไฟล์
+
+            $updateimgpofile->move($upload_location, $img_profile); //อัพภาพ
+
+            $old_image = $request->old_img_profile; //ภาพเก่า
+            // dd($old_image);
+            if ($old_image !== 'user_base_profile.png') { //ต้องเช็คเพราะ ค่าเริ่มต้นคือ user_base_profile.png
+                if (file_exists($upload_location . $old_image)) {
+                    unlink($upload_location . $old_image);
+                }
+            }
+            $updateprofile = User::find($id)->update([
+                'imgprofile' => !empty($img_profile) ? $img_profile : $old_image,
+                'name' => $request->name,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'sex' => $request->sex,
+                'birthday' => $request->birthday,
+                'region' => $request->region,
+                'province' => ($request->province == null ? $olddata->province : $request->province),
+                'district' => ($request->district == null ? $olddata->district : $request->district),
+                'sub_district' => ($request->sub_district == null ? $olddata->sub_district : $request->sub_district),
+                'zipcode' => ($request->zipcode == null ? $olddata->zipcode : $request->zipcode),
+
+            ]);
+        } else {
+
+            $updateprofile = User::find($id)->update([
+                'name' => $request->name,
+                'lastname' => $request->lastname,
+                'email' => $request->email,
+                'sex' => $request->sex,
+                'birthday' => $request->birthday,
+                'region' => $request->region,
+                'province' => ($request->province == null ? $olddata->province : $request->province),
+                'district' => ($request->district == null ? $olddata->district : $request->district),
+                'sub_district' => ($request->sub_district == null ? $olddata->sub_district : $request->sub_district),
+                'zipcode' => ($request->zipcode == null ? $olddata->zipcode : $request->zipcode),
+
+            ]);
+        }
+        return redirect()->back()->with('success-updateprofile', 'อัปเดตโปรไฟล์เรียบร้อย');
+    }
 }
