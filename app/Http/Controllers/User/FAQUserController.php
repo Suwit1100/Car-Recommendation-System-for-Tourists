@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\FaqReply;
+use App\Models\Log;
 use App\Models\Notify;
 use App\Models\TokenLine;
 use App\Models\User;
@@ -174,6 +175,13 @@ class FAQUserController extends Controller
             $result = json_decode($result, TRUE);
         }
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้เขียนข้อความ',
+        ]);
+
         return redirect()->back()->with('success-letter-post', 'ส่งข้อความสำเร็จ');
     }
 
@@ -246,6 +254,13 @@ class FAQUserController extends Controller
                 ->delete();
             $faq->delete();
         }
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ลบข้อความ',
+        ]);
 
         return response()->json(['status' => 200, 'message' => 'ลบข้อมูลสำเร็จ']);
     }
@@ -346,6 +361,13 @@ class FAQUserController extends Controller
             'to_admin_type' => 1,
             'to_user_id_read' => 'read',
             'to_admin_type_read' => 'new'
+        ]);
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ตอบกลับข้อความ',
         ]);
 
         return redirect()->back()->with('success-reply', 'ตอบกลับสำเร็จ');

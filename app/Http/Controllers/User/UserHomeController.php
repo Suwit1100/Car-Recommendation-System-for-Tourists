@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\LikeCar;
+use App\Models\Log;
 use App\Models\Notify;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -197,6 +198,13 @@ class UserHomeController extends Controller
             'newstatus' => $newstatus,
             'total' => $totallike
         ];
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้กดถูกใจรถยนต์',
+        ]);
 
         return response()->json($responseData);
     }

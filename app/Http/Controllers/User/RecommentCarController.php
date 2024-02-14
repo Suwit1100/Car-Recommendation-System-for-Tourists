@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Log;
 use App\Models\ReviewRecomment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -255,6 +256,12 @@ class RecommentCarController extends Controller
 
 
 
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้ใช้ระบบแนะนำรถยนต์',
+        ]);
 
         return response([
             'status' => '200',
@@ -293,6 +300,13 @@ class RecommentCarController extends Controller
             'result' => $dataReview['result'],
             'score' => $dataReview['scorereview'],
             'comment' => $dataReview['detailsreview'],
+        ]);
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้แสดงความคิดเห็นเกี่ยวกับการแนะนำ',
         ]);
 
         // dd($result);
