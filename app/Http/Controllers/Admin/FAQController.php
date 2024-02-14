@@ -166,23 +166,20 @@ class FAQController extends Controller
         $condition1 = $token ? $token->status_token == 'on' : '';
         $condition3 = $user->id != Auth::user()->id;
 
+        $notify = Notify::create([
+            'type_notify' => 'faq',
+            'web_id' => null,
+            'faq_id' => $data['letter_id'],
+            'text_detail' => 'ได้ตอบกลับข้อความของคุณ',
+            'user_send_id' => Auth::user()->id,
+            'to_user_id' =>  $user->id,
+            'to_admin_type' => null,
+            'to_user_id_read' => 'new',
+            'to_admin_type_read' => null
+        ]);
+
         if ($condition1 &&  $condition2 &&  $condition3) {
             //บันทึกลงตาราง notify
-            $notify = new Notify([
-                'type_notify' => 'faq',
-                'web_id' => null,
-                'faq_id' => $data['letter_id'],
-                'text_detail' => 'ได้ตอบกลับข้อความของคุณ',
-                'user_send_id' => Auth::user()->id,
-                'to_user_id' =>  $user->id,
-                'to_admin_type' => null,
-                'to_user_id_read' => 'new',
-                'to_admin_type_read' => null
-            ]);
-            $notify->save();
-
-
-
             $url        = 'https://notify-api.line.me/api/notify';
             $token      = $token->token_text;
             $headers    = [
