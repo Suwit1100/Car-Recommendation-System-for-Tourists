@@ -142,7 +142,7 @@ class FAQUserController extends Controller
         // // 3.เงื่อนไข
 
         // บันทึก notify
-        $notify = new Notify([
+        Notify::create([
             'type_notify' => 'faq',
             'web_id' => null,
             'faq_id' => $faqnew->id,
@@ -153,7 +153,6 @@ class FAQUserController extends Controller
             'to_user_id_read' => null,
             'to_admin_type_read' => 'new'
         ]);
-        $notify->save();
 
         foreach ($tokencheck as $key => $itokencheck) {
             $url        = 'https://notify-api.line.me/api/notify';
