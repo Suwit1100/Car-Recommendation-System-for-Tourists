@@ -153,17 +153,17 @@ class FAQController extends Controller
 
     public function faq_reply_post_am(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
 
         $data = $request->all();
 
         // แจ้งเตือนไลน์
-        $faqcheck = Faq::find($data['letter_id'])->first();
-        $user = User::find($faqcheck->toUserId)->first();
+        $faqcheck = DB::table('faq')->where('id', $data['letter_id'])->first();
+        $user = DB::table('users')->where('id', $faqcheck->toUserId)->first();
         $token = TokenLine::where('user_id', $user->id)->first();
         // 2.เงื่อนไข
-        $condition1 = $token->status_token == 'on';
         $condition2 = $token != null;
+        $condition1 = $token ? $token->status_token == 'on' : '';
         $condition3 = $user->id != Auth::user()->id;
 
         if ($condition1 &&  $condition2 &&  $condition3) {
