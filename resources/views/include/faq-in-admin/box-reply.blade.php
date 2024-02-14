@@ -14,7 +14,6 @@
                     <textarea name="text-reply" id="text-reply" cols="30" rows="3" class="ms-2 form-control"
                         placeholder="เขียนอะไรสักหน่อย"></textarea>
                     <input type="hidden" name="letter_id" value="{{ $letter_title->id }}">
-                    {{ dd($letter_title->id) }}
                 </div>
                 <div class="col-12 mt-1 d-flex justify-content-between">
                     <span class="upimg-reply" role="button">
