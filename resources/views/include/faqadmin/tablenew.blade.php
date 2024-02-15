@@ -8,7 +8,7 @@
                         aria-label="ค้นหาคำขอที่ตอบกลับ" aria-describedby="addon-wrapping" name="faqreply"
                         value="{{ $titlesearch == 'faqreply' ? $valuesearch : '' }}">
                     <a class="btn btn-add-announce ms-2 rounded-2" id="open-anounce" data-bs-toggle="modal"
-                        data-bs-target="#Modal-add-annouce"><b>+</b>
+                        data-bs-target="#exampleModal"><b>+</b>
                         เขียนข้อความใหม่</a>
                 </div>
             </form>

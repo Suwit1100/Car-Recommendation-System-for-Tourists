@@ -115,92 +115,47 @@
         </div>
     </div>
 
-    {{-- Modal --}}
-    <div class="modal fade" id="Modal-add-annouce">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h6 class="modal-title">ประกาศใหม่</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">เขียนข้อความ</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-                <!-- Modal body -->
                 <div class="modal-body">
-                    @php
-                        $anoucevalueto = session()->pull('valueto');
-                        $anoucevaluetitle = session()->pull('valuetitle');
-                        $anoucevaluecontent = session()->pull('valuecontent');
-                        // dd($anoucevalue);
-                        $to = $anoucevalueto ? $anoucevalueto : '';
-                        $title = $anoucevaluetitle ? $anoucevaluetitle : '';
-                        $description = $anoucevaluecontent ? $anoucevaluecontent : '';
-                        // $fileimg = $anoucevalue ? $anoucevalue['fileimg'] : '';
-                    @endphp
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form class="row" method="post" action="{{ route('faq_post_admin') }}"
+                        enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
-                            <div class="col-1  mb-1 d-flex align-items-center">
-                                <h6>ถึง</h6>
-                            </div>
-                            <div class="col-11 my-1 ">
-                                @php
-                                    $touser = DB::table('users')->get();
-                                @endphp
-                                <select name="to" id="" class="form-select">
-                                    <option value="">
-                                        โปรดเลือก</option>
-                                    @foreach ($touser as $itouser)
-                                        <option {{ $itouser->id == Auth::user()->id ? 'hidden' : '' }}
-                                            value="{{ $itouser->id }}">{{ $itouser->name }} {{ $itouser->lastname }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @if ($errors->has('to'))
-                                    <span class="text-danger">{{ $errors->first('to') }}</span>
-                                @endif
-                            </div>
-                            <div class="col-1  my-1 d-flex align-items-center">
-                                <h6>เรื่อง</h6>
-                            </div>
-                            <div class="col-11 my-1 ">
-                                <input type="text" class="form-control" name="titlefaq" value="{{ $title }}">
-                                @if ($errors->has('titlefaq'))
-                                    <span class="text-danger">{{ $errors->first('titlefaq') }}</span>
-                                @endif
-                            </div>
-
-                            <div class="col-1  my-1 d-flex align-items-center">
-                            </div>
-                            <div class="col-11 my-1 ">
-                                <textarea name="description" id="" cols="30" rows="10" class="form-control">{{ $description }}</textarea>
-                                @if ($errors->has('description'))
-                                    <span class="text-danger">{{ $errors->first('description') }}</span>
-                                @endif
-                            </div>
-
+                        <div class="col-12 my-1">
+                            <select name="touserid" id="" class="form-select" required>
+                                <option value="">ส่งถึง</option>
+                                {{ $user = DB::table('users')->get() }}
+                                @foreach ($user as $iuser)
+                                    <option value="{{ $iuser->id }}">{{ $iuser->name }} {{ $iuser->lastname }}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="row">
-                            <div class="col-1 d-flex justify-content-start">
-                            </div>
-                            <div class="col-11 d-flex align-items-center">
-                                <i class="bi bi-images" style="font-size: 24px; cursor: pointer; color:#357266;"
-                                    id="uploadIcon"></i>
-                                <div id="selectedFileName" class="ms-2">ยังไม่ได้เลือกไฟล์</div>
-                                <input type="file" id="fileImg" name="fileimg" style="display: none" />
-                            </div>
-                            @if ($errors->has('fileimg'))
-                                <div class="col-1"></div>
-                                <div class="col-11 mb-3">
-                                    <span class="text-danger">{{ $errors->first('fileimg') }}</span>
-                                </div>
-                            @endif
+                        <div class="col-12 my-1 ">
+                            <input type="text" class="form-control" name="title" placeholder="กรุณาระบุเรื่อง"
+                                value="" required>
+                        </div>
+                        <div class="col-12 my-1 ">
+                            <textarea name="content" id="" cols="30" rows="10" class="form-control"
+                                placeholder="กรุณาระบุเนื้อหา" required></textarea>
+                        </div>
+                        <div class="col-12 d-flex align-items-center">
+                            <i class="bi bi-images" style="font-size: 24px; cursor: pointer; color:#357266;"
+                                id="uploadImg"></i>
+                            <div id="selectedFileName" class="ms-2">ยังไม่ได้เลือกไฟล์</div>
+                            <input type="file" id="fileImg" name="fileimg" style="display: none" />
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn rounded-2 btn-add-announce px-3 form-control">ส่ง</button>
+                            <button type="submit" id="summit_letter_post"
+                                class="form-control bg-green text-white">ส่ง</button>
                         </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
     </div>
@@ -220,95 +175,6 @@
         var titlesearch = "{{ $titlesearch }}";
         console.log(titlesearch);
         document.addEventListener('DOMContentLoaded', function() {
-            var toSelect = document.querySelector('select[name="to"]');
-            var titleInput = document.querySelector('input[name="titlefaq"]');
-            var descriptionTextarea = document.querySelector('textarea[name="description"]');
-            var errorTo = "{{ $errors->first('to') }}";
-            var errorTitle = "{{ $errors->first('titlefaq') }}";
-            var errorContent = "{{ $errors->first('description') }}";
-            var errorImgfaq = "{{ $errors->first('fileimg') }}";
-
-            var success_annouce = "{{ session('success_annouce') }}"
-
-            var succes_deletefaq = "{{ session('success-deletefaq') }}"
-            var successdeletefaqreply = "{{ session('success_deletefaq_reply') }}"
-
-
-            if (errorTo) {
-                Swal.fire({
-                    title: 'เกิดข้อผิดพลาด',
-                    text: errorTo,
-                    icon: 'error',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    console.log('openmodal');
-                    document.querySelector('#open-anounce').click();
-                });
-            } else if (errorTitle) {
-                Swal.fire({
-                    title: 'เกิดข้อผิดพลาด',
-                    text: errorTitle,
-                    icon: 'error',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    console.log('openmodal');
-                    document.querySelector('#open-anounce').click();
-                });
-            } else if (errorContent) {
-                Swal.fire({
-                    title: 'เกิดข้อผิดพลาด',
-                    text: errorContent,
-                    icon: 'error',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    console.log('openmodal');
-                    document.querySelector('#open-anounce').click();
-                });
-            } else if (errorImgfaq) {
-                Swal.fire({
-                    title: 'เกิดข้อผิดพลาด',
-                    text: errorImgfaq,
-                    icon: 'error',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    console.log('openmodal');
-                    document.querySelector('#open-anounce').click();
-
-                });
-
-            } else if (success_annouce) {
-                Swal.fire({
-                    title: 'สำเร็จ',
-                    text: success_annouce,
-                    icon: 'success',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    document.querySelector('a[href="#announce"]').click();
-                    toSelect.value = ''; // ตั้งค่าค่าว่างให้กับ select
-                    titleInput.value = ''; // ตั้งค่าค่าว่างให้กับ input
-                    descriptionTextarea.value = ''; // ตั้งค่าค่าว่างให้กับ textarea
-                });
-            } else if (succes_deletefaq) {
-                Swal.fire({
-                    title: 'สำเร็จ',
-                    text: succes_deletefaq,
-                    icon: 'success',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                });
-            } else if (successdeletefaqreply) {
-                Swal.fire({
-                    title: 'สำเร็จ',
-                    text: successdeletefaqreply,
-                    icon: 'success',
-                    timer: 2000, // แสดง alert 2 วินาทีแล้วหายไป
-                }).then(function() {
-                    document.querySelector('a[href="#faqsend"]').click();
-                    toSelect.value = ''; // ตั้งค่าค่าว่างให้กับ select
-                    titleInput.value = ''; // ตั้งค่าค่าว่างให้กับ input
-                    descriptionTextarea.value = ''; // ตั้งค่าค่าว่างให้กับ textarea
-                });
-            }
-
             document.querySelector('a[href="#faqmain"]').click();
             if (titlesearch == 'faq') {
                 console.log(111111 + 'faq');
@@ -320,6 +186,23 @@
                 console.log(33333 + 'announce');
                 document.querySelector('a[href="#faqnew"]').click();
             }
+
+            // เพิ่มไฟล์ภาพ
+            $("#uploadImg").click(function() {
+                var fileInput = $('#fileImg');
+                fileInput.click();
+                fileInput.change(function() {
+                    var selectedFile = this.files[0];
+
+                    if (selectedFile) {
+                        console.log(111111111);
+                        $('#selectedFileName').text(selectedFile.name);
+                    } else {
+                        console.log(2222222222);
+                        $('#selectedFileName').text("ไม่มีไฟล์ที่เลือก");
+                    }
+                });
+            });
 
         });
 
@@ -385,29 +268,6 @@
                         }
                     });
                 }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#Modal-add-annouce').modal({
-                backdrop: 'static', // ป้องกันการปิด Modal ด้วยการคลิกข้างนอก
-                keyboard: false // ป้องกันการปิด Modal ด้วยการกดปุ่ม Escape
-            });
-            $("#uploadIcon").click(function() {
-                var fileInput = $('#fileImg');
-                fileInput.click();
-                fileInput.change(function() {
-                    var selectedFile = this.files[0];
-
-                    if (selectedFile) {
-                        console.log(111111111);
-                        $('#selectedFileName').text(selectedFile.name);
-                    } else {
-                        console.log(2222222222);
-                        $('#selectedFileName').text("ไม่มีไฟล์ที่เลือก");
-                    }
-                });
             });
         });
     </script>
