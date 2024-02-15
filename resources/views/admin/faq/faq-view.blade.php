@@ -204,6 +204,19 @@
                 });
             });
 
+            // โพสต์สำเร็จ
+            let letter_post = @json(session('success-letter-post'));
+            if (letter_post) {
+                Swal.fire({
+                    title: 'สำเร็จ',
+                    text: letter_post,
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1000,
+                    timerProgressBar: true,
+                });
+            }
+
         });
 
         // เปิดอ่าน letter

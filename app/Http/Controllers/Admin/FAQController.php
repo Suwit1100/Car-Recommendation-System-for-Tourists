@@ -255,9 +255,9 @@ class FAQController extends Controller
             'content' => $data['content'],
             'imgfile' => $request->has('fileimg') ? $fileimgname : '',
             'toAdminType' => null,
-            'toUserId' => Auth::user()->id,
-            'statusUser' => 'send',
-            'statusAdmin' => 'new',
+            'toUserId' => $data['touserid'],
+            'statusUser' => 'new',
+            'statusAdmin' => 'send',
         ]);
 
 
@@ -269,10 +269,10 @@ class FAQController extends Controller
             'check_first' => 'first'
         ]);
 
-        // แจ้งเตือนไปยังแอดมิน
+        // แจ้งเตือนไปยังuser
         //1. ดึงข้อมูล
         $faqcheck = Faq::find($faqnew->id);
-        $tokencheck = TokenLine::where('user_type', 1)
+        $tokencheck = TokenLine::where('user_id', $faqnew->toUserId)
             ->where('status_token', 'on')
             ->get();
         // // 3.เงื่อนไข
@@ -284,20 +284,21 @@ class FAQController extends Controller
             'faq_id' => $faqnew->id,
             'text_detail' => 'ได้ส่งข้อความถึงคุณ',
             'user_send_id' => Auth::user()->id,
-            'to_user_id' => null,
+            'to_user_id' => $faqnew->toUserId,
             'to_admin_type' => 1,
-            'to_user_id_read' => null,
-            'to_admin_type_read' => 'new'
+            'to_user_id_read' => 'new',
+            'to_admin_type_read' => 'read'
         ]);
 
-        foreach ($tokencheck as $key => $itokencheck) {
+
+        if ($tokencheck) {
             $url        = 'https://notify-api.line.me/api/notify';
-            $token      = $itokencheck->token_text;
+            $token      = $tokencheck->token_text;
             $headers    = [
                 'Content-Type: application/x-www-form-urlencoded',
                 'Authorization: Bearer ' . $token
             ];
-            $fields     = 'message=' . Auth::user()->name . ' ได้ส่งคำขอช่วยเหลือถึงคุณ เรื่อง ' . $faqcheck->title;
+            $fields     = 'message=' . 'แอดมิน' . ' ได้ส่งข้อความถึงคุณ เรื่อง ' . $faqcheck->title;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, 1);
