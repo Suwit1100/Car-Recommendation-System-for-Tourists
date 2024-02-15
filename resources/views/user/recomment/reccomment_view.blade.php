@@ -53,7 +53,7 @@
             opacity: 1;
         }
 
-        /* .qt-sex, */
+        .qt-sex,
         .qt-old,
         .qt-education,
         .qt-career,
@@ -193,6 +193,7 @@
     @include('include.reccomment-view.qt16')
     @include('include.reccomment-view.qt17')
     @include('include.reccomment-view.qt18')
+    @include('include.reccomment-view.re-rec')
 
     <div class="box-load" hidden>
         <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
@@ -586,7 +587,7 @@
         });
 
         // qt-12
-        $('input[name="factorrent"]').on('change', function() {
+        $('input[name="planrent"]').on('change', function() {
             answerfactorrent = $('input[name="factorrent"]:checked').val();
             console.log("ค่าที่เลือก: " + answerfactorrent);
             $('#btn-next-factordrive').prop('disabled', false);
@@ -1206,6 +1207,22 @@
                     console.error(error);
                 }
             });
+        });
+
+        // กดลองอีกครั้ง
+        $('#click-re-rec').click(function(e) {
+            e.preventDefault();
+            $(':radio[name=sex], :radio[name=old], :radio[name=education], :radio[name=career], :radio[name=income], :radio[name=status], :radio[name=freetime], :radio[name=lifestyle], :radio[name=carnow], :radio[name=ownercar], :radio[name=planrent], :radio[name=planrent], :radio[name=factordrive], :radio[name=travellevel], :radio[name=travelwith], :radio[name=typeattraction], :radio[name=attraction], :radio[name=ft-attraction]')
+                .prop('checked', false);
+            $('#btn-next-old, #btn-next-education, #btn-next-career, #btn-next-income, #btn-next-status, #btn-next-freetime, #btn-next-lifestyle, #btn-next-carnow, #btn-next-ownercar, #btn-next-planrent, #btn-next-factorrent, #btn-next-factordrive, #btn-next-travellevel, #btn-next-travelwith, #btn-next-typeattraction, #btn-next-attraction, #btn-next-ftattraction, #btn-next-submit')
+                .prop('disabled', true);
+
+            $(".re_rec").css("display", "none");
+            $(".qt-sex").css("display", "block");
+            $(".qt-sex").animate({
+                opacity: 1
+            }, 500);
+
         });
     </script>
 @endsection
