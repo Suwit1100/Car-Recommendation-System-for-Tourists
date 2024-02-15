@@ -254,7 +254,7 @@ class FAQController extends Controller
             'title' => $data['title'],
             'content' => $data['content'],
             'imgfile' => $request->has('fileimg') ? $fileimgname : '',
-            'toAdminType' => null,
+            'toAdminType' => 1,
             'toUserId' => $data['touserid'],
             'statusUser' => 'new',
             'statusAdmin' => 'send',
