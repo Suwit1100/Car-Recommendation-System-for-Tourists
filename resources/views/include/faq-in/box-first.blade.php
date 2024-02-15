@@ -12,7 +12,8 @@
                         alt="">
                     <div class="ms-2 text-content-reply form-control">
                         <p class="m-0">
-                            <strong>{คุณ}</strong> {{ $letter_main->content }}
+                            <strong>{{ $letter_main->type == 1 ? '{แอดมิน}' : '{คุณ}' }}</strong>
+                            {{ $letter_main->content }}
                         </p>
                     </div>
                 </div>

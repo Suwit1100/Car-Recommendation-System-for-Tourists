@@ -45,7 +45,6 @@ class FAQUserController extends Controller
                 $join->on('faq.id', '=', 'faq_reply.letter_id')
                     ->where('faq_reply.created_at', '=', DB::raw('(SELECT MAX(created_at) FROM faq_reply WHERE faq_reply.letter_id = faq.id)'));
             })
-            ->where('faq.letter_by', Auth::user()->id)
             ->where('faq.toUserId', Auth::user()->id)
             ->where('faq.deleteUser', 'not_delete')
             ->when($search_main, function ($query, $search_main) {
@@ -63,7 +62,6 @@ class FAQUserController extends Controller
                 $join->on('faq.id', '=', 'faq_reply.letter_id')
                     ->where('faq_reply.created_at', '=', DB::raw('(SELECT MAX(created_at) FROM faq_reply WHERE faq_reply.letter_id = faq.id)'));
             })
-            ->where('faq.letter_by', Auth::user()->id)
             ->where('faq.toUserId', Auth::user()->id)
             ->where('faq.deleteUser', 'not_delete')
             ->where('faq.statusUser', 'send')
@@ -82,7 +80,6 @@ class FAQUserController extends Controller
                 $join->on('faq.id', '=', 'faq_reply.letter_id')
                     ->where('faq_reply.created_at', '=', DB::raw('(SELECT MAX(created_at) FROM faq_reply WHERE faq_reply.letter_id = faq.id)'));
             })
-            ->where('faq.letter_by', Auth::user()->id)
             ->where('faq.toUserId', Auth::user()->id)
             ->where('faq.deleteUser', 'not_delete')
             ->where('faq.statusUser', 'new')
@@ -279,7 +276,7 @@ class FAQUserController extends Controller
             ->leftJoin('users', 'faq_reply.reply_by', '=', 'users.id')
             ->where('faq.id', $idLetter)
             ->where('faq_reply.check_first', 'first')
-            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile')
+            ->select('faq_reply.*', 'users.name', 'users.lastname', 'users.imgprofile', 'users.type')
             ->first();
         // dd($letter_main);
 
