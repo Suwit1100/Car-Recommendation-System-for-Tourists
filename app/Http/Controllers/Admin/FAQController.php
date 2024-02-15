@@ -240,7 +240,7 @@ class FAQController extends Controller
 
     public function faq_post_admin(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $data = $request->all();
 
         if ($request->has('fileimg')) {
@@ -274,7 +274,7 @@ class FAQController extends Controller
         $faqcheck = Faq::find($faqnew->id);
         $tokencheck = TokenLine::where('user_id', $faqnew->toUserId)
             ->where('status_token', 'on')
-            ->get();
+            ->first();
         // // 3.เงื่อนไข
 
         // บันทึก notify
