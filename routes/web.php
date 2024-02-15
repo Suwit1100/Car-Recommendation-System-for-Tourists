@@ -75,6 +75,7 @@ Route::middleware(['auth', 'checkadmin'])->group(function () {
         Route::get('faq_in_am/{idLetter}', [FAQController::class, 'faq_in_am'])->name('faq_in_am');
         Route::post('faq_delete_am', [FAQController::class, 'faq_delete_am'])->name('faq_delete_am');
         Route::post('faq_reply_post_am', [FAQController::class, 'faq_reply_post_am'])->name('faq_reply_post_am');
+        Route::post('faq_post_admin', [FAQController::class, 'faq_post_admin'])->name('faq_post_admin');
     });
 
     Route::get('export_view', [ExportController::class, 'export_view'])->name('export_view');

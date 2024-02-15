@@ -237,4 +237,86 @@ class FAQController extends Controller
 
         return redirect()->back()->with('success-reply', 'ตอบกลับสำเร็จ');
     }
+
+    public function faq_post_admin(Request $request)
+    {
+        dd($request->all());
+        $data = $request->all();
+
+        if ($request->has('fileimg')) {
+            $fileimg = $request->file('fileimg');
+            $fileimgname = 'faq' . time() . '_' . $fileimg->getClientOriginalName();
+            $fileimg->move(public_path('assets/imgfaq'), $fileimgname);
+        }
+
+        $faqnew = Faq::create([
+            'letter_by' => Auth::user()->id,
+            'title' => $data['title'],
+            'content' => $data['content'],
+            'imgfile' => $request->has('fileimg') ? $fileimgname : '',
+            'toAdminType' => null,
+            'toUserId' => Auth::user()->id,
+            'statusUser' => 'send',
+            'statusAdmin' => 'new',
+        ]);
+
+
+        $reply_new = FaqReply::create([
+            'letter_id' => $faqnew->id,
+            'content' => $data['content'],
+            'imgfile' => $request->has('fileimg') ? $fileimgname : '',
+            'reply_by' => Auth::user()->id,
+            'check_first' => 'first'
+        ]);
+
+        // แจ้งเตือนไปยังแอดมิน
+        //1. ดึงข้อมูล
+        $faqcheck = Faq::find($faqnew->id);
+        $tokencheck = TokenLine::where('user_type', 1)
+            ->where('status_token', 'on')
+            ->get();
+        // // 3.เงื่อนไข
+
+        // บันทึก notify
+        Notify::create([
+            'type_notify' => 'faq',
+            'web_id' => null,
+            'faq_id' => $faqnew->id,
+            'text_detail' => 'ได้ส่งข้อความถึงคุณ',
+            'user_send_id' => Auth::user()->id,
+            'to_user_id' => null,
+            'to_admin_type' => 1,
+            'to_user_id_read' => null,
+            'to_admin_type_read' => 'new'
+        ]);
+
+        foreach ($tokencheck as $key => $itokencheck) {
+            $url        = 'https://notify-api.line.me/api/notify';
+            $token      = $itokencheck->token_text;
+            $headers    = [
+                'Content-Type: application/x-www-form-urlencoded',
+                'Authorization: Bearer ' . $token
+            ];
+            $fields     = 'message=' . Auth::user()->name . ' ได้ส่งคำขอช่วยเหลือถึงคุณ เรื่อง ' . $faqcheck->title;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($ch);
+            curl_close($ch);
+            var_dump($result);
+            $result = json_decode($result, TRUE);
+        }
+
+        //บันทึก Log
+        Log::create([
+            'user_id' => Auth::user()->id,
+            'user_type' => Auth::user()->type,
+            'text_detail' => 'ได้เขียนข้อความ',
+        ]);
+
+        return redirect()->back()->with('success-letter-post', 'ส่งข้อความสำเร็จ');
+    }
 }

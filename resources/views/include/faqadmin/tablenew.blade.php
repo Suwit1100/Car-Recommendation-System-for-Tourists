@@ -9,7 +9,7 @@
                         value="{{ $titlesearch == 'faqreply' ? $valuesearch : '' }}">
                     <a class="btn btn-add-announce ms-2 rounded-2" id="open-anounce" data-bs-toggle="modal"
                         data-bs-target="#Modal-add-annouce"><b>+</b>
-                        สร้างประกาศ</a>
+                        เขียนข้อความใหม่</a>
                 </div>
             </form>
         </div>
