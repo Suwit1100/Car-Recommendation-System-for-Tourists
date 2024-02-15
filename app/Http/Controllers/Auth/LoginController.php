@@ -29,13 +29,13 @@ class LoginController extends Controller
                 Log::create([
                     'user_id' => Auth::user()->id,
                     'user_type' => Auth::user()->type,
-                    'text_detail' => 'เข้าสู๋ระบบ',
+                    'text_detail' => 'เข้าสู่ระบบ',
                 ]);
 
                 VisitWeb::create([
                     'user_id' => Auth::user()->id,
                     'user_type' => Auth::user()->type,
-                    'text_detail' => 'เข้าสู๋ระบบ',
+                    'text_detail' => 'เข้าสู่ระบบ',
                 ]);
                 return redirect()->route('home_admin');
             } else if (auth()->user()->type == 0) {
@@ -47,13 +47,13 @@ class LoginController extends Controller
                 Log::create([
                     'user_id' => Auth::user()->id,
                     'user_type' => Auth::user()->type,
-                    'text_detail' => 'เข้าสู๋ระบบ',
+                    'text_detail' => 'เข้าสู่ระบบ',
                 ]);
 
                 VisitWeb::create([
                     'user_id' => Auth::user()->id,
                     'user_type' => Auth::user()->type,
-                    'text_detail' => 'เข้าสู๋ระบบ',
+                    'text_detail' => 'เข้าสู่ระบบ',
                 ]);
                 return redirect()->route('home_user');
             }
