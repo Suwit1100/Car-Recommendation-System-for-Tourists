@@ -53,7 +53,7 @@
             opacity: 1;
         }
 
-        .qt-sex,
+        /* .qt-sex, */
         .qt-old,
         .qt-education,
         .qt-career,
@@ -83,6 +83,7 @@
             color: #23c686;
         }
 
+        .re_rec,
         .result-suv,
         .result-sedan,
         .result-coupe,
@@ -856,6 +857,9 @@
                                         'block')
                                 } else if (response.result == 'Pickup') {
                                     $(".result-pickup").css("display",
+                                        'block')
+                                } else if (response.result == '') {
+                                    $(".re_rec").css("display",
                                         'block')
                                 }
 
