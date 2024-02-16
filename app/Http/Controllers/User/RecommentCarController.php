@@ -18,7 +18,6 @@ class RecommentCarController extends Controller
     public function reccoment_proccess(Request $request)
     {
         // dd($request->all());
-        // $result = 'SUV';
         $answersex1 = $request->input('answersex1');
         $answerold2 = $request->input('answerold2');
         $answereducation3 = $request->input('answereducation3');
@@ -38,219 +37,83 @@ class RecommentCarController extends Controller
         $answerattraction17 = $request->input('answerattraction17');
         $answerftattraction18 = $request->input('answerftattraction18');
 
-        $answer = [
-            'an1' => $answersex1,
-            'an2' => $answerold2,
-            'an3' => $answereducation3,
-            'an4' => $answercareer4,
-            'an5' => $answerincome5,
-            'an6' => $answerstatus6,
-            'an7' => $answerfreetime7,
-            'an8' => $answerlifestyle8,
-            'an9' => $answercarnow9,
-            'an10' => $answerownercar10,
-            'an11' => $answerplanrent11,
-            'an12' => $answerfactorrent12,
-            'an13' => $answerfactordrive13,
-            'an14' => $answertravellevel14,
-            'an15' => $answertravelwith15,
-            'an16' => $answertypeattraction16,
-            'an17' => $answerattraction17,
-            'an18' => $answerftattraction18,
-        ];
-
         // แนะนำ
-        if ($answerattraction17 == 'ancientcity') {
-            $result = 'Van';
-        } else if ($answerattraction17 == 'beach and sea') {
-            if ($answertypeattraction16 == 'human') {
-                $result = 'Sedan';
-            } else if ($answertypeattraction16 == 'nature') {
-                if ($answercarnow9 == 'coupe') {
-                    $result = 'Convertible';
-                } else if ($answercarnow9 == 'hatchback') {
-                    if ($answerownercar10 == '1-3') {
-                        $result = 'Sedan';
-                    } else if ($answerownercar10 == '4-6') {
-                        $result = 'Van';
-                    } else if ($answerownercar10 == 'less1') {
-                        $result = 'SUV';
-                    }
-                } else if ($answercarnow9 == 'minivan') {
-                    $result = 'SUV';
-                } else if ($answercarnow9 == 'pickup') {
-                    if ($answertravelwith15 == 'closefriend') {
-                        $result = 'Coupe';
-                    } else if ($answertravelwith15 == 'family') {
-                        $result = 'SUV';
-                    }
-                } else if ($answercarnow9 == 'suv') {
-                    $result = 'SUV';
-                } else if ($answercarnow9 == 'sedan') {
-                    $result = 'SUV';
-                } else if ($answercarnow9 == 'wagon') {
-                    if ($answerold2 == '25-34') {
-                        $result = 'SUV';
-                    } else if ($answerold2 == '35-44') {
-                        $result = 'Van';
-                    }
-                } else if ($answercarnow9 == 'no') {
-                    if ($answerownercar10 == '1-3') {
-                        if ($answertravellevel14 == 'level1') {
-                            $result = 'Coupe';
-                        } else if ($answertravellevel14 == 'travelLv2') {
-                            $result = 'Van';
-                        }
-                    } else if ($answerownercar10 == '4-6') {
-                        $result = 'SUV';
-                    } else if ($answerownercar10 == 'less1') {
-                        $result = 'Coupe';
-                    } else if ($answerownercar10 == 'no') {
-                        if ($answereducation3 == 'bachelordegree') {
-                            $result = 'Sedan';
-                        } else if ($answereducation3 == 'juniorhighschool') {
-                            $result = 'Sedan';
-                        } else if ($answereducation3 == 'masterdegree') {
-                            $result = 'Sedan';
-                        } else if ($answereducation3 == 'vocationalcertificate') {
-                            $result = 'SUV';
-                        } else if ($answereducation3 == 'highschool') {
-                            if ($answerfactorrent12 == 'goodvalue') {
-                                $result = 'SUV';
-                            } else if ($answerfactorrent12 == 'auqlity') {
-                                $result = 'Sedan';
-                            }
-                        }
-                    }
-                }
+        $result = '';
+        $condition = 'ไม่เข้าเงื่อนไข';
+        if ($answerfactorrent12 == 'amenities') {
+            if ($answereducation3 == 'bachelordegree') {
+                $result = 'sedan';
+                $condition = 'factorrent = amenities\n-education = bachelordegree: sedan';
+            } else if ($answereducation3 == 'highschool') {
+                $result = 'coupe';
+                $condition = 'factorrent = amenities\n-education = highschool: coupe';
             }
-        } else if ($answerattraction17 == 'fleamarket') {
-            if ($answerincome5 == 'no') {
-                if ($answersex1 == 'female') {
-                    $result = 'Sedan';
-                } else if ($answersex1 == 'male') {
-                    $result = 'Sedan';
+        } else if ($answerfactorrent12 == 'auqlity') {
+            if ($answercarnow9 == 'coupe') {
+                $result = 'convertible';
+                $condition = 'factorrent = auqlity\n-carnow = coupe: convertible';
+            } else if ($answercarnow9 == 'hatchback') {
+                if ($answerownercar10 == '1to3') {
+                    $result = 'hatchback';
+                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = 1to3: hatchback';
+                } else if ($answerownercar10 == 'less1') {
+                    $result = 'suv';
+                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = less1: hatchback';
                 }
-            } else if ($answerincome5 == '10000-20000') {
-                $result = 'Pickup';
-            } else if ($answerincome5 == '20001-30000') {
-                $result = 'Wagon';
-            } else if ($answerincome5 == 'less10000') {
-                if ($answerplanrent11 == '1000-2000') {
-                    $result = 'SUV';
-                } else if ($answerplanrent11 == 'less1000') {
-                    $result = 'Sedan';
-                }
-            }
-        } else if ($answerattraction17 == 'mall') {
-            if ($answercareer4 == 'freelance') {
-                $result = 'Sedan';
-            } else if ($answercareer4 == 'it') {
-                if ($answerownercar10 == '1-3') {
-                    $result = 'SUV';
-                } else if ($answerownercar10 == 'no') {
-                    $result = 'Hatchback';
-                }
-            } else if ($answercareer4 == 'no') {
-                $result = 'Sedan';
-            } else if ($answercareer4 == 'tradesman') {
-                $result = 'Sedan';
-            } else if ($answercareer4 == 'employee') {
-                if ($answersex1 == 'female') {
-                    $result = 'Sedan';
-                } else if ($answersex1 == 'male') {
-                    $result = 'Hatchback';
-                }
-            } else if ($answercareer4 == 'ceo') {
-                $result = 'Hatchback';
-            } else if ($answercareer4 == 'student') {
-                if ($answerstatus6 == 'couple') {
-                    $result = 'Sedan';
-                } else if ($answerstatus6 == 'no') {
-                    if ($answerftattraction18 == 'activity') {
-                        $result = 'Sedan';
-                    } else if ($answerftattraction18 == 'food') {
-                        $result = 'SUV';
-                    }
-                } else if ($answerstatus6 == 'single') {
-                    $result = 'Hatchback';
-                }
-            }
-        } else if ($answerattraction17 == 'mountain') {
-            if ($answertypeattraction16 == 'human') {
-                $result = 'Sedan';
-            } else if ($answertypeattraction16 == 'nature') {
-                if ($answerfactorrent12 == 'goodvalue') {
-                    if ($answersex1 == 'female') {
-                        $result = 'Van';
-                    } else if ($answersex1 == 'male') {
-                        $result = 'Pickup';
-                    }
-                } else if ($answerfactorrent12 == 'service') {
-                    $result = 'SUV';
-                } else if ($answerfactorrent12 == 'auqlity') {
-                    if ($answerold2 == '20-24') {
-                        if ($answersex1 == 'female') {
-                            $result = 'Sedan';
-                        } else if ($answersex1 == 'male') {
-                            $result = 'Pickup';
+            } else if ($answercarnow9 == 'minivan') {
+                $result = 'suv';
+                $condition = 'factorrent = auqlity\n-carnow = minivan: suv';
+            } else if ($answercarnow9 == 'no') {
+                if ($answerattraction17 == 'ancientcity') {
+                    $result = 'minivan';
+                    $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = ancientcity: minivan';
+                } else if ($answerattraction17 == 'beach and sea') {
+                    if ($answereducation3 == 'bachelordegree') {
+                        if ($answercarnow9 == '1to3') {
+                            $result = 'coupe';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = 1to3: coupe';
+                        } else if ($answercarnow9 == 'less1') {
+                            $result = 'convertible';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = less1: convertible';
+                        } else if ($answercarnow9 == 'no') {
+                            $result = 'sedan';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = no: sedan';
                         }
-                    } else if ($answerold2 == '25-34') {
-                        if ($answersex1 == 'female') {
-                            $result = 'SUV';
-                        } else if ($answersex1 == 'male') {
-                            $result = 'Convertible';
-                        }
-                    } else if ($answerold2 == '35-44') {
-                        $result = 'Hatchback';
-                    } else if ($answerold2 == '45-54') {
-                        $result = 'Pickup';
+                    } else if ($answereducation3 == 'highschool') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = highschool: sedan';
+                    } else if ($answereducation3 == 'masterdegree') {
+                        $result = 'suv';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = masterdegree: suv';
+                    } else if ($answereducation3 == 'vocationalcertificate') {
+                        $result = 'coupe';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = vocationalcertificate: coupe';
                     }
-                } else if ($answerfactorrent12 == 'category') {
-                    if ($answertravelwith15 == 'closefriend') {
-                        $result = 'SUV';
-                    } else if ($answertravelwith15 == 'family') {
-                        $result = 'Hatchback';
-                    }
-                } else if ($answerfactorrent12 == 'discount') {
-                    $result = 'Convertible';
-                }
-            }
-        } else if ($answerattraction17 == 'waterfall') {
-            if ($answerownercar10 == '1-3') {
-                $result = 'SUV';
-            } else if ($answerownercar10 == '4-6') {
-                if ($answerincome5 == '10000-20000') {
-                    $result = 'Van';
-                } else if ($answerincome5 == '20001-30000') {
-                    $result = 'SUV';
-                } else if ($answerincome5 == '30001-40000') {
-                    $result = 'SUV';
-                }
-            } else if ($answerownercar10 == '7-10') {
-                $result = 'Pickup';
-            } else if ($answerownercar10 == 'less1') {
-                $result = 'Pickup';
-            } else if ($answerownercar10 == 'no') {
-                if ($answertravellevel14 == 'level0') {
-                    $result = 'SUV';
-                } else if ($answertravellevel14 == 'level1') {
-                    if ($answersex1 == 'female') {
-                        $result = 'Hatchback';
-                    } else if ($answersex1 == 'male') {
-                        if ($answerincome5 == 'no') {
-                            $result = 'Pickup';
-                        } else if ($answerincome5 == '10000-20000') {
-                            $result = 'Sedan';
-                        } else if ($answerincome5 == 'less10000') {
-                            $result = 'Sedan';
-                        }
-                    }
-                } else if ($answertravellevel14 == 'level2') {
-                    $result = 'SUV';
                 }
             }
         }
+
+
+        // $answer = [
+        //     'sex' => $answersex1,
+        //     'old' => $answerold2,
+        //     'education' => $answereducation3,
+        //     'career' => $answercareer4,
+        //     'income' => $answerincome5,
+        //     'an6' => $answerstatus6,
+        //     'status' => $answerfreetime7,
+        //     'lifestyle' => $answerlifestyle8,
+        //     'carnow' => $answercarnow9,
+        //     'ownercar' => $answerownercar10,
+        //     'planrent' => $answerplanrent11,
+        //     'factorrent' => $answerfactorrent12,
+        //     'factordrive' => $answerfactordrive13,
+        //     'travellevel' => $answertravellevel14,
+        //     'travelwith' => $answertravelwith15,
+        //     'typeattraction' => $answertypeattraction16,
+        //     'attraction' => $answerattraction17,
+        //     'ftattraction' => $answerftattraction18,
+        // ];
         // dd($result);
         // แนะนำ
 
@@ -266,8 +129,8 @@ class RecommentCarController extends Controller
         return response([
             'status' => '200',
             'message' => 'ส่งข้อมูลสำเร็จ',
-            'result' => $result,
-            'answer' => $answer,
+            // 'result' => $result,
+            // 'answer' => $answer,
         ]);
     }
 
