@@ -143,6 +143,37 @@ class RecommentCarController extends Controller
                             }
                         }
                     }
+                } else if ($answerattraction17 == 'mountain') {
+                    if ($answertravelwith15  == 'closefriend') {
+                        if ($answersex1 == 'female') {
+                            $result = 'hatchback';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = closefriend\n----sex = female: hatchback';
+                        } else if ($answersex1 == 'male') {
+                            $result = 'pickup';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = closefriend\n----sex = male: pickup';
+                        }
+                    } else if ($answertravelwith15  == 'family') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = family: pickup';
+                    }
+                } else if ($answerattraction17 == 'waterfall') {
+                    $result = 'pickup';
+                    $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = waterfall: pickup';
+                }
+            } else if ($answercarnow9 == 'pickup') {
+                if ($answertravelwith15 == 'closefriend') {
+                    if ($answertravellevel14 == 'level1') {
+                        $result == 'hatchback';
+                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level1: hatchback';
+                    } else if ($answertravellevel14 == 'level2') {
+                        if ($answerownercar10 == '1to3') {
+                            $result = 'minivan';
+                            $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level2\n----ownercar = 1to3: minivan';
+                        } else if ($answerownercar10 == 'less1') {
+                            $result = 'pickup';
+                            $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level2\n----ownercar = less1: pickup';
+                        }
+                    }
                 }
             }
         }
