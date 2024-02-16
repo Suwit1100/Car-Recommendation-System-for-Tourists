@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-6 col-lg-2 my-1">
                     <input type="radio" class="btn-check" name="ft-attraction" id="ft-attraction_nature"
-                        autocomplete="off" value="natur">
+                        autocomplete="off" value="nature">
                     <label class="box-lable" for="ft-attraction_nature">
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
