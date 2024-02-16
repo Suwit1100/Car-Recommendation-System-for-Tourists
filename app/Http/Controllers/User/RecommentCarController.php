@@ -220,6 +220,122 @@ class RecommentCarController extends Controller
                         $result = 'sedan';
                         $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = privacy: sedan';
                     }
+                } else if ($answerold2  == '35-44') {
+                    $result = 'coupe';
+                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 35-44: coupe';
+                } else if ($answerold2  == '45-54') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 45-54: sedan';
+                }
+            } else if ($answercarnow9 == 'suv') {
+                $result = 'suv';
+                $condition = 'factorrent = auqlity\n-carnow = suv: suv';
+            } else if ($answercarnow9 == 'wagon') {
+                $result = 'suv';
+                $condition = 'factorrent = auqlity\n-carnow = wagon: suv';
+            }
+        } else if ($answerfactorrent12 == 'category') {
+            if ($answercarnow9 == 'no') {
+                $result = 'suv';
+                $condition = 'factorrent = category\n-carnow = no: suv';
+            } else if ($answercarnow9 == 'pickup') {
+                $result = 'pickup';
+                $condition = 'factorrent = category\n-carnow = pickup: pickup';
+            } else if ($answercarnow9 == 'sedan') {
+                $result = 'coupe';
+                $condition = 'factorrent = category\n-carnow = sedan: coupe';
+            } else if ($answercarnow9 == 'wagon') {
+                $result = 'hatchback';
+                $condition = 'factorrent = category\n-carnow = wagon: hatchback';
+            }
+        } else if ($answerfactorrent12 == 'discount') {
+            if ($answerattraction17 == 'ancientcity') {
+                $result = 'sedan';
+                $condition = 'factorrent = discount\n-attraction = ancientcity: sedan';
+            } else if ($answerattraction17 == 'beach and sea') {
+                if ($answerstatus6 == 'couple') {
+                    if ($answerold2 == '20-24') {
+                        $result = 'pickup';
+                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = couple\n---old = 20-24: pickup';
+                    } else if ($answerold2 == '25-34') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = couple\n---old = 25-34: sedan';
+                    }
+                } else if ($answerstatus6 == 'married') {
+                    $result = 'convertible';
+                    $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = married: convertible';
+                } else if ($answerstatus6 == 'single') {
+                    if ($answersex1 == 'female') {
+                        $result = 'convertible';
+                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = female: convertible';
+                    } else if ($answersex1 == 'lgbt') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = lgbt: sedan';
+                    } else if ($answersex1 == 'male') {
+                        $result = 'minivan';
+                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = male: minivan';
+                    }
+                }
+            } else if ($answerattraction17 == 'fleamarket') {
+                if ($answersex1 == 'female') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = discount\n-attraction = fleamarket\n--sex = female: sedan';
+                } else if ($answersex1 == 'male') {
+                    $result = 'suv';
+                    $condition = 'factorrent = discount\n-attraction = fleamarket\n--sex = male: suv';
+                }
+            } else if ($answerattraction17 == 'mall') {
+                $result = 'suv';
+                $condition = 'factorrent = discount\n-attraction = mall: suv';
+            } else if ($answerattraction17 == 'mountain') {
+                $result = 'convertible';
+                $condition = 'factorrent = discount\n-attraction = mountain: convertible';
+            } else if ($answerattraction17 == 'waterfall') {
+                $result = 'suv';
+                $condition = 'factorrent = discount\n-attraction = waterfall: suv';
+            }
+        } else if ($answerfactorrent12 == 'goodvalue') {
+            if ($answerattraction17 == 'ancientcity') {
+                $result = 'minivan';
+                $condition = 'factorrent = goodvalue\n-attraction = ancientcity: minivan';
+            } else if ($answerattraction17 == 'beach and sea') {
+                if ($answerftattraction18 == 'activity') {
+                    $result = 'suv';
+                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = activity: suv';
+                } else if ($answerftattraction18 == 'adventure') {
+                    $result = 'minivan';
+                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = adventure: minivan';
+                } else if ($answerftattraction18 == 'culture') {
+                    $result = 'suv';
+                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = culture: suv';
+                } else if ($answerftattraction18 == 'food') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = food: sedan';
+                } else if ($answerftattraction18 == 'nature') {
+                    if ($answerlifestyle8 == 'active') {
+                        $result = 'convertible';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = active: convertible';
+                    } else if ($answerlifestyle8 == 'career') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = career: sedan';
+                    } else if ($answerlifestyle8 == 'chill') {
+                        $result = 'suv';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = chill: suv';
+                    } else if ($answerlifestyle8 == 'peaceful') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = peaceful: sedan';
+                    } else if ($answerlifestyle8 == 'travel') {
+                        $result = 'suv';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = travel: suv';
+                    }
+                } else if ($answerftattraction18 == 'privacy') {
+                    if ($answertravellevel14 == 'level1') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = privacy\n---travellevel = level1: sedan';
+                    } else if ($answertravellevel14 == 'level2') {
+                        $result = 'wagon';
+                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = privacy\n---travellevel = level2: wagon';
+                    }
                 }
             }
         }
