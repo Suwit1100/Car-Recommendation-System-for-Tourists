@@ -337,6 +337,69 @@ class RecommentCarController extends Controller
                         $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = privacy\n---travellevel = level2: wagon';
                     }
                 }
+            } else if ($answerattraction17 == 'fleamarket') {
+                $result = 'hatchback';
+                $condition = 'factorrent = goodvalue\n-attraction = fleamarket: hatchback';
+            } else if ($answerattraction17 == 'mall') {
+                if ($answerincome5 == '10000-20000') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = 10000-20000: sedan';
+                } else if ($answerincome5 == 'less10000') {
+                    $result = 'suv';
+                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = less10000: suv';
+                } else if ($answerincome5 == 'no') {
+                    $result = 'suv';
+                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = no: suv';
+                }
+            } else if ($answerattraction17 == 'mountain') {
+                if ($answerplanrent11 == '1000-2000') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = goodvalue\n-attraction = mountain\n--planrent = 1000-2000: sedan';
+                } else if ($answerplanrent11 == 'less1000') {
+                    $result = 'pickup';
+                    $condition = 'factorrent = goodvalue\n-attraction = mountain\n--planrent = less1000: pickup';
+                }
+            } else if ($answerattraction17 == 'waterfall') {
+                if ($answersex1 == 'female') {
+                    $result = 'minivan';
+                    $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = female: minivan';
+                } else if ($answersex1 == 'male') {
+                    if ($answertravelwith15 == 'closefriend') {
+                        $result = 'pickup';
+                        $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = male\n---travelwith = closefriend: pickup';
+                    } else if ($answertravelwith15 == 'family') {
+                        $result = 'minivan';
+                        $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = male\n---travelwith = family: minivan';
+                    }
+                }
+            }
+        } else if ($answerfactorrent12 == 'location') {
+            $result = 'minivan';
+            $condition = 'factorrent = location: minivan';
+        } else if ($answerfactorrent12 == 'reliability') {
+            $result = 'suv';
+            $condition = 'factorrent = reliability: suv';
+        } else if ($answerfactorrent12 == 'service') {
+            if ($answerincome5 == '10000-20000') {
+                $result = 'suv';
+                $condition = 'factorrent = service\n-income = 10000-20000: suv';
+            } else if ($answerincome5 == '20001-30000') {
+                if ($answereducation3 == 'bachelordegree') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = bachelordegree: sedan';
+                } else if ($answereducation3 == 'masterdegree') {
+                    $result = 'suv';
+                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = masterdegree: suv';
+                } else if ($answereducation3 == 'vocationalcertificate') {
+                    $result = 'suv';
+                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = vocationalcertificate: suv';
+                }
+            } else if ($answerincome5 == '30001-40000') {
+                $result = 'minivan';
+                $condition = 'factorrent = service\n-income = 30001-40000: minivan';
+            } else if ($answerincome5 == 'less10000') {
+                $result = 'sedan';
+                $condition = 'factorrent = service\n-income = less10000: sedan';
             }
         }
 
