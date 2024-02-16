@@ -174,6 +174,52 @@ class RecommentCarController extends Controller
                             $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level2\n----ownercar = less1: pickup';
                         }
                     }
+                } else if ($answertravelwith15 == 'family') {
+                    $result = 'suv';
+                    $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = family: suv';
+                } else if ($answertravelwith15 == 'lover') {
+                    $result = 'pickup';
+                    $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = lover: pickup';
+                } else if ($answertravelwith15 == 'team') {
+                    if ($answerincome5 == '10000-20000') {
+                        $result = 'suv';
+                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = team\n---income = 10000-20000: suv';
+                    } else if ($answerincome5 == '30001-40000') {
+                        $result = 'pickup';
+                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = team\n---income = 30001-40000: pickup';
+                    }
+                }
+            } else if ($answercarnow9 == 'sedan') {
+                if ($answerold2  == '20-24') {
+                    $result = 'sedan';
+                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 20-24: sedan';
+                } else if ($answerold2  == '25-34') {
+                    if ($answerftattraction18 == 'activity') {
+                        $result = 'hatchback';
+                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = activity: hatchback';
+                    } else if ($answerftattraction18 == 'adventure') {
+                        $result = 'suv';
+                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = adventure: suv';
+                    } else if ($answerftattraction18 == 'food') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = food: sedan';
+                    } else if ($answerftattraction18 == 'nature') {
+                        if ($answertravellevel14  == 'level1') {
+                            if ($answerfreetime7 == 'enjoy') {
+                                $result = 'convertible';
+                                $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level1\n-----freetime = enjoy: convertible';
+                            } else if ($answerfreetime7 == 'relax') {
+                                $result = 'suv';
+                                $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level1\n-----freetime = relax: suv';
+                            }
+                        } else if ($answertravellevel14  == 'level2') {
+                            $result = 'suv';
+                            $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level2: suv';
+                        }
+                    } else if ($answerftattraction18 == 'privacy') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = privacy: sedan';
+                    }
                 }
             }
         }
