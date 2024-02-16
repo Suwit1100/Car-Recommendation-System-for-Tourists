@@ -834,28 +834,28 @@
                             $('#md-result').val(response.result);
                             setTimeout(function() {
                                 $('.box-load').attr('hidden', true);
-                                if (response.result == 'SUV') {
+                                if (response.result == 'suv') {
                                     $(".result-suv").css("display", 'block')
-                                } else if (response.result == 'Coupe') {
+                                } else if (response.result == 'coupe') {
                                     $(".result-coupe").css("display",
                                         'block')
                                 } else if (response.result ==
-                                    'Convertible') {
+                                    'convertible') {
                                     $(".result-convertible").css("display",
                                         'block')
-                                } else if (response.result == 'Sedan') {
+                                } else if (response.result == 'sedan') {
                                     $(".result-sedan").css("display",
                                         'block')
-                                } else if (response.result == 'Wagon') {
+                                } else if (response.result == 'wagon') {
                                     $(".result-wagon").css("display",
                                         'block')
-                                } else if (response.result == 'Hatchback') {
+                                } else if (response.result == 'hatchback') {
                                     $(".result-hatchback").css("display",
                                         'block')
-                                } else if (response.result == 'Van') {
+                                } else if (response.result == 'minivan') {
                                     $(".result-van").css("display",
                                         'block')
-                                } else if (response.result == 'Pickup') {
+                                } else if (response.result == 'pickup') {
                                     $(".result-pickup").css("display",
                                         'block')
                                 } else if (response.result == '') {

@@ -403,27 +403,31 @@ class RecommentCarController extends Controller
             }
         }
 
+        if ($condition != 'ไม่เข้าเงื่อนไข') {
+            $condition = str_replace("\n", '\n', $condition);
+        }
 
-        // $answer = [
-        //     'sex' => $answersex1,
-        //     'old' => $answerold2,
-        //     'education' => $answereducation3,
-        //     'career' => $answercareer4,
-        //     'income' => $answerincome5,
-        //     'an6' => $answerstatus6,
-        //     'status' => $answerfreetime7,
-        //     'lifestyle' => $answerlifestyle8,
-        //     'carnow' => $answercarnow9,
-        //     'ownercar' => $answerownercar10,
-        //     'planrent' => $answerplanrent11,
-        //     'factorrent' => $answerfactorrent12,
-        //     'factordrive' => $answerfactordrive13,
-        //     'travellevel' => $answertravellevel14,
-        //     'travelwith' => $answertravelwith15,
-        //     'typeattraction' => $answertypeattraction16,
-        //     'attraction' => $answerattraction17,
-        //     'ftattraction' => $answerftattraction18,
-        // ];
+
+        $answer = [
+            'sex' => $answersex1,
+            'old' => $answerold2,
+            'education' => $answereducation3,
+            'career' => $answercareer4,
+            'income' => $answerincome5,
+            'an6' => $answerstatus6,
+            'status' => $answerfreetime7,
+            'lifestyle' => $answerlifestyle8,
+            'carnow' => $answercarnow9,
+            'ownercar' => $answerownercar10,
+            'planrent' => $answerplanrent11,
+            'factorrent' => $answerfactorrent12,
+            'factordrive' => $answerfactordrive13,
+            'travellevel' => $answertravellevel14,
+            'travelwith' => $answertravelwith15,
+            'typeattraction' => $answertypeattraction16,
+            'attraction' => $answerattraction17,
+            'ftattraction' => $answerftattraction18,
+        ];
         // dd($result);
         // แนะนำ
 
@@ -439,8 +443,10 @@ class RecommentCarController extends Controller
         return response([
             'status' => '200',
             'message' => 'ส่งข้อมูลสำเร็จ',
-            // 'result' => $result,
-            // 'answer' => $answer,
+            'answer' => $answer,
+            'condition' => $condition,
+            'result' => $result,
+
         ]);
     }
 
