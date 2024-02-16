@@ -58,7 +58,7 @@ class RecommentCarController extends Controller
                     $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = 1to3: hatchback';
                 } else if ($answerownercar10 == 'less1') {
                     $result = 'suv';
-                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = less1: hatchback';
+                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = less1: suv';
                 }
             } else if ($answercarnow9 == 'minivan') {
                 $result = 'suv';
@@ -88,6 +88,22 @@ class RecommentCarController extends Controller
                     } else if ($answereducation3 == 'vocationalcertificate') {
                         $result = 'coupe';
                         $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = vocationalcertificate: coupe';
+                    }
+                } else if ($answerattraction17 == 'fleamarket') {
+                    if ($answerold2 == '20-24') {
+                        if ($answerincome5 == '10000-20000') {
+                            $result = 'pickup';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = fleamarket\n---old = 20-24----income = 10000-20000: pickup';
+                        } else if ($answerincome5 == 'less10000') {
+                            $result = 'sedan';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = fleamarket\n---old = 20-24----income = less10000: sedan';
+                        } else if ($answerincome5 == 'no') {
+                            $result = 'minivan';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = fleamarket\n---old = 20-24----income = no: minivan';
+                        }
+                    } else if ($answerold2 == '25-34') {
+                        $result = 'suv';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = fleamarket\n---old = 25-34 : minivan';
                     }
                 }
             }
