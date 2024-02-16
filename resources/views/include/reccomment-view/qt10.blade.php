@@ -32,9 +32,9 @@
                  </label>
              </div>
              <div class="col-6 col-lg-2 my-1">
-                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_1-3" autocomplete="off"
-                     value="1-3">
-                 <label class="box-lable" for="ownercar_1-3">
+                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_1to3" autocomplete="off"
+                     value="1to3">
+                 <label class="box-lable" for="ownercar_1to3">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
                          <img src="https://img5.pic.in.th/file/secure-sv1/-1--1.png">
@@ -45,9 +45,9 @@
                  </label>
              </div>
              <div class="col-6 col-lg-2 my-1">
-                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_4-6" autocomplete="off"
-                     value="4-6">
-                 <label class="box-lable" for="ownercar_4-6">
+                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_4to6" autocomplete="off"
+                     value="4to6">
+                 <label class="box-lable" for="ownercar_4to6">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
                          <img src="https://img5.pic.in.th/file/secure-sv1/-1--2957fde6aa22b8915.png">
@@ -58,9 +58,9 @@
                  </label>
              </div>
              <div class="col-6 col-lg-2 my-1">
-                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_7-10" autocomplete="off"
-                     value="7-10">
-                 <label class="box-lable" for="ownercar_7-10">
+                 <input type="radio" class="btn-check" name="ownercar" id="ownercar_7to10" autocomplete="off"
+                     value="7to10">
+                 <label class="box-lable" for="ownercar_7to10">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
                          <img src="https://img2.pic.in.th/pic/-1--3.png">
