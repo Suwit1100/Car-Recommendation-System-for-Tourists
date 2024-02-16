@@ -105,6 +105,44 @@ class RecommentCarController extends Controller
                         $result = 'suv';
                         $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = fleamarket\n---old = 25-34 : minivan';
                     }
+                } else if ($answerattraction17 == 'mall') {
+                    if ($answerstatus6 == 'couple') {
+                        $result = 'sedan';
+                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = couple: sedan';
+                    } else if ($answerstatus6 == 'no') {
+                        if ($answercareer4 == 'no') {
+                            $result = 'pickup';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = no\n----career = no: pickup';
+                        } else if ($answercareer4 == 'student') {
+                            $result = 'sedan';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = no\n----career = student: sedan';
+                        }
+                    } else if ($answerstatus6 == 'single') {
+                        if ($answerplanrent11 == '1000-2000') {
+                            $result == 'hatchback';
+                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = 1000-2000: hatchback';
+                        } else if ($answerplanrent11 == 'less1000') {
+                            if ($answerincome5 == '10000-20000') {
+                                $result = 'sedan';
+                                $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = less1000\n-----income = 10000-20000 : sedan';
+                            } else if ($answerincome5 == 'less10000') {
+                                $result = 'coupe';
+                                $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = less1000\n-----income = less10000 : coupe';
+                            } else if ($answerincome5 == 'no') {
+                                if ($answercareer4 == 'no') {
+                                    $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = less1000\n-----income = no\n------career = no : sedan';
+                                } else if ($answercareer4 == 'student') {
+                                    if ($answertravelwith15 == 'closefriend') {
+                                        $result = 'minivan';
+                                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = less1000\n-----income = less10000\n------career = no\n-------travelwith = closefriend  : minivan';
+                                    } else if ($answertravelwith15 == 'family') {
+                                        $result = 'suv';
+                                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mall\n---status = single\n----planrent = less1000\n-----income = less10000\n------career = no\n-------travelwith = family  : suv';
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
