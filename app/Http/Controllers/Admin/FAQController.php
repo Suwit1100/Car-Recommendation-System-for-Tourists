@@ -285,7 +285,7 @@ class FAQController extends Controller
             'text_detail' => 'ได้ส่งข้อความถึงคุณ',
             'user_send_id' => Auth::user()->id,
             'to_user_id' => $faqnew->toUserId,
-            'to_admin_type' => 1,
+            'to_admin_type' => null,
             'to_user_id_read' => 'new',
             'to_admin_type_read' => 'read'
         ]);

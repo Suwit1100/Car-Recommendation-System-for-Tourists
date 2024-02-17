@@ -34,7 +34,7 @@ return new class extends Migration
             $table->text('answer18');
             $table->text('result');
             $table->text('score');
-            $table->text('comment')->default(null);
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

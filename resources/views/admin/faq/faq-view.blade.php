@@ -130,7 +130,7 @@
                         <div class="col-12 my-1">
                             <select name="touserid" id="" class="form-select" required>
                                 <option value="">ส่งถึง</option>
-                                {{ $user = DB::table('users')->get() }}
+                                {{ $user = DB::table('users')->where('type', 0)->get() }}
                                 @foreach ($user as $iuser)
                                     <option value="{{ $iuser->id }}">{{ $iuser->name }} {{ $iuser->lastname }}</option>
                                 @endforeach
