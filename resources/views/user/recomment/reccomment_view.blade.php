@@ -71,9 +71,9 @@
         .qt-typeattraction,
         .qt-attraction,
         .qt-factor-attraction {
-            /* display: none;
-                                                                                                                                                                    opacity: 0;
-                                                                                                                                                                    transition: 0.5; */
+            display: none;
+            opacity: 0;
+            transition: 0.5;
         }
 
         .box-load {
