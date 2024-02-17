@@ -7,6 +7,7 @@ use App\Models\Log;
 use App\Models\ReviewRecomment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RecommentCarController extends Controller
 {
@@ -498,6 +499,119 @@ class RecommentCarController extends Controller
 
     public function result_view(Request $request, $category)
     {
-        dd($category);
+        // dd($category);
+        $cars = DB::table('car_dataset')
+            ->where('vehicle_style', $category)
+            ->paginate(12);
+
+        $totalcars = DB::table('car_dataset')
+            ->where('vehicle_style', $category)
+            ->count();
+        $category;
+        return view('user.recomment.rec-result-view', compact('category', 'cars', 'totalcars'));
+    }
+
+    public function rec_filter_car(Request $request)
+    {
+        $data = $request->Datafilter;
+        $ofset = ($data['page'] - 1) * 12;
+        $cars = DB::table('car_dataset')
+            ->when($data['valSearch'], function ($query, $search) {
+                return $query->where(function ($query) use ($search) {
+                    $query->where('car_dataset.make', 'like', '%' . $search . '%')
+                        ->orWhere('car_dataset.model', 'like', '%' . $search . '%');
+                });
+            })
+            ->when($data['valPricemin'], function ($query, $pricemin) {
+                return $query->where('msrp', '>=', "$pricemin");
+            })
+            ->when($data['valPricemax'], function ($query, $pricemax) {
+                return $query->where('msrp', '<=', "$pricemax");
+            })
+            ->when($data['valYearmin'], function ($query, $yearmin) {
+                return $query->where('year', '>=', "$yearmin");
+            })
+            ->when($data['valYearmax'], function ($query, $yearmax) {
+                return $query->where('year', '<=', "$yearmax");
+            })
+            ->when($data['valVachicle'], function ($query, $category) {
+                return $query->where('vehicle_style', 'like', "$category");
+            })
+            ->when($data['valMake'], function ($query, $make) {
+                return $query->where('make', 'like', "$make");
+            })
+            ->when($data['valModel'], function ($query, $model) {
+                return $query->where('model', 'like', "$model");
+            })
+            ->when($data['valFuel'], function ($query, $fuel) {
+                return $query->where('engine_fuel_type', 'like', "$fuel");
+            })
+            ->when($data['valTransmission'], function ($query, $transmission) {
+                return $query->where('transmission_type', 'like', "$transmission");
+            })
+            ->when($data['ValSortPrice'], function ($query, $sort_price) {
+                return $query->orderBy('msrp', $sort_price);
+            })
+            ->when($data['ValSortYear'], function ($query, $sort_year) {
+                return $query->orderBy('year', $sort_year);
+            })
+            ->skip($ofset)
+            ->take(12)
+            ->get();
+
+        // จำนวน st
+        $totalcars = DB::table('car_dataset')
+            ->when($data['valSearch'], function ($query, $search) {
+                return $query->where(function ($query) use ($search) {
+                    $query->where('car_dataset.make', 'like', '%' . $search . '%')
+                        ->orWhere('car_dataset.model', 'like', '%' . $search . '%');
+                });
+            })
+            ->when($data['valPricemin'], function ($query, $pricemin) {
+                return $query->where('msrp', '>=', "$pricemin");
+            })
+            ->when($data['valPricemax'], function ($query, $pricemax) {
+                return $query->where('msrp', '<=', "$pricemax");
+            })
+            ->when($data['valYearmin'], function ($query, $yearmin) {
+                return $query->where('year', '>=', "$yearmin");
+            })
+            ->when($data['valYearmax'], function ($query, $yearmax) {
+                return $query->where('year', '<=', "$yearmax");
+            })
+            ->when($data['valVachicle'], function ($query, $category) {
+                return $query->where('vehicle_style', 'like', "$category");
+            })
+            ->when($data['valMake'], function ($query, $make) {
+                return $query->where('make', 'like', "$make");
+            })
+            ->when($data['valModel'], function ($query, $model) {
+                return $query->where('model', 'like', "$model");
+            })
+            ->when($data['valFuel'], function ($query, $fuel) {
+                return $query->where('engine_fuel_type', 'like', "$fuel");
+            })
+            ->when($data['valTransmission'], function ($query, $transmission) {
+                return $query->where('transmission_type', 'like', "$transmission");
+            })
+            ->when($data['ValSortPrice'], function ($query, $sort_price) {
+                return $query->orderBy('msrp', $sort_price);
+            })
+            ->when($data['ValSortYear'], function ($query, $sort_year) {
+                return $query->orderBy('year', $sort_year);
+            })
+            ->count();
+        // จำนวน ed
+
+        $html = view('include.rec-result-view.recdatacar', compact('cars'))->render();
+
+        return response([
+            'message' => "สำเร็จ",
+            'status' => '300',
+            'data' => $data,
+            'cardata' => $cars,
+            'html' => $html,
+            'total' => $totalcars
+        ]);
     }
 }
