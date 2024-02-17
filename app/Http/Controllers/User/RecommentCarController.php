@@ -113,10 +113,24 @@ class RecommentCarController extends Controller
                             ];
                         } else if ($ownercar == 'less1') {
                             $result = 'convertible';
-                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = less1: convertible';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'no',
+                                'attraction' => 'beach and sea',
+                                'education' => 'bachelordegree',
+                                'ownercar' => 'less1',
+                                'result' => 'convertible'
+                            ];
                         } else if ($ownercar == 'no') {
                             $result = 'sedan';
-                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = no: sedan';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'no',
+                                'attraction' => 'beach and sea',
+                                'education' => 'bachelordegree',
+                                'ownercar' => 'no',
+                                'result' => 'sedan'
+                            ];
                         }
                     } else if ($education == 'highschool') {
                         $result = 'sedan';
