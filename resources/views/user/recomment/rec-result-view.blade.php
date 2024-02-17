@@ -129,13 +129,13 @@
     {{-- jquery ui custom --}}
 @endsection
 @section('content')
-    <div class="testvalue btn green">
+    {{-- <div class="testvalue btn green">
         กดสิ
-    </div>
+    </div> --}}
     {{-- ปุ่มกลับ --}}
     <div class="row">
         <div class="col-1 my-2">
-            <a href="{{ route('home_user') }}" class="icon-20">
+            <a href="{{ route('reccomment_view') }}" class="icon-20">
                 <i class="fa-solid fa-circle-left"></i>
             </a>
         </div>
