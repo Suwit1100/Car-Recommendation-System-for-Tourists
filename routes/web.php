@@ -52,6 +52,7 @@ Route::middleware(['auth', 'checkuser'])->group(function () {
     Route::get('reccomment_view', [RecommentCarController::class, 'reccomment_view'])->name('reccomment_view');
     Route::post('reccoment_proccess', [RecommentCarController::class, 'reccoment_proccess'])->name('reccoment_proccess');
     Route::post('review_recomment', [RecommentCarController::class, 'review_recomment'])->name('review_recomment');
+    Route::get('result_view/{category}', [RecommentCarController::class, 'result_view'])->name('result_view/{category}');
 
     Route::prefix('faquser')->group(function () {
         Route::get('faq_view', [FAQUserController::class, 'faq_view'])->name('faq_view');

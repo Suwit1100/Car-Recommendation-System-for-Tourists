@@ -72,8 +72,8 @@
         .qt-attraction,
         .qt-factor-attraction {
             /* display: none;
-                                                                                                                                                opacity: 0;
-                                                                                                                                                transition: 0.5; */
+                                                                                                                                                                    opacity: 0;
+                                                                                                                                                                    transition: 0.5; */
         }
 
         .box-load {
@@ -1268,6 +1268,7 @@
                             timer: 2000
                         }).then(() => {
                             console.log('บันทึกสำเร็จ');
+                            window.location.href = "/result_view/" + md_result;
                         });
                     }
 

@@ -495,4 +495,9 @@ class RecommentCarController extends Controller
             'data' => $dataReview
         ]);
     }
+
+    public function result_view(Request $request, $category)
+    {
+        dd($category);
+    }
 }
