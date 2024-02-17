@@ -24,7 +24,7 @@
                  <label class="box-lable" for="travelwith_family">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
-                         <img src="https://mpics.mgronline.com/pics/Images/561000005988501.JPEG">
+                         <img src="https://cf.ltkcdn.net/family/images/std/200821-800x533r1-family.jpg">
                      </div>
                      <div class="box-text">
                          <h6 class="text-center">ครอบครัว</h6>
@@ -38,7 +38,7 @@
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
                          <img
-                             src="https://t3.ftcdn.net/jpg/04/60/24/54/360_F_460245449_zVTuA4D3rF2BOOZnIVxVxkx6SKKzz26M.jpg">
+                             src="https://www.adventurebook.com/connect/wp-content/uploads/sites/2/2023/01/benefits-of-having-a-best-friend.jpg">
                      </div>
                      <div class="box-text">
                          <h6 class="text-center">เพื่อนสนิท</h6>
@@ -78,8 +78,7 @@
                  <label class="box-lable" for="travelwith_alone">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
-                         <img
-                             src="https://www.travelandleisure.com/thmb/7oTZS6byNtQfqRv5-fl2StoXSgg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/woman-traveling-barcelona-spain_TRAVELALONE0123-5bed695bd5d74b14a3b9f1bb35f09c1c.jpg">
+                         <img src="https://www.hotelmousai.com/blog/wp-content/uploads/2021/10/Solo-Traveler.jpg">
                      </div>
                      <div class="box-text">
                          <h6 class="text-center">เดินทางคนเดียว</h6>

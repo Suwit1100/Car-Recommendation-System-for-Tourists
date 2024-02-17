@@ -24,8 +24,7 @@
                     <label class="box-lable" for="ft-attraction_culture">
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
-                            <img
-                                src="https://thaicultureandthaitradition.files.wordpress.com/2016/09/10917466_10203152288597300_4884093615363339770_n.jpg?w=650">
+                            <img src="https://img2.pic.in.th/pic/1fa1a2b7ca321b1bd.png">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">วัฒนธรรมและประวัติศาสตร์ที่น่าสนใจ</h6>
@@ -39,7 +38,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://s359.kapook.com/r/600/auto/pagebuilder/d9044a52-4bf2-43d6-bf62-19c12a6605fb.jpg">
+                                src="https://images.pexels.com/photos/1165981/pexels-photo-1165981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">ความเป็นส่วนตัวและเงียบสงบ</h6>
@@ -53,7 +52,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://www.aonangboat.com/images/editor/260796417_1029642247901656_4006042412879538457_n.jpg">
+                                src="https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5K3yb2NErxuTvrbEKjRutlM56l7pgHBnMSukmSVy50ZQLmSvlr5.webp">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">ธรรมชาติที่หลากหลายและสวยงาม</h6>
@@ -66,8 +65,7 @@
                     <label class="box-lable" for="ft-attraction_adventure">
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
-                            <img
-                                src="https://www.seub.or.th/seubweb/wp-content/uploads/2022/02/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B8%9B%E0%B9%88%E0%B8%B2-1.jpg">
+                            <img src="https://www.wildsiam.com/wp-content/uploads/2020/08/203899-768x576-1.jpg">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">การผจญภัยและสำรวจ</h6>
@@ -81,7 +79,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2019/06/06/7943550b3acd4b79a1a75f92d2e288fc_ThaiNorthern.jpg">
+                                src="https://s3-ap-southeast-1.amazonaws.com/wpimage.powermag.kingpower.com/wp-content/uploads/2022/05/30164914/AA15.jpg">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">อาหารและของที่กินที่อร่อยและน่าลิ้มลอง</h6>
@@ -94,7 +92,7 @@
                     <label class="box-lable" for="ft-attraction_activity">
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
-                            <img src="https://phuketwindsurfing.com/wp-content/uploads/2020/09/9.jpg">
+                            <img src="https://img5.pic.in.th/file/secure-sv1/2667a45563b329ea9.png">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">มีกิจกรรมที่สนุกและน่าสนใจ</h6>

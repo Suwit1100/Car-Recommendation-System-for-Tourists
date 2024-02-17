@@ -24,7 +24,7 @@
              <label class="box-lable" for="primary_education">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://cbethailand.com/wp-content/uploads/2020/09/S__56025115.jpg">
+                     <img src="https://www.nstda.or.th/sci2pub/wp-content/uploads/2022/02/Handy-Sense2.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">ประถมศึกษา</h6>
@@ -50,7 +50,7 @@
              <label class="box-lable" for="high_school">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://www.bu.ac.th/uploads/files/1514815098_WEFT6PSLZN.jpg">
+                     <img src="https://geniuschulatutor.com/userfiles/images/IMG5.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">มัธยมศึกษาตอนปลาย</h6>
@@ -76,7 +76,7 @@
              <label class="box-lable" for="bachelor_degree">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://renewable.mju.ac.th/wp-content/uploads/2020/12/congrestulation2y.jpg">
+                     <img src="https://media.atime.live/editor/content/2f533b5c-717a-4a3d-a0bf-afc97d2ad1ec.jpeg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">ปริญาตรี</h6>
@@ -102,7 +102,7 @@
              <label class="box-lable" for="doctoral_degree">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://mpics.mgronline.com/pics/Images/559000002636701.JPEG">
+                     <img src="https://storage-wp.thaipost.net/2022/03/messageImage_1647578771173.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">ปริญาเอก</h6>

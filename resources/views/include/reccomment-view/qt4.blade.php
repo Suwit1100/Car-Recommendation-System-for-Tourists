@@ -38,7 +38,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://static.thairath.co.th/media/dFQROr7oWzulq5FZYkSMxD2cQjdCdNKVgnVpjL8V6F9mUg0rWnVADmhcB5xuSYZDmxg.jpg">
+                                src="https://production-rabbit-care-blog.imgix.net/2022/10/government-officer-2.jpg?auto=compress%2Cformat&crop=faces%2Ccenter&fit=scale&h=768&q=50&w=1024">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">ข้าราชการ/รัฐวิสาหกิจ</h6>
