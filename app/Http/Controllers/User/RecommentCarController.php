@@ -44,39 +44,77 @@ class RecommentCarController extends Controller
         if ($answerfactorrent12 == 'amenities') {
             if ($answereducation3 == 'bachelordegree') {
                 $result = 'sedan';
-                $condition = 'factorrent = amenities\n-education = bachelordegree: sedan';
+                $condition = [
+                    'factorrent' => 'amenities',
+                    'education' => 'bachelordegree',
+                    'result' => 'sedan'
+                ];
             } else if ($answereducation3 == 'highschool') {
                 $result = 'coupe';
-                $condition = 'factorrent = amenities\n-education = highschool: coupe';
+                $condition = [
+                    'factorrent' => 'amenities',
+                    'education' => 'highschool',
+                    'result' => 'coupe'
+                ];
             }
         } else if ($answerfactorrent12 == 'auqlity') {
             if ($answercarnow9 == 'coupe') {
                 $result = 'convertible';
-                $condition = 'factorrent = auqlity\n-carnow = coupe: convertible';
+                $condition = [
+                    'factorrent' => 'auqlity',
+                    'carnow' => 'coupe',
+                    'result' => 'convertible'
+                ];
             } else if ($answercarnow9 == 'hatchback') {
                 if ($answerownercar10 == '1to3') {
                     $result = 'hatchback';
-                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = 1to3: hatchback';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'hatchback',
+                        'ownercar' => '1to3',
+                        'result' => 'hatchback'
+                    ];
                 } else if ($answerownercar10 == 'less1') {
                     $result = 'suv';
-                    $condition = 'factorrent = auqlity\n-carnow = hatchback\n--ownercar = less1: suv';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'hatchback',
+                        'ownercar' => 'less1',
+                        'result' => 'suv'
+                    ];
                 }
             } else if ($answercarnow9 == 'minivan') {
                 $result = 'suv';
-                $condition = 'factorrent = auqlity\n-carnow = minivan: suv';
+                $condition = [
+                    'factorrent' => 'auqlity',
+                    'carnow' => 'minivan',
+                    'result' => 'suv'
+                ];
             } else if ($answercarnow9 == 'no') {
                 if ($answerattraction17 == 'ancientcity') {
                     $result = 'minivan';
-                    $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = ancientcity: minivan';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'no',
+                        'attraction' => 'ancientcity',
+                        'result' => 'minivan'
+                    ];
                 } else if ($answerattraction17 == 'beach and sea') {
                     if ($answereducation3 == 'bachelordegree') {
-                        if ($answercarnow9 == '1to3') {
+                        if ($answerownercar10 == '1to3') {
                             $result = 'coupe';
-                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = 1to3: coupe';
-                        } else if ($answercarnow9 == 'less1') {
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'no',
+                                'attraction' => 'beach and sea',
+                                'education' => 'bachelordegree',
+                                'ownercar' => '1to3',
+                                'result' => 'coupe'
+                            ];
+                        } else if ($answerownercar10 == 'less1') {
                             $result = 'convertible';
                             $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = less1: convertible';
-                        } else if ($answercarnow9 == 'no') {
+                        } else if ($answerownercar10 == 'no') {
                             $result = 'sedan';
                             $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = beach and sea\n---education = bachelordegree\n----ownercar = no: sedan';
                         }
