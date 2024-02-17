@@ -18,10 +18,11 @@
             </span>
         </span>
     </div>
-    <div class="col-4 col-md-2 mt-1" id="category_select" style="display: none;">
+    <div class="col-4 col-md-2 mt-1" id="category_select" style="">
         <span class="text-truncate bg-light form-control" style="max-width: 100%; font-size:12px;">
-            <i class="fa-solid fa-xmark" style="font-size:12px;" role="button" id="category_close"></i>
-            <span id="text_category"></span>
+            <span id="text_category">
+                {{ $category }}
+            </span>
         </span>
     </div>
     <div class="col-4 col-md-2 mt-1" id="make_select" style="display: none;">

@@ -106,7 +106,7 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="coupe"
-                                    autocomplete="off" value="coupe" {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="coupe" {{ $category == 'coupe' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="coupe"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/coupe.png') }}" alt=""
@@ -120,7 +120,7 @@
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="hatchback"
                                     autocomplete="off" value="hatchback"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    {{ $category == 'hatchback' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="hatchback"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/hatchback.png') }}" alt=""
@@ -133,8 +133,7 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="pickup"
-                                    autocomplete="off" value="pickup"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="pickup" {{ $category == 'pickup' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="pickup"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/pickup.png') }}" alt=""
@@ -147,8 +146,7 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="sedan"
-                                    autocomplete="off" value="sedan"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="sedan" {{ $category == 'sedan' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="sedan"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/sedan.png') }}" alt=""
@@ -161,8 +159,7 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="suv"
-                                    autocomplete="off" value="suv"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="suv" {{ $category == 'suv' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="suv"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/suv.png') }}" alt=""
@@ -175,22 +172,20 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="van"
-                                    autocomplete="off" value="van"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="minivan" {{ $category == 'minivan' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="van"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/van.png') }}" alt=""
                                         style="width:40px; height:40px;">
                                     <br>
                                     <span>
-                                        Van
+                                        MiniVan
                                     </span>
                                 </label>
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="wagon"
-                                    autocomplete="off" value="wagon"
-                                    {{ $category == 'convertible' ? 'checked' : '' }}>
+                                    autocomplete="off" value="wagon" {{ $category == 'wagon' ? 'checked' : '' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="wagon"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/wagon.png') }}" alt=""

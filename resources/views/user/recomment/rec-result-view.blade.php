@@ -224,7 +224,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: "{{ route('filter_car') }}",
+                        url: "{{ route('rec_filter_car') }}",
                         headers: {
                             'X-CSRF-TOKEN': '{{ csrf_token() }}'
                         },
@@ -279,7 +279,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: "{{ route('filter_car') }}",
+                        url: "{{ route('rec_filter_car') }}",
                         headers: {
                             'X-CSRF-TOKEN': '{{ csrf_token() }}'
                         },
@@ -341,7 +341,7 @@
                     };
                     $.ajax({
                         type: 'POST',
-                        url: "{{ route('filter_car') }}",
+                        url: "{{ route('rec_filter_car') }}",
                         headers: {
                             'X-CSRF-TOKEN': '{{ csrf_token() }}'
                         },
@@ -413,7 +413,7 @@
                         };
                         $.ajax({
                             type: 'POST',
-                            url: "{{ route('filter_car') }}",
+                            url: "{{ route('rec_filter_car') }}",
                             headers: {
                                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
                             },
@@ -470,7 +470,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -564,7 +564,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -625,7 +625,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -677,7 +677,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -729,7 +729,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -792,7 +792,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -847,7 +847,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -892,9 +892,9 @@
                 valYearmax = 2017;
 
                 // category reset
-                $('input[name="vachicle_style"]').prop('checked', false);
-                valVachicle = '';
-                $('#category_select').hide();
+                // $('input[name="vachicle_style"]').prop('checked', false);
+                // valVachicle = '';
+                // $('#category_select').hide();
 
                 // make reset
                 $('#selectmake').val('');
@@ -944,7 +944,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -989,7 +989,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1033,7 +1033,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1079,7 +1079,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1121,7 +1121,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1164,7 +1164,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1207,7 +1207,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1249,7 +1249,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1292,7 +1292,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1334,7 +1334,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1376,7 +1376,7 @@
                 };
                 $.ajax({
                     type: "POST",
-                    url: "{{ route('filter_car') }}",
+                    url: "{{ route('rec_filter_car') }}",
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
@@ -1425,7 +1425,7 @@
                     page: page
                 };
                 $.ajax({
-                        url: "{{ route('filter_car') }}",
+                        url: "{{ route('rec_filter_car') }}",
                         type: "post",
                         headers: {
                             'X-CSRF-TOKEN': '{{ csrf_token() }}'
