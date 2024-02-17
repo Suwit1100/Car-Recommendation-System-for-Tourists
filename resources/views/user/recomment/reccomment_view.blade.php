@@ -72,8 +72,8 @@
         .qt-attraction,
         .qt-factor-attraction {
             /* display: none;
-                            opacity: 0;
-                            transition: 0.5; */
+                        opacity: 0;
+                        transition: 0.5; */
         }
 
         .box-load {
@@ -165,6 +165,11 @@
         }
 
         input[type="radio"][name="sex"][value="male"]:disabled+label[for="male"] {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        input[type="radio"][name="income"]:disabled+label {
             opacity: 0.3;
             pointer-events: none;
         }
@@ -333,6 +338,24 @@
             answercareer = $('input[name="career"]:checked').val();
             console.log("ค่าที่เลือก: " + answercareer);
             $('#btn-next-income').prop('disabled', false);
+
+            if (answercareer == 'no' || answercareer == 'student') {
+                $('#income10000').prop('disabled', true);
+                $('#income10000-20000').prop('disabled', true);
+                $('#income20001-30000').prop('disabled', true);
+                $('#income30001-40000').prop('disabled', true);
+                $('#income40001-50000').prop('disabled', true);
+                $('#income50001-100000').prop('disabled', true);
+                $('#income100000').prop('disabled', true);
+            } else {
+                $('#income10000').prop('disabled', false);
+                $('#income10000-20000').prop('disabled', false);
+                $('#income20001-30000').prop('disabled', false);
+                $('#income30001-40000').prop('disabled', false);
+                $('#income40001-50000').prop('disabled', false);
+                $('#income50001-100000').prop('disabled', false);
+                $('#income100000').prop('disabled', false);
+            }
         });
         // next-4
         $("#btn-next-income").click(function() {
