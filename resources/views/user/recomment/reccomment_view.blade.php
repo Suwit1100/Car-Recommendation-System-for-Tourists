@@ -71,9 +71,9 @@
         .qt-typeattraction,
         .qt-attraction,
         .qt-factor-attraction {
-            display: none;
-            opacity: 0;
-            transition: 0.5;
+            /* display: none;
+                            opacity: 0;
+                            transition: 0.5; */
         }
 
         .box-load {
@@ -162,6 +162,11 @@
         #sent-review:disabled {
             background-color: #6aa08a;
             color: white;
+        }
+
+        input[type="radio"][name="sex"][value="male"]:disabled+label[for="male"] {
+            opacity: 0.3;
+            pointer-events: none;
         }
 
 
@@ -588,7 +593,7 @@
         });
 
         // qt-12
-        $('input[name="planrent"]').on('change', function() {
+        $('input[name="factorrent"]').on('change', function() {
             answerfactorrent = $('input[name="factorrent"]:checked').val();
             console.log("ค่าที่เลือก: " + answerfactorrent);
             $('#btn-next-factordrive').prop('disabled', false);
@@ -1216,7 +1221,7 @@
         // กดลองอีกครั้ง
         $('#click-re-rec').click(function(e) {
             e.preventDefault();
-            $(':radio[name=sex], :radio[name=old], :radio[name=education], :radio[name=career], :radio[name=income], :radio[name=status], :radio[name=freetime], :radio[name=lifestyle], :radio[name=carnow], :radio[name=ownercar], :radio[name=planrent], :radio[name=planrent], :radio[name=factordrive], :radio[name=travellevel], :radio[name=travelwith], :radio[name=typeattraction], :radio[name=attraction], :radio[name=ft-attraction]')
+            $(':radio[name=sex], :radio[name=old], :radio[name=education], :radio[name=career], :radio[name=income], :radio[name=status], :radio[name=freetime], :radio[name=lifestyle], :radio[name=carnow], :radio[name=ownercar], :radio[name=planrent], :radio[name=factorrent], :radio[name=factordrive], :radio[name=travellevel], :radio[name=travelwith], :radio[name=typeattraction], :radio[name=attraction], :radio[name=ft-attraction]')
                 .prop('checked', false);
             $('#btn-next-old, #btn-next-education, #btn-next-career, #btn-next-income, #btn-next-status, #btn-next-freetime, #btn-next-lifestyle, #btn-next-carnow, #btn-next-ownercar, #btn-next-planrent, #btn-next-factorrent, #btn-next-factordrive, #btn-next-travellevel, #btn-next-travelwith, #btn-next-typeattraction, #btn-next-attraction, #btn-next-ftattraction, #btn-next-submit')
                 .prop('disabled', true);
