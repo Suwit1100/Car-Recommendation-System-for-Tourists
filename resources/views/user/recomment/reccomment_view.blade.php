@@ -72,8 +72,8 @@
         .qt-attraction,
         .qt-factor-attraction {
             /* display: none;
-                        opacity: 0;
-                        transition: 0.5; */
+                                                                                                                                                opacity: 0;
+                                                                                                                                                transition: 0.5; */
         }
 
         .box-load {
@@ -174,8 +174,15 @@
             pointer-events: none;
         }
 
+        input[type="radio"][name="ownercar"]:disabled+label {
+            opacity: 0.3;
+            pointer-events: none;
+        }
 
-
+        input[type="radio"][name="attraction"]:disabled+label {
+            opacity: 0.3;
+            pointer-events: none;
+        }
 
         @media only screen and (max-width: 500px) {
             #btn-next-review {
@@ -521,6 +528,20 @@
             answercarnow = $('input[name="carnow"]:checked').val();
             console.log("ค่าที่เลือก: " + answercarnow);
             $('#btn-next-ownercar').prop('disabled', false);
+
+            if (answercarnow == 'no') {
+                $('#ownercar_1').prop('disabled', true);
+                $('#ownercar_1to3').prop('disabled', true);
+                $('#ownercar_4to6').prop('disabled', true);
+                $('#ownercar_7to10').prop('disabled', true);
+                $('#ownercar_7to10').prop('disabled', true);
+            } else {
+                $('#ownercar_1').prop('disabled', false);
+                $('#ownercar_1to3').prop('disabled', false);
+                $('#ownercar_4to6').prop('disabled', false);
+                $('#ownercar_7to10').prop('disabled', false);
+                $('#ownercar_7to10').prop('disabled', false);
+            }
         });
         // next-9
         $("#btn-next-ownercar").click(function() {
@@ -752,6 +773,22 @@
             answertypeattraction = $('input[name="typeattraction"]:checked').val();
             console.log("ค่าที่เลือก: " + answertypeattraction);
             $('#btn-next-attraction').prop('disabled', false);
+
+            if (answertypeattraction == 'human') {
+                $('#attraction_beach').prop('disabled', true);
+                $('#attraction_mountain').prop('disabled', true);
+                $('#attraction_waterfall').prop('disabled', true);
+                $('#attraction_ancientcity').prop('disabled', false);
+                $('#attraction_mall').prop('disabled', false);
+                $('#attraction_fleamarket').prop('disabled', false);
+            } else {
+                $('#attraction_beach').prop('disabled', false);
+                $('#attraction_mountain').prop('disabled', false);
+                $('#attraction_waterfall').prop('disabled', false);
+                $('#attraction_ancientcity').prop('disabled', true);
+                $('#attraction_mall').prop('disabled', true);
+                $('#attraction_fleamarket').prop('disabled', true);
+            }
         });
         // next-16
         $("#btn-next-attraction").click(function() {
