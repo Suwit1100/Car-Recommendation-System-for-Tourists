@@ -318,287 +318,642 @@ class RecommentCarController extends Controller
                     if ($travelwith  == 'closefriend') {
                         if ($sex == 'female') {
                             $result = 'hatchback';
-                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = closefriend\n----sex = female: hatchback';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'no',
+                                'attraction' => 'mountain',
+                                'travelwith' => 'closefriend',
+                                'sex' => 'female',
+                                'result' => 'hatchback'
+                            ];
                         } else if ($sex == 'male') {
                             $result = 'pickup';
-                            $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = closefriend\n----sex = male: pickup';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'no',
+                                'attraction' => 'mountain',
+                                'travelwith' => 'closefriend',
+                                'sex' => 'male',
+                                'result' => 'pickup'
+                            ];
                         }
                     } else if ($travelwith  == 'family') {
                         $result = 'sedan';
-                        $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = mountain\n---travelwith = family: pickup';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'no',
+                            'attraction' => 'mountain',
+                            'travelwith' => 'family',
+                            'result' => 'sedan'
+                        ];
                     }
                 } else if ($attraction == 'waterfall') {
                     $result = 'pickup';
-                    $condition = 'factorrent = auqlity\n-carnow = no\n--attraction = waterfall: pickup';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'no',
+                        'attraction' => 'waterfall',
+                        'result' => 'pickup'
+                    ];
                 }
             } else if ($carnow == 'pickup') {
                 if ($travelwith == 'closefriend') {
                     if ($travellevel == 'level1') {
                         $result == 'hatchback';
-                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level1: hatchback';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'pickup',
+                            'travelwith' => 'closefriend',
+                            'travellevel' => 'level1',
+                            'result' => 'hatchback'
+                        ];
                     } else if ($travellevel == 'level2') {
                         if ($ownercar == '1to3') {
                             $result = 'minivan';
-                            $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level2\n----ownercar = 1to3: minivan';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'pickup',
+                                'travelwith' => 'closefriend',
+                                'travellevel' => 'level2',
+                                'ownercar' => '1to3',
+                                'result' => 'minivan'
+                            ];
                         } else if ($ownercar == 'less1') {
                             $result = 'pickup';
-                            $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = closefriend\n---travellevel = level2\n----ownercar = less1: pickup';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'pickup',
+                                'travelwith' => 'closefriend',
+                                'travellevel' => 'level2',
+                                'ownercar' => 'less1',
+                                'result' => 'pickup'
+                            ];
                         }
                     }
                 } else if ($travelwith == 'family') {
                     $result = 'suv';
-                    $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = family: suv';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'pickup',
+                        'travelwith' => 'family',
+                        'result' => 'suv'
+                    ];
                 } else if ($travelwith == 'lover') {
                     $result = 'pickup';
-                    $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = lover: pickup';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'pickup',
+                        'travelwith' => 'lover',
+                        'result' => 'pickup'
+                    ];
                 } else if ($travelwith == 'team') {
                     if ($income == '10000-20000') {
                         $result = 'suv';
-                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = team\n---income = 10000-20000: suv';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'pickup',
+                            'travelwith' => 'team',
+                            'income' => '10000-20000',
+                            'result' => 'suv'
+                        ];
                     } else if ($income == '30001-40000') {
                         $result = 'pickup';
-                        $condition = 'factorrent = auqlity\n-carnow = pickup\n--travelwith = team\n---income = 30001-40000: pickup';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'pickup',
+                            'travelwith' => 'team',
+                            'income' => '30001-40000',
+                            'result' => 'pickup'
+                        ];
                     }
                 }
             } else if ($carnow == 'sedan') {
                 if ($old  == '20-24') {
                     $result = 'sedan';
-                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 20-24: sedan';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'sedan',
+                        'old' => '20-24',
+                        'result' => 'sedan'
+                    ];
                 } else if ($old  == '25-34') {
                     if ($ftattraction == 'activity') {
                         $result = 'hatchback';
-                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = activity: hatchback';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'sedan',
+                            'old' => '25-34',
+                            'ftattraction' => 'activity',
+                            'result' => 'hatchback'
+                        ];
                     } else if ($ftattraction == 'adventure') {
                         $result = 'suv';
-                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = adventure: suv';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'sedan',
+                            'old' => '25-34',
+                            'ftattraction' => 'adventure',
+                            'result' => 'suv'
+                        ];
                     } else if ($ftattraction == 'food') {
                         $result = 'sedan';
-                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = food: sedan';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'sedan',
+                            'old' => '25-34',
+                            'ftattraction' => 'food',
+                            'result' => 'sedan'
+                        ];
                     } else if ($ftattraction == 'nature') {
                         if ($travellevel  == 'level1') {
                             if ($freetime == 'enjoy') {
                                 $result = 'convertible';
-                                $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level1\n-----freetime = enjoy: convertible';
+                                $condition = [
+                                    'factorrent' => 'auqlity',
+                                    'carnow' => 'sedan',
+                                    'old' => '25-34',
+                                    'ftattraction' => 'nature',
+                                    'travellevel' => 'level1',
+                                    'freetime' => 'enjoy',
+                                    'result' => 'convertible'
+                                ];
                             } else if ($freetime == 'relax') {
                                 $result = 'suv';
-                                $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level1\n-----freetime = relax: suv';
+                                $condition = [
+                                    'factorrent' => 'auqlity',
+                                    'carnow' => 'sedan',
+                                    'old' => '25-34',
+                                    'ftattraction' => 'nature',
+                                    'travellevel' => 'level1',
+                                    'freetime' => 'relax',
+                                    'result' => 'convertible'
+                                ];
                             }
                         } else if ($travellevel  == 'level2') {
                             $result = 'suv';
-                            $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = nature\n----travellevel = level2: suv';
+                            $condition = [
+                                'factorrent' => 'auqlity',
+                                'carnow' => 'sedan',
+                                'old' => '25-34',
+                                'ftattraction' => 'nature',
+                                'travellevel' => 'level2',
+                                'result' => 'suv'
+                            ];
                         }
                     } else if ($ftattraction == 'privacy') {
                         $result = 'sedan';
-                        $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 25-34\n---ftattraction = privacy: sedan';
+                        $condition = [
+                            'factorrent' => 'auqlity',
+                            'carnow' => 'sedan',
+                            'old' => '25-34',
+                            'ftattraction' => 'privacy',
+                            'result' => 'sedan'
+                        ];
                     }
                 } else if ($old  == '35-44') {
                     $result = 'coupe';
-                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 35-44: coupe';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'sedan',
+                        'old' => '35-44',
+                        'result' => 'coupe'
+                    ];
                 } else if ($old  == '45-54') {
                     $result = 'sedan';
-                    $condition = 'factorrent = auqlity\n-carnow = sedan\n--old = 45-54: sedan';
+                    $condition = [
+                        'factorrent' => 'auqlity',
+                        'carnow' => 'sedan',
+                        'old' => '45-54',
+                        'result' => 'sedan'
+                    ];
                 }
             } else if ($carnow == 'suv') {
                 $result = 'suv';
-                $condition = 'factorrent = auqlity\n-carnow = suv: suv';
+                $condition = [
+                    'factorrent' => 'auqlity',
+                    'carnow' => 'suv',
+                    'result' => 'suv'
+                ];
             } else if ($carnow == 'wagon') {
                 $result = 'suv';
-                $condition = 'factorrent = auqlity\n-carnow = wagon: suv';
+                $condition = [
+                    'factorrent' => 'auqlity',
+                    'carnow' => 'wagon',
+                    'result' => 'suv'
+                ];
             }
         } else if ($factorrent == 'category') {
             if ($carnow == 'no') {
                 $result = 'suv';
-                $condition = 'factorrent = category\n-carnow = no: suv';
+                $condition = [
+                    'factorrent' => 'category',
+                    'carnow' => 'no',
+                    'result' => 'suv'
+                ];
             } else if ($carnow == 'pickup') {
                 $result = 'pickup';
-                $condition = 'factorrent = category\n-carnow = pickup: pickup';
+                $condition = [
+                    'factorrent' => 'category',
+                    'carnow' => 'pickup',
+                    'result' => 'pickup'
+                ];
             } else if ($carnow == 'sedan') {
                 $result = 'coupe';
-                $condition = 'factorrent = category\n-carnow = sedan: coupe';
+                $condition = [
+                    'factorrent' => 'category',
+                    'carnow' => 'sedan',
+                    'result' => 'coupe'
+                ];
             } else if ($carnow == 'wagon') {
                 $result = 'hatchback';
-                $condition = 'factorrent = category\n-carnow = wagon: hatchback';
+                $condition = [
+                    'factorrent' => 'category',
+                    'carnow' => 'wagon',
+                    'result' => 'hatchback'
+                ];
             }
         } else if ($factorrent == 'discount') {
             if ($attraction == 'ancientcity') {
                 $result = 'sedan';
-                $condition = 'factorrent = discount\n-attraction = ancientcity: sedan';
+                $condition = [
+                    'factorrent' => 'discount',
+                    'attraction' => 'ancientcity',
+                    'result' => 'sedan'
+                ];
             } else if ($attraction == 'beach and sea') {
                 if ($status == 'couple') {
                     if ($old == '20-24') {
                         $result = 'pickup';
-                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = couple\n---old = 20-24: pickup';
+                        $condition = [
+                            'factorrent' => 'discount',
+                            'attraction' => 'beach and sea',
+                            'status' => 'couple',
+                            'old' => '20-24',
+                            'result' => 'pickup'
+                        ];
                     } else if ($old == '25-34') {
                         $result = 'sedan';
-                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = couple\n---old = 25-34: sedan';
+                        $condition = [
+                            'factorrent' => 'discount',
+                            'attraction' => 'beach and sea',
+                            'status' => 'couple',
+                            'old' => '25-34',
+                            'result' => 'sedan'
+                        ];
                     }
                 } else if ($status == 'married') {
                     $result = 'convertible';
-                    $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = married: convertible';
+                    $condition = [
+                        'factorrent' => 'discount',
+                        'attraction' => 'beach and sea',
+                        'status' => 'married',
+                        'result' => 'convertible'
+                    ];
                 } else if ($status == 'single') {
                     if ($sex == 'female') {
                         $result = 'convertible';
-                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = female: convertible';
+                        $condition = [
+                            'factorrent' => 'discount',
+                            'attraction' => 'beach and sea',
+                            'status' => 'single',
+                            'sex' => 'female',
+                            'result' => 'convertible'
+                        ];
                     } else if ($sex == 'lgbt') {
                         $result = 'sedan';
-                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = lgbt: sedan';
+                        $condition = [
+                            'factorrent' => 'discount',
+                            'attraction' => 'beach and sea',
+                            'status' => 'single',
+                            'sex' => 'lgbt',
+                            'result' => 'sedan'
+                        ];
                     } else if ($sex == 'male') {
                         $result = 'minivan';
-                        $condition = 'factorrent = discount\n-attraction = beach and sea\n--status = single\n---sex = male: minivan';
+                        $condition = [
+                            'factorrent' => 'discount',
+                            'attraction' => 'beach and sea',
+                            'status' => 'single',
+                            'sex' => 'male',
+                            'result' => 'minivan'
+                        ];
                     }
                 }
             } else if ($attraction == 'fleamarket') {
                 if ($sex == 'female') {
                     $result = 'sedan';
-                    $condition = 'factorrent = discount\n-attraction = fleamarket\n--sex = female: sedan';
+                    $condition = [
+                        'factorrent' => 'discount',
+                        'attraction' => 'fleamarket',
+                        'sex' => 'female',
+                        'result' => 'sedan'
+                    ];
                 } else if ($sex == 'male') {
                     $result = 'suv';
-                    $condition = 'factorrent = discount\n-attraction = fleamarket\n--sex = male: suv';
+                    $condition = [
+                        'factorrent' => 'discount',
+                        'attraction' => 'fleamarket',
+                        'sex' => 'male',
+                        'result' => 'suv'
+                    ];
                 }
             } else if ($attraction == 'mall') {
                 $result = 'suv';
-                $condition = 'factorrent = discount\n-attraction = mall: suv';
+                $condition = [
+                    'factorrent' => 'discount',
+                    'attraction' => 'mall',
+                    'result' => 'suv'
+                ];
             } else if ($attraction == 'mountain') {
                 $result = 'convertible';
-                $condition = 'factorrent = discount\n-attraction = mountain: convertible';
+                $condition = [
+                    'factorrent' => 'discount',
+                    'attraction' => 'mountain',
+                    'result' => 'convertible'
+                ];
             } else if ($attraction == 'waterfall') {
                 $result = 'suv';
-                $condition = 'factorrent = discount\n-attraction = waterfall: suv';
+                $condition = [
+                    'factorrent' => 'discount',
+                    'attraction' => 'waterfall',
+                    'result' => 'suv'
+                ];
             }
         } else if ($factorrent == 'goodvalue') {
             if ($attraction == 'ancientcity') {
                 $result = 'minivan';
-                $condition = 'factorrent = goodvalue\n-attraction = ancientcity: minivan';
+                $condition = [
+                    'factorrent' => 'goodvalue',
+                    'attraction' => 'ancientcity',
+                    'result' => 'minivan'
+                ];
             } else if ($attraction == 'beach and sea') {
                 if ($ftattraction == 'activity') {
                     $result = 'suv';
-                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = activity: suv';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'beach and sea',
+                        'ftattraction' => 'activity',
+                        'result' => 'suv'
+                    ];
                 } else if ($ftattraction == 'adventure') {
                     $result = 'minivan';
-                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = adventure: minivan';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'beach and sea',
+                        'ftattraction' => 'adventure',
+                        'result' => 'minivan'
+                    ];
                 } else if ($ftattraction == 'culture') {
                     $result = 'suv';
-                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = culture: suv';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'beach and sea',
+                        'ftattraction' => 'culture',
+                        'result' => 'suv'
+                    ];
                 } else if ($ftattraction == 'food') {
                     $result = 'sedan';
-                    $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = food: sedan';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'beach and sea',
+                        'ftattraction' => 'food',
+                        'result' => 'sedan'
+                    ];
                 } else if ($ftattraction == 'nature') {
                     if ($lifestyle == 'active') {
                         $result = 'convertible';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = active: convertible';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'nature',
+                            'lifestyle' => 'active',
+                            'result' => 'convertible'
+                        ];
                     } else if ($lifestyle == 'career') {
                         $result = 'sedan';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = career: sedan';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'nature',
+                            'lifestyle' => 'career',
+                            'result' => 'sedan'
+                        ];
                     } else if ($lifestyle == 'chill') {
                         $result = 'suv';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = chill: suv';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'nature',
+                            'lifestyle' => 'chill',
+                            'result' => 'suv'
+                        ];
                     } else if ($lifestyle == 'peaceful') {
                         $result = 'sedan';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = peaceful: sedan';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'nature',
+                            'lifestyle' => 'peaceful',
+                            'result' => 'sedan'
+                        ];
                     } else if ($lifestyle == 'travel') {
                         $result = 'suv';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = nature\n---lifestyle = travel: suv';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'nature',
+                            'lifestyle' => 'travel',
+                            'result' => 'suv'
+                        ];
                     }
                 } else if ($ftattraction == 'privacy') {
                     if ($travellevel == 'level1') {
                         $result = 'sedan';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = privacy\n---travellevel = level1: sedan';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'privacy',
+                            'travellevel' => 'level1',
+                            'result' => 'sedan'
+                        ];
                     } else if ($travellevel == 'level2') {
                         $result = 'wagon';
-                        $condition = 'factorrent = goodvalue\n-attraction = beach and sea\n--ftattraction = privacy\n---travellevel = level2: wagon';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'beach and sea',
+                            'ftattraction' => 'privacy',
+                            'travellevel' => 'level2',
+                            'result' => 'wagon'
+                        ];
                     }
                 }
             } else if ($attraction == 'fleamarket') {
                 $result = 'hatchback';
-                $condition = 'factorrent = goodvalue\n-attraction = fleamarket: hatchback';
+                $condition = [
+                    'factorrent' => 'goodvalue',
+                    'attraction' => 'fleamarket',
+                    'result' => 'hatchback'
+                ];
             } else if ($attraction == 'mall') {
                 if ($income == '10000-20000') {
                     $result = 'sedan';
-                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = 10000-20000: sedan';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'mall',
+                        'income' => '10000-20000',
+                        'result' => 'sedan'
+                    ];
                 } else if ($income == 'less10000') {
                     $result = 'suv';
-                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = less10000: suv';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'mall',
+                        'income' => 'less10000',
+                        'result' => 'suv'
+                    ];
                 } else if ($income == 'no') {
                     $result = 'suv';
-                    $condition = 'factorrent = goodvalue\n-attraction = mall\n--income = no: suv';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'mall',
+                        'income' => 'no',
+                        'result' => 'suv'
+                    ];
                 }
             } else if ($attraction == 'mountain') {
                 if ($planrent == '1000-2000') {
                     $result = 'sedan';
-                    $condition = 'factorrent = goodvalue\n-attraction = mountain\n--planrent = 1000-2000: sedan';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'mountain',
+                        'planrent' => '1000-2000',
+                        'result' => 'sedan'
+                    ];
                 } else if ($planrent == 'less1000') {
                     $result = 'pickup';
-                    $condition = 'factorrent = goodvalue\n-attraction = mountain\n--planrent = less1000: pickup';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'mountain',
+                        'planrent' => 'less1000',
+                        'result' => 'pickup'
+                    ];
                 }
             } else if ($attraction == 'waterfall') {
                 if ($sex == 'female') {
                     $result = 'minivan';
-                    $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = female: minivan';
+                    $condition = [
+                        'factorrent' => 'goodvalue',
+                        'attraction' => 'waterfall',
+                        'sex' => 'female',
+                        'result' => 'minivan'
+                    ];
                 } else if ($sex == 'male') {
                     if ($travelwith == 'closefriend') {
                         $result = 'pickup';
-                        $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = male\n---travelwith = closefriend: pickup';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'waterfall',
+                            'sex' => 'male',
+                            'travelwith' => 'closefriend',
+                            'result' => 'pickup'
+                        ];
                     } else if ($travelwith == 'family') {
                         $result = 'minivan';
-                        $condition = 'factorrent = goodvalue\n-attraction = waterfall\n--sex = male\n---travelwith = family: minivan';
+                        $condition = [
+                            'factorrent' => 'goodvalue',
+                            'attraction' => 'waterfall',
+                            'sex' => 'male',
+                            'travelwith' => 'family',
+                            'result' => 'minivan'
+                        ];
                     }
                 }
             }
         } else if ($factorrent == 'location') {
             $result = 'minivan';
-            $condition = 'factorrent = location: minivan';
+            $condition = [
+                'factorrent' => 'location',
+                'result' => 'minivan'
+            ];
         } else if ($factorrent == 'reliability') {
             $result = 'suv';
-            $condition = 'factorrent = reliability: suv';
+            $condition = [
+                'factorrent' => 'reliability',
+                'result' => 'suv'
+            ];
         } else if ($factorrent == 'service') {
             if ($income == '10000-20000') {
                 $result = 'suv';
-                $condition = 'factorrent = service\n-income = 10000-20000: suv';
+                $condition = [
+                    'factorrent' => 'service',
+                    'income' => '10000-20000',
+                    'result' => 'suv'
+                ];
             } else if ($income == '20001-30000') {
                 if ($education == 'bachelordegree') {
                     $result = 'sedan';
-                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = bachelordegree: sedan';
+                    $condition = [
+                        'factorrent' => 'service',
+                        'income' => '20001-30000',
+                        'education' => 'bachelordegree',
+                        'result' => 'sedan'
+                    ];
                 } else if ($education == 'masterdegree') {
                     $result = 'suv';
-                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = masterdegree: suv';
+                    $condition = [
+                        'factorrent' => 'service',
+                        'income' => '20001-30000',
+                        'education' => 'masterdegree',
+                        'result' => 'suv'
+                    ];
                 } else if ($education == 'vocationalcertificate') {
                     $result = 'suv';
-                    $condition = 'factorrent = service\n-income = 20001-30000\n--education = vocationalcertificate: suv';
+                    $condition = [
+                        'factorrent' => 'service',
+                        'income' => '20001-30000',
+                        'education' => 'vocationalcertificate',
+                        'result' => 'suv'
+                    ];
                 }
             } else if ($income == '30001-40000') {
                 $result = 'minivan';
-                $condition = 'factorrent = service\n-income = 30001-40000: minivan';
+                $condition = [
+                    'factorrent' => 'service',
+                    'income' => '30001-40000',
+                    'result' => 'minivan'
+                ];
             } else if ($income == 'less10000') {
                 $result = 'sedan';
-                $condition = 'factorrent = service\n-income = less10000: sedan';
+                $condition = [
+                    'factorrent' => 'service',
+                    'income' => 'less10000',
+                    'result' => 'sedan'
+                ];
             }
         }
 
-        if ($condition != 'ไม่เข้าเงื่อนไข') {
-            $condition = str_replace("\n", '\n', $condition);
-        }
 
-
-        // $answer = [
-        //     'sex' => $sex,
-        //     'old' => $old,
-        //     'education' => $education,
-        //     'career' => $career,
-        //     'income' => $income,
-        //     'an6' => $status,
-        //     'status' => $freetime,
-        //     'lifestyle' => $lifestyle,
-        //     'carnow' => $carnow,
-        //     'ownercar' => $ownercar,
-        //     'planrent' => $planrent,
-        //     'factorrent' => $factorrent,
-        //     'factordrive' => $factordrive,
-        //     'travellevel' => $travellevel,
-        //     'travelwith' => $travelwith,
-        //     'typeattraction' => $typeattraction,
-        //     'attraction' => $attraction,
-        //     'ftattraction' => $ftattraction,
-        // ];
+        $answer = [
+            'sex' => $sex,
+            'old' => $old,
+            'education' => $education,
+            'career' => $career,
+            'income' => $income,
+            'an6' => $status,
+            'status' => $freetime,
+            'lifestyle' => $lifestyle,
+            'carnow' => $carnow,
+            'ownercar' => $ownercar,
+            'planrent' => $planrent,
+            'factorrent' => $factorrent,
+            'factordrive' => $factordrive,
+            'travellevel' => $travellevel,
+            'travelwith' => $travelwith,
+            'typeattraction' => $typeattraction,
+            'attraction' => $attraction,
+            'ftattraction' => $ftattraction,
+        ];
         // dd($result);
         // แนะนำ
 
@@ -614,7 +969,7 @@ class RecommentCarController extends Controller
         return response([
             'status' => '200',
             'message' => 'ส่งข้อมูลสำเร็จ',
-            // 'answer' => $answer,
+            'answer' => $answer,
             'condition' => $condition,
             'result' => $result,
 
