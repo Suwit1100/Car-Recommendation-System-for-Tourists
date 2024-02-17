@@ -20,23 +20,23 @@ class RecommentCarController extends Controller
     {
         // dd($request->all());
         $sex = $request->input('answersex1');
-        $old = $request->input('old');
-        $education = $request->input('education');
-        $career = $request->input('career');
-        $income = $request->input('income');
-        $status = $request->input('status');
-        $freetime = $request->input('freetime');
-        $lifestyle = $request->input('lifestyle');
-        $carnow = $request->input('carnow');
-        $ownercar = $request->input('ownercar');
-        $planrent = $request->input('planrent');
-        $factorrent = $request->input('factorrent');
-        $factordrive = $request->input('factordrive');
-        $travellevel = $request->input('travellevel');
-        $travelwith = $request->input('travelwith');
-        $typeattraction = $request->input('typeattraction');
-        $attraction = $request->input('attraction');
-        $ftattraction = $request->input('ftattraction');
+        $old = $request->input('answerold2');
+        $education = $request->input('answereducation3');
+        $career = $request->input('answercareer4');
+        $income = $request->input('answerincome5');
+        $status = $request->input('answerstatus6');
+        $freetime = $request->input('answerfreetime7');
+        $lifestyle = $request->input('answerlifestyle8');
+        $carnow = $request->input('answercarnow9');
+        $ownercar = $request->input('answerownercar10');
+        $planrent = $request->input('answerplanrent11');
+        $factorrent = $request->input('answerfactorrent12');
+        $factordrive = $request->input('answerfactordrive13');
+        $travellevel = $request->input('answertravellevel14');
+        $travelwith = $request->input('answertravelwith15');
+        $typeattraction = $request->input('answertypeattraction16');
+        $attraction = $request->input('answerattraction17');
+        $ftattraction = $request->input('answerftattraction18');
 
         // แนะนำ
         $result = '';
@@ -447,26 +447,26 @@ class RecommentCarController extends Controller
         }
 
 
-        $answer = [
-            'sex' => $sex,
-            'old' => $old,
-            'education' => $education,
-            'career' => $career,
-            'income' => $income,
-            'an6' => $status,
-            'status' => $freetime,
-            'lifestyle' => $lifestyle,
-            'carnow' => $carnow,
-            'ownercar' => $ownercar,
-            'planrent' => $planrent,
-            'factorrent' => $factorrent,
-            'factordrive' => $factordrive,
-            'travellevel' => $travellevel,
-            'travelwith' => $travelwith,
-            'typeattraction' => $typeattraction,
-            'attraction' => $attraction,
-            'ftattraction' => $ftattraction,
-        ];
+        // $answer = [
+        //     'sex' => $sex,
+        //     'old' => $old,
+        //     'education' => $education,
+        //     'career' => $career,
+        //     'income' => $income,
+        //     'an6' => $status,
+        //     'status' => $freetime,
+        //     'lifestyle' => $lifestyle,
+        //     'carnow' => $carnow,
+        //     'ownercar' => $ownercar,
+        //     'planrent' => $planrent,
+        //     'factorrent' => $factorrent,
+        //     'factordrive' => $factordrive,
+        //     'travellevel' => $travellevel,
+        //     'travelwith' => $travelwith,
+        //     'typeattraction' => $typeattraction,
+        //     'attraction' => $attraction,
+        //     'ftattraction' => $ftattraction,
+        // ];
         // dd($result);
         // แนะนำ
 
@@ -482,7 +482,7 @@ class RecommentCarController extends Controller
         return response([
             'status' => '200',
             'message' => 'ส่งข้อมูลสำเร็จ',
-            'answer' => $answer,
+            // 'answer' => $answer,
             'condition' => $condition,
             'result' => $result,
 
