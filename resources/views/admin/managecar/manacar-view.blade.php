@@ -197,7 +197,8 @@
                                     <input type="number" class="form-control" name="highway_mpg"
                                         placeholder="กรุณากรอก MPG HWY" required>
                                 </div>
-                                <div class="form-group col-6 my-3">
+                                <div class="col-6"></div>
+                                <div class="form-group col-6 my-3 ">
                                     <select name="engine_fuel_type" class="form-select" required>
                                         @foreach ($engine_fuel_type as $liengine_fuel_type)
                                             <option value="{{ $liengine_fuel_type->engine_fuel_type }}">
