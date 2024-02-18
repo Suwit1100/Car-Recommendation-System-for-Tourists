@@ -24,11 +24,17 @@ class ExportController extends Controller
         $month = $request->month;
         $datestart = $request->datestart;
         $dateend = $request->dateend;
+        $datasex = $request->datasex;
+        $dataresult = $request->dataresult;
+        $datascore = $request->datascore;
 
         $request->session()->put('year', $request->year);
         $request->session()->put('month', $request->month);
         $request->session()->put('datestart', $request->datestart);
         $request->session()->put('dateend', $request->dateend);
+        $request->session()->put('datasex', $request->datasex);
+        $request->session()->put('dataresult', $request->dataresult);
+        $request->session()->put('datascore', $request->datascore);
 
 
         $table_export = DB::table('review_recomment')
@@ -44,6 +50,15 @@ class ExportController extends Controller
             ->when($dateend, function ($query, $dateend) {
                 return $query->where('review_recomment.created_at', '<=', $dateend);
             })
+            ->when($datasex, function ($query, $datasex) {
+                return $query->where('review_recomment.answer1', 'like', $datasex);
+            })
+            ->when($dataresult, function ($query, $dataresult) {
+                return $query->where('review_recomment.result', 'like', $dataresult);
+            })
+            ->when($datascore, function ($query, $datascore) {
+                return $query->where('review_recomment.score', 'like', $datascore);
+            })
             ->get();
 
 
@@ -57,6 +72,9 @@ class ExportController extends Controller
         $monthvalue = $request->input('monthvalue');
         $datestartvalue = $request->input('datestartvalue');
         $dateendvalue = $request->input('dateendvalue');
+        $datasexvalue = $request->datasexvalue;
+        $dataresultvalue = $request->dataresultvalue;
+        $datascorevalue = $request->datascorevalue;
 
         //บันทึก Log
         Log::create([
@@ -65,6 +83,6 @@ class ExportController extends Controller
             'text_detail' => 'Export รายงาน',
         ]);
 
-        return Excel::download(new ReviewExport($yearvalue, $monthvalue, $datestartvalue, $dateendvalue,), 'ReviewExport.xlsx');
+        return Excel::download(new ReviewExport($yearvalue, $monthvalue, $datestartvalue, $dateendvalue, $datasexvalue, $dataresultvalue, $datascorevalue), 'ReviewExport.xlsx');
     }
 }

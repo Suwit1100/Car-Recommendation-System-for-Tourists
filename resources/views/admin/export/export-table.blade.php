@@ -30,17 +30,25 @@
             $month_ses = session()->pull('month');
             $datestart_ses = session()->pull('datestart');
             $dateend_ses = session()->pull('dateend');
+            $datasex_ses = session()->pull('datasex');
+            $dataresult_ses = session()->pull('dataresult');
+            $datascore_ses = session()->pull('datascore');
         @endphp
         <div class="row">
             <div class="col-12 d-flex justify-content-end">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal-filter-table">filter</button>
+                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#Modal-filter-table"><i
+                        class="fa-solid fa-filter me-2"></i>filter</button>
                 <form action="{{ route('export_toexcel') }}" method="post">
                     @csrf
-                    <button class="ms-3 btn btn-info" id="Export_excel_review" type="submit">Export</button>
+                    <button class="ms-3 btn btn btn-light" id="Export_excel_review" type="submit"><i
+                            class="fa-solid fa-download me-2"></i>Export</button>
                     <input type="hidden" name="yearvalue" value="{{ $year_ses }}">
                     <input type="hidden" name="monthvalue" value="{{ $month_ses }}">
                     <input type="hidden" name="datestartvalue" value="{{ $datestart_ses }}">
                     <input type="hidden" name="dateendvalue" value="{{ $dateend_ses }}">
+                    <input type="hidden" name="datasexvalue" value="{{ $datasex_ses }}">
+                    <input type="hidden" name="dataresultvalue" value="{{ $dataresult_ses }}">
+                    <input type="hidden" name="datascorevalue" value="{{ $datascore_ses }}">
                 </form>
             </div>
             <div class="col-12 table-responsive">
@@ -135,7 +143,6 @@
                                 <select name="year" class="form-select" id="selectyear">
                                     <option value="" {{ $year_ses == '' ? 'selected' : '' }}>เลือกปี</option>
                                     <option value="2024" {{ $year_ses == '2024' ? 'selected' : '' }}>2024</option>
-                                    <option value="2025" {{ $year_ses == '2025' ? 'selected' : '' }}>2025</option>
                                 </select>
                             </div>
                             <div class="col-3"></div>
@@ -210,20 +217,43 @@
                             </div>
                             <div class="col-2"></div>
                             <div class="col-5">
-                                <select name="sex" id="sex" class="form-select">
-                                    <option value="">เลือกเพศ</option>
+                                <select name="datasex" id="sex" class="form-select">
+                                    <option value="" {{ $datasex_ses == '' ? 'selected' : '' }}>เลือกเพศ</option>
+                                    <option value="male" {{ $datasex_ses == 'male' ? 'selected' : '' }}>ชาย</option>
+                                    <option value="female" {{ $datasex_ses == 'female' ? 'selected' : '' }}>หญิง</option>
+                                    <option value="lgbt" {{ $datasex_ses == 'lgbt' ? 'selected' : '' }}>เพศทางเลือก
+                                    </option>
+                                    <option value="no" {{ $datasex_ses == 'no' ? 'selected' : '' }}>ไม่ระบุ</option>
                                 </select>
                             </div>
                             <div class="col-3"></div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-2">
-                                เลือกโมเดลรถ
+                                ผลลัพธ์
                             </div>
                             <div class="col-2"></div>
                             <div class="col-5">
-                                <select name="car_model" id="car_model" class="form-select">
-                                    <option value="">เลือกโมเดล</option>
+                                <select name="dataresult" id="" class="form-select">
+                                    <option value="" {{ $dataresult_ses == '' ? 'selected' : '' }}>เลือกผลลัพธ์
+                                    </option>
+                                    <option value="coupe" {{ $dataresult_ses == 'coupe' ? 'selected' : '' }}>coupe
+                                    </option>
+                                    <option value="convertible" {{ $dataresult_ses == 'convertible' ? 'selected' : '' }}>
+                                        convertible
+                                    </option>
+                                    <option value="sedan" {{ $dataresult_ses == 'sedan' ? 'selected' : '' }}>sedan
+                                    </option>
+                                    <option value="pickup" {{ $dataresult_ses == 'pickup' ? 'selected' : '' }}>pickup
+                                    </option>
+                                    <option value="hatchback" {{ $dataresult_ses == 'hatchback' ? 'selected' : '' }}>
+                                        hatchback
+                                    </option>
+                                    <option value="wagon" {{ $dataresult_ses == 'wagon' ? 'selected' : '' }}>wagon
+                                    </option>
+                                    <option value="suv" {{ $dataresult_ses == 'suv' ? 'selected' : '' }}>suv</option>
+                                    <option value="minivan" {{ $dataresult_ses == 'minivan' ? 'selected' : '' }}>minivan
+                                    </option>
                                 </select>
                             </div>
                             <div class="col-3"></div>
@@ -231,18 +261,24 @@
 
                         <div class="row mt-2">
                             <div class="col-2 mb-3">
-                                เลือกความชอบ
+                                ความชอบ
                             </div>
                             <div class="col-2 mb-3"></div>
                             <div class="col-5 mb-3">
-                                <select name="like_not" id="like_not" class="form-select">
-                                    <option value="">เลือกความชอบ</option>
+                                <select name="datascore" id="" class="form-select">
+                                    <option value="" {{ $datascore_ses == '' ? 'selected' : '' }}>เลือกความชอบ
+                                    </option>
+                                    <option value="1" {{ $datascore_ses == '1' ? 'selected' : '' }}>1 ดาว</option>
+                                    <option value="2" {{ $datascore_ses == '2' ? 'selected' : '' }}>2 ดาว</option>
+                                    <option value="3" {{ $datascore_ses == '3' ? 'selected' : '' }}>3 ดาว</option>
+                                    <option value="4" {{ $datascore_ses == '4' ? 'selected' : '' }}>4 ดาว</option>
+                                    <option value="5" {{ $datascore_ses == '5' ? 'selected' : '' }}>5 ดาว</option>
                                 </select>
                             </div>
                             <div class="col-3 mb-3"></div>
                             <hr>
                             <div class="col-12 mb-3 d-flex justify-content-end mt-2">
-                                <button type="submit" class="btn-bg-apply">ยืนยัน</button>
+                                <button type="submit" class="btn btn-green">ยืนยัน</button>
 
                             </div>
                         </div>

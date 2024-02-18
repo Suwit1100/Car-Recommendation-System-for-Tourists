@@ -35,7 +35,6 @@
                     <select name="year" class="form-select" id="selectyear">
                         <option value="">เลือกปี</option>
                         <option value="2024">2024</option>
-                        <option value="2025">2025</option>
                     </select>
                 </div>
                 <div class="col-3"></div>
@@ -108,20 +107,32 @@
                 </div>
                 <div class="col-2"></div>
                 <div class="col-5">
-                    <select name="sex" id="" class="form-select">
+                    <select name="datasex" id="sex" class="form-select">
                         <option value="">เลือกเพศ</option>
+                        <option value="male">ชาย</option>
+                        <option value="female">หญิง</option>
+                        <option value="lgbt">เพศทางเลือก</option>
+                        <option value="no">ไม่ระบุ</option>
                     </select>
                 </div>
                 <div class="col-3"></div>
             </div>
             <div class="row mt-2">
                 <div class="col-2">
-                    เลือกโมเดลรถ
+                    ผลลัพธ์
                 </div>
                 <div class="col-2"></div>
                 <div class="col-5">
-                    <select name="car_model" id="" class="form-select">
-                        <option value="">เลือกโมเดล</option>
+                    <select name="dataresult" id="" class="form-select">
+                        <option value="">เลือกผลลัพธ์</option>
+                        <option value="coupe">coupe</option>
+                        <option value="convertible">convertible</option>
+                        <option value="sedan">sedan</option>
+                        <option value="pickup">pickup</option>
+                        <option value="hatchback">hatchback</option>
+                        <option value="wagon">wagon</option>
+                        <option value="suv">suv</option>
+                        <option value="minivan">minivan</option>
                     </select>
                 </div>
                 <div class="col-3"></div>
@@ -129,18 +140,23 @@
 
             <div class="row mt-2">
                 <div class="col-2 mb-3">
-                    เลือกความชอบ
+                    ความชอบ
                 </div>
                 <div class="col-2 mb-3"></div>
                 <div class="col-5 mb-3">
-                    <select name="like_not" id="" class="form-select">
+                    <select name="datascore" id="" class="form-select">
                         <option value="">เลือกความชอบ</option>
+                        <option value="1">1 ดาว</option>
+                        <option value="2">2 ดาว</option>
+                        <option value="3">3 ดาว</option>
+                        <option value="4">4 ดาว</option>
+                        <option value="5">5 ดาว</option>
                     </select>
                 </div>
                 <div class="col-3 mb-3"></div>
                 <hr>
                 <div class="col-12 mb-3 d-flex justify-content-end mt-2">
-                    <button type="submit" class="btn-bg-apply">ยืนยัน</button>
+                    <button type="submit" class="btn btn-green">ยืนยัน</button>
 
                 </div>
             </div>

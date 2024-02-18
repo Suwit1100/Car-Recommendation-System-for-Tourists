@@ -17,13 +17,19 @@ class ReviewExport implements FromCollection, WithHeadings
     protected $month;
     protected $datestart;
     protected $dateend;
+    protected $sex;
+    protected $result;
+    protected $score;
 
-    public function __construct($year, $month, $datestart, $dateend,)
+    public function __construct($year, $month, $datestart, $dateend, $sex, $result, $score)
     {
         $this->year = $year;
         $this->month = $month;
         $this->datestart = $datestart;
         $this->dateend = $dateend;
+        $this->sex = $sex;
+        $this->result = $result;
+        $this->score = $score;
     }
 
     public function headings(): array
@@ -70,6 +76,15 @@ class ReviewExport implements FromCollection, WithHeadings
             })
             ->when($this->dateend, function ($query, $dateend) {
                 return $query->where('test_exportreview.created_at', '<=', $dateend);
+            })
+            ->when($this->sex, function ($query, $sex) {
+                return $query->where('review_recomment.answer1', 'like', $sex);
+            })
+            ->when($this->result, function ($query, $result) {
+                return $query->where('review_recomment.result', 'like', $result);
+            })
+            ->when($this->score, function ($query, $score) {
+                return $query->where('review_recomment.score', 'like', $score);
             })
             ->get();
 
