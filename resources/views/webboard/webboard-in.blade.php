@@ -209,26 +209,40 @@
         $(document).on('click', '.click-delete-comment', function() {
             let id_comment = $(this).data("id-comment");
             let id_post = $(this).data("id-post");
-            $.ajax({
-                type: "POST",
-                url: "{{ route('delete_comment') }}",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    id_comment: id_comment,
-                    id_post: id_post
-                },
-                success: function(response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: response.message,
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                    }).then((result) => {
-                        location.reload();
+            Swal.fire({
+                title: 'คุณแน่ใจหรือไม่?',
+                text: 'การลบความคิดเห็นนี้ไม่สามารถกู้คืนได้!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'ใช่, ลบ!',
+                cancelButtonText: 'ยกเลิก'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route('delete_comment') }}",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            id_comment: id_comment,
+                            id_post: id_post
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: response.message,
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                            }).then((result) => {
+                                location.reload();
+                            });
+                        }
                     });
                 }
             });
+
         });
     </script>
 @endsection
