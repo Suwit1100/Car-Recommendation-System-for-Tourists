@@ -53,6 +53,25 @@
             display: none;
         }
 
+        .tooltip-token {
+            display: none;
+            height: 450px;
+            overflow-y: auto;
+
+        }
+
+        .imgtooltip {
+            display: flex;
+            justify-content: center;
+        }
+
+        .imgtooltip img {
+            max-width: 100%;
+            height: 230px;
+            object-fit: cover;
+            object-position: center center;
+        }
+
         @media only screen and (max-width: 865px) {
             .sidescroll {
                 display: flex;
@@ -277,6 +296,17 @@
                 }, 350);
             });
             // ราคา
+
+            // เปิด tooltip
+            $('#click-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideDown();
+            });
+
+            $('#close-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideUp();
+            });
         });
     </script>
 @endsection

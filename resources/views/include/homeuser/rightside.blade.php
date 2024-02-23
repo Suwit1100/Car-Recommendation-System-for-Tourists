@@ -75,12 +75,77 @@
                         style="cursor:pointer;" {{ $status_token == 'on' ? 'checked' : '' }}
                         {{ $token ? ($token->token_text = '' ? 'disabled' : '') : 'disabled' }}>
                     <label class="form-check-label" for="flexSwitchCheckDefault">ปิด/เปิด การแจ้งเตือน</label>
+                    <a href="#" id="click-tooltip">วิธีออกโทเคน</a>
                 </div>
                 <div class="mt-2">
                     <input type="submit" id="token_submit" class="form-control btn-green text-white" value="บันทึก"
                         disabled>
                 </div>
             </form>
+            <div class="tooltip-token">
+                <div class="card m-1">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-green text-white">
+                        วิธีออก Token
+                        <span role="button" class="btn text-white" id="close-tooltip">
+                            <i class="fa-solid fa-xmark" style="font-size: 24px;"></i>
+                        </span>
+                    </div>
+                    <div class="container">
+                        <div class="row mt-2">
+                            <div class="col-12 ">
+                                <span>
+                                    ก่อนอื่นให้เข้าไปที่ https://notify-bot.line.me/th จากนั้น Login เข้าสู่ระบบ >
+                                    เลือกเมนู
+                                    “หน้าของฉัน”
+                                </span>
+                            </div>
+                            <div class="col-12 imgtooltip">
+                                <img class="" src="{{ asset('assets/imgtooltip/ไปที่หน้าpage.png') }}"
+                                    alt="">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <span>
+                                    เลื่อนลงไปด้านล่างจะมีส่วน ออก Access Token ของนักพัฒนา ให้กดปุ่ม “ออก Token”
+                                </span>
+                            </div>
+                            <div class="col-12 imgtooltip">
+                                <img class="" src="{{ asset('assets/imgtooltip/คลิกออกโทเคน.png') }}"
+                                    alt="">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <span>
+                                    ให้ใส่ชื่อ Token (จะแสดงเมื่อมีการแจ้งเตือน)
+                                    และเลือกห้องแชทที่ต้องการส่งข้อความแจ้งเตือน
+                                    จากนั้นกดปุ่ม “ออก Token” เพื่อรับ Token key
+                                </span>
+                            </div>
+                            <div class="col-12 imgtooltip">
+                                <img class="" src="{{ asset('assets/imgtooltip/เลือกกลุ่ม.png') }}"
+                                    alt="">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <span>
+                                    ระบบจะสร้าง token ให้เรานำไปใช้งานต่อไป อย่าลืม ! Copy Token
+                                    เก็บไว้ก่อนที่จะปิดหน้าต่างนะครับ เพราะจะกลับมาดูอีกครั้งไม่ได้แล้ว นอกเสียจากจะขอ
+                                    Token ใหม่อีกรอบ
+                                </span>
+                            </div>
+                            <div class="col-12 imgtooltip">
+                                <img class="" src="{{ asset('assets/imgtooltip/Token.png') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
