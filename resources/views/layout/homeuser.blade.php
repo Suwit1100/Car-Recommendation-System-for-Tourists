@@ -541,9 +541,8 @@
         }
 
         .tooltip-token {
-            display: none !important;
-            height: 450px !important;
-            overflow-y: auto !important;
+            height: 450px;
+            overflow-y: auto;
 
         }
 
@@ -602,6 +601,12 @@
 
     <script>
         $(document).ready(function() {
+
+            $('.tooltip-token').hide();
+            $('#click-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideDown();
+            });
             //CHATBOT
             // check การเปิดปิด chatbot st
             // Select the target node
@@ -801,17 +806,6 @@
                 });
             }
             // TOKEN
-
-            // เปิด tooltip
-            $('#click-tooltip').click(function(e) {
-                e.preventDefault();
-                $('.tooltip-token').slideDown();
-            });
-
-            $('#close-tooltip').click(function(e) {
-                e.preventDefault();
-                $('.tooltip-token').slideUp();
-            });
 
         });
 
