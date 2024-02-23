@@ -45,8 +45,9 @@
     </div>
 </aside>
 <!-- Modal -->
-<div class="modal fade" id="edit_token" tabindex="-1" aria-labelledby="edit_tokenLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="edit_token" tabindex="-1" aria-labelledby="edit_tokenLabel" aria-hidden="true"
+    data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="edit_tokenLabel">ตั้งค่าการแจ้งเตือน</h1>
