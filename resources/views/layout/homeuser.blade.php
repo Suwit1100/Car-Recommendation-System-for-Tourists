@@ -539,6 +539,18 @@
             overflow-y: auto;
             overflow-x: none;
         }
+
+        .tooltip-token {
+            display: none !important;
+            height: 450px !important;
+            overflow-y: auto !important;
+
+        }
+
+        .imgtooltip {
+            display: flex !important;
+            justify-content: center center !important;
+        }
     </style>
 
 
@@ -789,6 +801,17 @@
                 });
             }
             // TOKEN
+
+            // เปิด tooltip
+            $('#click-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideDown();
+            });
+
+            $('#close-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideUp();
+            });
 
         });
 
