@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-6">
                                 <p class="text-16-bold m-0" style="color: #ac5b4d">
-                                    {{ $icar_like->msrp }}
+                                    {{ $icar_like->price_rent }}
                                 </p>
                             </div>
                             <div class="col-6">

@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-6">
                         <p class="text-16-bold m-0" style="color: #ac5b4d">
-                            {{ $icars->msrp }}
+                            {{ $icars->price_rent }}
                         </p>
                     </div>
                     <div class="col-6">

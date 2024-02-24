@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-6 d-flex" style="color: #ac5b4d;">
                     <i class="fa-solid fa-money-bill-wave me-2" style="line-height: 24px"></i>
-                    <h5 style="font-weight: 700;">{{ $car->msrp }}</h5>
+                    <h5 style="font-weight: 700;">{{ $car->price_rent }}</h5>
                 </div>
                 <div class="col-12">
                     <div class="row">

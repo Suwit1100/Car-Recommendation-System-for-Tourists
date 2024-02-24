@@ -183,8 +183,8 @@
                                         placeholder="กรุณากรอกจำนวนประตู" required>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="msrp">ราคา</label>
-                                    <input type="number" class="form-control" name="msrp"
+                                    <label for="price_rent">ราคา</label>
+                                    <input type="number" class="form-control" name="price_rent"
                                         placeholder="กรุณากรอกราคา" required>
                                 </div>
                                 <div class="form-group col-6">

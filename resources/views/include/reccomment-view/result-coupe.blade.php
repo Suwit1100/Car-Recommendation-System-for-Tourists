@@ -1,19 +1,9 @@
 @php
-    $total = DB::table('car_dataset')
-        ->where('vehicle_style', 'Coupe')
-        ->count();
-    $city = DB::table('car_dataset')
-        ->where('vehicle_style', 'Coupe')
-        ->sum('city_mpg');
-    $hy = DB::table('car_dataset')
-        ->where('vehicle_style', 'Coupe')
-        ->sum('highway_mpg');
-    $hp = DB::table('car_dataset')
-        ->where('vehicle_style', 'Coupe')
-        ->sum('engine_hp');
-    $price = DB::table('car_dataset')
-        ->where('vehicle_style', 'Coupe')
-        ->sum('msrp');
+    $total = DB::table('car_dataset')->where('vehicle_style', 'Coupe')->count();
+    $city = DB::table('car_dataset')->where('vehicle_style', 'Coupe')->sum('city_mpg');
+    $hy = DB::table('car_dataset')->where('vehicle_style', 'Coupe')->sum('highway_mpg');
+    $hp = DB::table('car_dataset')->where('vehicle_style', 'Coupe')->sum('engine_hp');
+    $price = DB::table('car_dataset')->where('vehicle_style', 'Coupe')->sum('price_rent');
     $averagecity = intval($city / $total);
     $averagehy = intval($hy / $total);
     $averagehp = intval($hp / $total);

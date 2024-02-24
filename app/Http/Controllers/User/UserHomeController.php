@@ -42,10 +42,10 @@ class UserHomeController extends Controller
                 });
             })
             ->when($data['valPricemin'], function ($query, $pricemin) {
-                return $query->where('msrp', '>=', "$pricemin");
+                return $query->where('price_rent', '>=', "$pricemin");
             })
             ->when($data['valPricemax'], function ($query, $pricemax) {
-                return $query->where('msrp', '<=', "$pricemax");
+                return $query->where('price_rent', '<=', "$pricemax");
             })
             ->when($data['valYearmin'], function ($query, $yearmin) {
                 return $query->where('year', '>=', "$yearmin");
@@ -69,7 +69,7 @@ class UserHomeController extends Controller
                 return $query->where('transmission_type', 'like', "$transmission");
             })
             ->when($data['ValSortPrice'], function ($query, $sort_price) {
-                return $query->orderBy('msrp', $sort_price);
+                return $query->orderBy('price_rent', $sort_price);
             })
             ->when($data['ValSortYear'], function ($query, $sort_year) {
                 return $query->orderBy('year', $sort_year);
@@ -87,10 +87,10 @@ class UserHomeController extends Controller
                 });
             })
             ->when($data['valPricemin'], function ($query, $pricemin) {
-                return $query->where('msrp', '>=', "$pricemin");
+                return $query->where('price_rent', '>=', "$pricemin");
             })
             ->when($data['valPricemax'], function ($query, $pricemax) {
-                return $query->where('msrp', '<=', "$pricemax");
+                return $query->where('price_rent', '<=', "$pricemax");
             })
             ->when($data['valYearmin'], function ($query, $yearmin) {
                 return $query->where('year', '>=', "$yearmin");
@@ -114,7 +114,7 @@ class UserHomeController extends Controller
                 return $query->where('transmission_type', 'like', "$transmission");
             })
             ->when($data['ValSortPrice'], function ($query, $sort_price) {
-                return $query->orderBy('msrp', $sort_price);
+                return $query->orderBy('price_rent', $sort_price);
             })
             ->when($data['ValSortYear'], function ($query, $sort_year) {
                 return $query->orderBy('year', $sort_year);

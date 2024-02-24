@@ -86,7 +86,7 @@ class ManageCarController extends Controller
         $engine_hp = $request->engine_hp;
         $engine_cylinders = $request->engine_cylinders;
         $number_doors = $request->number_doors;
-        $msrp = $request->msrp;
+        $price_rent = $request->price_rent;
         $city_mpg = $request->city_mpg;
         $highway_mpg = $request->highway_mpg;
         $popularity = $request->popularity;
@@ -138,7 +138,7 @@ class ManageCarController extends Controller
             'highway_mpg' => $highway_mpg,
             'city_mpg' => $city_mpg,
             'popularity' => $popularity,
-            'msrp' => $msrp,
+            'price_rent' => $price_rent,
             'vehicle_style' => $vehicle_style,
             'description_car' => $description_car,
             'imgcar' => $filename_car,
@@ -222,7 +222,7 @@ class ManageCarController extends Controller
         $engine_hp = $request->engine_hp;
         $engine_cylinders = $request->engine_cylinders;
         $number_doors = $request->number_doors;
-        $msrp = $request->msrp;
+        $price_rent = $request->price_rent;
         $city_mpg = $request->city_mpg;
         $highway_mpg = $request->highway_mpg;
         $popularity = $request->popularity;
@@ -283,7 +283,7 @@ class ManageCarController extends Controller
             'highway_mpg' => $highway_mpg,
             'city_mpg' => $city_mpg,
             'popularity' => $popularity,
-            'msrp' => $msrp,
+            'price_rent' => $price_rent,
             'vehicle_style' => $vehicle_style,
             'description_car' => $description_car,
             'imgcar' => $img_carname,

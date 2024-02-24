@@ -13,7 +13,7 @@
         ->sum('engine_hp');
     $price = DB::table('car_dataset')
         ->where('vehicle_style', 'Van')
-        ->sum('msrp');
+        ->sum('price_rent');
     $averagecity = intval($city / $total);
     $averagehy = intval($hy / $total);
     $averagehp = intval($hp / $total);

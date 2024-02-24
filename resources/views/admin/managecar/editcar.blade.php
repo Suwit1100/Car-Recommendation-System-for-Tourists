@@ -58,9 +58,9 @@
                                         placeholder="กรุณากรอกจำนวนประตู" value="{{ $car_dataset->number_doors }}" required>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="msrp">ราคา</label>
-                                    <input type="number" class="form-control" name="msrp" placeholder="กรุณากรอกราคา"
-                                        value="{{ $car_dataset->msrp }}" required>
+                                    <label for="price_rent">ราคา</label>
+                                    <input type="number" class="form-control" name="price_rent" placeholder="กรุณากรอกราคา"
+                                        value="{{ $car_dataset->price_rent }}" required>
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="city_mpg">MPG CITY</label>
