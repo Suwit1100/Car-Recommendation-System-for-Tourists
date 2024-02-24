@@ -170,14 +170,14 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="van"
-                                    autocomplete="off" value="van">
+                                    autocomplete="off" value="minivan">
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="van"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/van.png') }}" alt=""
                                         style="width:40px; height:40px;">
                                     <br>
                                     <span>
-                                        Van
+                                        Minivan
                                     </span>
                                 </label>
                             </div>
@@ -259,10 +259,7 @@
 
             {{-- เชื้อเพลิง st --}}
             @php
-                $fuel = DB::table('car_dataset')
-                    ->select('engine_fuel_type')
-                    ->distinct('engine_fuel_type')
-                    ->get();
+                $fuel = DB::table('car_dataset')->select('engine_fuel_type')->distinct('engine_fuel_type')->get();
             @endphp
             <div class="accordion-item">
                 <h2 class="accordion-header" id="filter_fuel">
@@ -303,10 +300,7 @@
 
             {{-- เกียร์ st --}}
             @php
-                $transmission = DB::table('car_dataset')
-                    ->select('transmission_type')
-                    ->distinct('transmission_type')
-                    ->get();
+                $transmission = DB::table('car_dataset')->select('transmission_type')->distinct('transmission_type')->get();
             @endphp
             <div class="accordion-item">
                 <h2 class="accordion-header" id="filter_tranmission">
