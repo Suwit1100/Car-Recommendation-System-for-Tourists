@@ -48,6 +48,18 @@
             display: none;
         }
 
+        .box-car-img {
+            width: 100%;
+            height: 170px;
+        }
+
+        .box-car-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
 
 
         @media only screen and (max-width: 768px) {

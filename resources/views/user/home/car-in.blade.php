@@ -6,10 +6,11 @@
             overflow: hidden;
             border-radius: 10px;
             filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+            height: 500px;
         }
 
         .imgcar img {
-            width: 100%;
+            max-width: 100%;
             object-fit: cover;
             object-position: center center;
         }
@@ -50,8 +51,7 @@
     <div class="row">
         <div class="col-12 col-lg-7 my-2">
             <div class="imgcar">
-                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8fDA%3D"
-                    alt="">
+                <img src="{{ asset('assets/imgcar/' . $car->imgcar) }}" alt="">
             </div>
         </div>
         <div class="col-12 col-lg-5 my-2 ">
