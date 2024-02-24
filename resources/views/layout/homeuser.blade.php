@@ -541,14 +541,22 @@
         }
 
         .tooltip-token {
+            display: none;
             height: 450px;
             overflow-y: auto;
 
         }
 
         .imgtooltip {
-            display: flex !important;
-            justify-content: center center !important;
+            display: flex;
+            justify-content: center;
+        }
+
+        .imgtooltip img {
+            max-width: 100%;
+            height: 230px;
+            object-fit: cover;
+            object-position: center center;
         }
     </style>
 
@@ -601,12 +609,6 @@
 
     <script>
         $(document).ready(function() {
-
-            $('.tooltip-token').hide();
-            $('#click-tooltip').click(function(e) {
-                e.preventDefault();
-                $('.tooltip-token').slideDown();
-            });
             //CHATBOT
             // check การเปิดปิด chatbot st
             // Select the target node
@@ -760,7 +762,7 @@
                 }
             });
 
-            // เปิดปิด token
+            // เปิดปิดแจ้งเตือน
             $('#flexSwitchCheckDefault').on('change', function() {
                 let val_status;
                 if ($(this).prop('checked')) {
@@ -805,6 +807,18 @@
                     timerProgressBar: true,
                 });
             }
+
+            // เปิดปิด tooltip
+            $('.tooltip-token').hide();
+            $('#click-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideDown();
+            });
+
+            $('#close-tooltip').click(function(e) {
+                e.preventDefault();
+                $('.tooltip-token').slideUp();
+            });
             // TOKEN
 
         });
