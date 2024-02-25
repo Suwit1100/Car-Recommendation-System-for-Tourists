@@ -170,7 +170,7 @@
                 <a href="test/suv" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/suv.png') }}" alt="">
                 </a>
-                <a href="test/van" class="item px-3 p-1 btn border">
+                <a href="test/minivan" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/van.png') }}" alt="">
                 </a>
                 <a href="test/wagon" class="item px-3 p-1 btn border">
