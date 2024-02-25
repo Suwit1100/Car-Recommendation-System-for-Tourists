@@ -174,9 +174,9 @@
         </div>
 
 
-        <div class="testvalue btn green">
+        {{-- <div class="testvalue btn green">
             กดสิ
-        </div>
+        </div> --}}
         @include('include.carlist.filtermobile')
     </div>
 
@@ -1456,7 +1456,7 @@
                     .done(function(response) {
                         console.log(response);
                         if (response.html == '') {
-                            $('.loader').html("End");
+                            $('.loader').html("ไม่มีรถยนต์เพิ่มเติม");
                             return;
                         }
                         $('.loader').hide();
