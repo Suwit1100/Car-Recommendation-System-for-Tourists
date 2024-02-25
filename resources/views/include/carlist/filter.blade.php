@@ -217,7 +217,7 @@
                         <div class="row">
                             <div class="col-6">
                                 @php
-                                    $makeVal = DB::table('namemake')->get();
+                                    $makeVal = DB::table('car_dataset')->select('car_dataset.make')->get();
                                 @endphp
                                 <div class="dropdown">
                                     <button
@@ -230,7 +230,7 @@
                                         name="make" id="selectmake">
                                         <option selected value="">ยังไม่เลือก</option>
                                         @foreach ($makeVal as $imakeVal)
-                                            <option value="{{ $imakeVal->namemake }}">{{ $imakeVal->namemake }}
+                                            <option value="{{ $imakeVal->make }}">{{ $imakeVal->make }}
                                             </option>
                                         @endforeach
                                     </select>
