@@ -285,4 +285,16 @@ class UserHomeController extends Controller
             ->count();
         return view('user.home.carlist-make', compact('cars', 'totalcars', 'make'));
     }
+
+    public function car_list_category(Request $request, $category)
+    {
+        $cars = DB::table('car_dataset')
+            ->where('vehicle_style', $category)
+            ->paginate(12);
+
+        $totalcars = DB::table('car_dataset')
+            ->where('vehicle_style', $category)
+            ->count();
+        return view('user.home.carlist-category', compact('cars', 'totalcars', 'category'));
+    }
 }
