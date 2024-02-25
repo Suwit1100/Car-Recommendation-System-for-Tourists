@@ -137,7 +137,7 @@ class UserHomeController extends Controller
     public function model_query(Request $request)
     {
         $valMake = $request->valMake;
-        $model = DB::table('model')
+        $model = DB::table('car_dataset')
             ->where('make', $valMake)
             ->distinct('model')
             ->get();

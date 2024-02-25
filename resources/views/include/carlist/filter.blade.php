@@ -217,7 +217,7 @@
                         <div class="row">
                             <div class="col-6">
                                 @php
-                                    $makeVal = DB::table('car_dataset')->select('car_dataset.make')->get();
+                                    $makeVal = DB::table('car_dataset')->select('car_dataset.make')->distinct()->get();
                                 @endphp
                                 <div class="dropdown">
                                     <button

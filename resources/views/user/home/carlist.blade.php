@@ -55,6 +55,7 @@
 
         .box-car-img img {
             max-width: 100%;
+            max-height: 150px;
             min-height: 150px;
             object-fit: cover;
             object-position: center center;
