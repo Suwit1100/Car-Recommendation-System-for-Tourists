@@ -48,6 +48,19 @@
             display: none;
         }
 
+        .box-car-img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .box-car-img img {
+            max-width: 100%;
+            max-height: 150px;
+            min-height: 150px;
+            object-fit: cover;
+            object-position: center center;
+        }
+
 
 
         @media only screen and (max-width: 768px) {
@@ -160,7 +173,7 @@
                 </div>
             </div>
         </div>
-        {{-- @include('include.carlist.filtermobile') --}}
+        @include('include.rec-result-view.recfiltermobile')
     </div>
 
     {{-- filter-mobile --}}
@@ -1440,7 +1453,7 @@
                     .done(function(response) {
                         console.log(response);
                         if (response.html == '') {
-                            $('.loader').html("End");
+                            $('.loader').html("ไม่มีรถยนต์เพิ่มเติม");
                             return;
                         }
                         $('.loader').hide();
