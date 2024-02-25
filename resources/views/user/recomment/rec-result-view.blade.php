@@ -1480,6 +1480,7 @@
             });
         });
 
+        // เปิดหน้ารถ
         $(document).on('click', '.click_idcar', function() {
             let idcar = $(this).data("car-id");
             // console.log(idcar);
@@ -1495,7 +1496,7 @@
                 },
                 success: function(response) {
                     console.log(response);
-                    window.location.href = "/car_view/" + response.idcar;
+                    window.location.href = "/rec_car_view/" + response.idcar;
                 }
             });
         });

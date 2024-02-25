@@ -1139,4 +1139,17 @@ class RecommentCarController extends Controller
             'total' => $totalcars
         ]);
     }
+
+    public function rec_car_view($id)
+    {
+        $car = DB::table('car_dataset')
+            ->where('car_dataset.id_cardataset', $id)
+            ->first();
+
+        $category = DB::table('review_recomment')
+            ->where('review_by', Auth::user()->id)
+            ->orderBy('created_at', 'DESC')
+            ->first();
+        return view('user.recomment.rec-car-view', compact('car', 'category'));
+    }
 }
