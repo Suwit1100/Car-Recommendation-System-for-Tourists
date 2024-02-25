@@ -123,7 +123,7 @@
                     $filteredData = DB::table('namemake')->whereIn('namemake', $makeValues)->get();
                 @endphp
                 @foreach ($filteredData as $ifilteredData)
-                    <a href="test/{{ $ifilteredData->namemake }}" class="item px-3 p-1 btn border">
+                    <a href="{{ route('car_list_make', $ifilteredData->namemake) }}" class="item px-3 p-1 btn border">
                         <img src="{{ asset('assets/imghomeuser/logomake/' . $ifilteredData->img) }}" alt="">
                     </a>
                 @endforeach

@@ -273,4 +273,16 @@ class UserHomeController extends Controller
             ]
         );
     }
+
+    public function car_list_make(Request $request, $make)
+    {
+        $cars = DB::table('car_dataset')
+            ->where('make', $make)
+            ->paginate(12);
+
+        $totalcars = DB::table('car_dataset')
+            ->where('make', $make)
+            ->count();
+        return view('user.home.carlist-make', compact('cars', 'totalcars', 'make'));
+    }
 }
