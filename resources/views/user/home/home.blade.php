@@ -109,9 +109,6 @@
         </span>
     </div>
     <div class="row">
-        @php
-            $makedata = DB::table('namemake')->get();
-        @endphp
         <div class="col-1 d-flex align-items-center justify-content-center">
             <button id="makeleft" class="btn icon-20 sidescroll2">
                 <i class="fa-solid fa-circle-left"></i>
@@ -119,12 +116,17 @@
         </div>
         <div class="col-10">
             <div class="wrapper p-0 wrapmake">
-                @foreach ($makedata as $imakedata)
-                    <a href="test/{{ $imakedata->namemake }}" class="item px-3 p-1 btn border">
-                        <img src="{{ asset('assets/imghomeuser/logomake/' . $imakedata->img) }}" alt="">
+                @php
+                    $makedata = DB::table('namemake')->get();
+                    $makecheck = DB::table('car_dataset')->select('make')->distinct()->get();
+                    $makeValues = $makecheck->pluck('make')->toArray();
+                    $filteredData = DB::table('namemake')->whereIn('namemake', $makeValues)->get();
+                @endphp
+                @foreach ($filteredData as $ifilteredData)
+                    <a href="test/{{ $ifilteredData->namemake }}" class="item px-3 p-1 btn border">
+                        <img src="{{ asset('assets/imghomeuser/logomake/' . $ifilteredData->img) }}" alt="">
                     </a>
                 @endforeach
-
             </div>
         </div>
         <div class="col-1 d-flex align-items-center justify-content-center">
