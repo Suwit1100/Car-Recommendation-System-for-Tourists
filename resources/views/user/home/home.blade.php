@@ -152,28 +152,28 @@
         <div class="col-10">
             <div class="wrapper p-0 wrapcategory">
 
-                <a href="test/convertible" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'convertible') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/convertible.png') }}" alt="">
                 </a>
-                <a href="test/coupe" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'coupe') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/coupe.png') }}" alt="">
                 </a>
-                <a href="test/hatchback" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'hatchback') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/hatchback.png') }}" alt="">
                 </a>
-                <a href="test/pickup" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'pickup') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/pickup.png') }}" alt="">
                 </a>
-                <a href="test/sedan" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'sedan') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/sedan.png') }}" alt="">
                 </a>
-                <a href="test/suv" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'suv') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/suv.png') }}" alt="">
                 </a>
-                <a href="test/minivan" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'minivan') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/van.png') }}" alt="">
                 </a>
-                <a href="test/wagon" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_category', 'wagon') }}" class="item px-3 p-1 btn border">
                     <img src="{{ asset('assets/imghomeuser/category/wagon.png') }}" alt="">
                 </a>
 

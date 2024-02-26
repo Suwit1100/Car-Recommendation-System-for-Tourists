@@ -24,11 +24,10 @@
             <span id="text_category"></span>
         </span>
     </div>
-    <div class="col-4 col-md-2 mt-1" id="make_select" style="">
+    <div class="col-4 col-md-2 mt-1" id="make_select" style="display: none;">
         <span class="text-truncate bg-light form-control" style="max-width: 100%; font-size:12px;">
-            <span id="text_make">
-                {{ $make }}
-            </span>
+            <i class="fa-solid fa-xmark" style="font-size:12px;" role="button" id="make_close"></i>
+            <span id="text_make"></span>
         </span>
     </div>
     <div class="col-4 col-md-2 mt-1" id="model_select" style="display: none;">

@@ -223,15 +223,14 @@
                                     <button
                                         class="btn dropdown-toggle form-control d-flex justify-content-between align-items-center"
                                         type="button" id="dropmake" data-bs-toggle="dropdown"
-                                        aria-expanded="false" disabled>
-                                        {{ $make }}
+                                        aria-expanded="false">
+                                        ยี่ห้อ
                                     </button>
                                     <select class="dropdown-menu" aria-labelledby="dropmake" size="3"
                                         name="make" id="selectmake">
                                         <option selected value="">ยังไม่เลือก</option>
                                         @foreach ($makeVal as $imakeVal)
-                                            <option value="{{ $imakeVal->make }}"
-                                                {{ $imakeVal->make == $make ? 'selected' : '' }}>{{ $imakeVal->make }}
+                                            <option value="{{ $imakeVal->make }}">{{ $imakeVal->make }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -243,18 +242,12 @@
                                     <button
                                         class="btn dropdown-toggle form-control d-flex justify-content-between align-items-center text-truncate"
                                         type="button" id="dropmodel" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                        aria-expanded="false" disabled>
                                         โมเดล
                                     </button>
                                     <select class="dropdown-menu" aria-labelledby="dropmodel" size="3"
                                         name="model" id="selectmodel">
-                                        @php
-                                            $model = DB::table('car_dataset')->where('make', $make)->distinct('model')->get();
-                                        @endphp
                                         <option selected value="">ยังไม่เลือก</option>
-                                        @foreach ($model as $imodel)
-                                            <option value="{{ $imodel->model }}">{{ $imodel->model }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                             </div>
