@@ -14,7 +14,7 @@
     <div class="col-4 col-md-2 mt-1" id="year_select">
         <span class="text-truncate bg-light form-control" style="max-width: 100%; font-size:12px;">
             <span id="text_year">
-                1990-2014
+                1990-2017
             </span>
         </span>
     </div>
