@@ -92,7 +92,8 @@
                         <div class="row" id="category-content">
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="convertible"
-                                    autocomplete="off" value="convertible">
+                                    autocomplete="off" value="convertible"
+                                    {{ $category == 'convertible' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="convertible"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/convertible.png') }}" alt=""
@@ -105,7 +106,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="coupe"
-                                    autocomplete="off" value="coupe">
+                                    autocomplete="off" value="coupe"
+                                    {{ $category == 'coupe' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="coupe"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/coupe.png') }}" alt=""
@@ -118,7 +120,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="hatchback"
-                                    autocomplete="off" value="hatchback">
+                                    autocomplete="off" value="hatchback"
+                                    {{ $category == 'hatchback' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="hatchback"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/hatchback.png') }}" alt=""
@@ -131,7 +134,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="pickup"
-                                    autocomplete="off" value="pickup">
+                                    autocomplete="off" value="pickup"
+                                    {{ $category == 'pickup' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="pickup"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/pickup.png') }}" alt=""
@@ -144,7 +148,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="sedan"
-                                    autocomplete="off" value="sedan">
+                                    autocomplete="off" value="sedan"
+                                    {{ $category == 'sedan' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="sedan"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/sedan.png') }}" alt=""
@@ -157,7 +162,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="suv"
-                                    autocomplete="off" value="suv">
+                                    autocomplete="off" value="suv"
+                                    {{ $category == 'suv' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="suv"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/suv.png') }}" alt=""
@@ -170,7 +176,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="van"
-                                    autocomplete="off" value="minivan">
+                                    autocomplete="off" value="minivan"
+                                    {{ $category == 'minivan' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="van"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/van.png') }}" alt=""
@@ -183,7 +190,8 @@
                             </div>
                             <div class="col-6 mt-1 d-flex justify-content-center align-items-center icategory">
                                 <input type="radio" class="btn-check" name="vachicle_style" id="wagon"
-                                    autocomplete="off" value="wagon">
+                                    autocomplete="off" value="wagon"
+                                    {{ $category == 'wagon' ? 'checked' : 'disabled' }}>
                                 <label class="btn border btn-outline-success p-1 shadow-hover" for="wagon"
                                     style="width: 100%">
                                     <img src="{{ asset('assets/imghomeuser/category/wagon.png') }}" alt=""

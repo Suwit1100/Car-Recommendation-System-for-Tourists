@@ -207,7 +207,7 @@
             var valYearmax = 2017;
             var valMake = $('#selectmake').val();
             var valModel = $('#selectmodel').val();
-            var valVachicle = '';
+            var valVachicle = $('input[name="vachicle_style"]:checked').val();
             var valFuel = '';
             var valTransmission = '';
             var valSearch = $('input[name="searchcar"]').val();
@@ -909,9 +909,9 @@
                 valYearmax = 2017;
 
                 // category reset
-                $('input[name="vachicle_style"]').prop('checked', false);
-                valVachicle = '';
-                $('#category_select').hide();
+                // $('input[name="vachicle_style"]').prop('checked', false);
+                // valVachicle = '';
+                // $('#category_select').hide();
 
                 // make reset
                 $('#selectmake').val('');
