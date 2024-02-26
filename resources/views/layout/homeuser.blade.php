@@ -726,7 +726,7 @@
                             $('#no-noti').html("ไม่มีแจ้งเตือนเพิ่ม");
                             return;
                         }
-                        $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
+                        $("#data-wrapper").append(response.html);
                     })
                     .fail(function(jqXHR, ajaxOptions, thrownError) {
                         console.log('Server error occurred');

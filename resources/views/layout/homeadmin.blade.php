@@ -753,7 +753,7 @@
                             $('#more-notify-admin').hide();
                             return;
                         }
-                        $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
+                        $("#data-wrapper").append(response.html);
                     })
                     .fail(function(jqXHR, ajaxOptions, thrownError) {
                         console.log('Server error occurred');

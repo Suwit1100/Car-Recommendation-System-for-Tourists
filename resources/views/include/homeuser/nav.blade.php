@@ -44,8 +44,8 @@
                                 <div id="box-noti-pc">
                                     <div id="notify-box">
                                         @include('include.homeuser.data-notify')
+                                        <div id="data-wrapper"></div>
                                         <div>
-                                            <div id="data-wrapper"></div>
                                             <div id="no-noti"></div>
                                             <button class="btn btn-white form-control" id="more-notify">
                                                 โหลดเพิ่ม
