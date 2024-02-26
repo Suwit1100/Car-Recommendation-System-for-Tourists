@@ -76,11 +76,15 @@
             position: absolute;
             width: 550px;
             top: 67px;
-            right: 219px;
+            right: 175px;
             display: none;
             border-radius: 10px;
             height: auto;
             z-index: 2;
+        }
+
+        #notify-box {
+            color: #fbfcf6;
         }
 
         .box-content {
@@ -820,6 +824,17 @@
                 $('.tooltip-token').slideUp();
             });
             // TOKEN
+
+            // STnotimobile
+            $(window).on('load resize', function() {
+                if (window.innerWidth < 768) {
+                    console.log(2222);
+                    $('#notify-box').appendTo('#box-noti-mobile');
+                } else {
+                    $('#notify-box').appendTo('#box-noti-pc');
+                }
+            });
+            // EDnotimobile
 
         });
 

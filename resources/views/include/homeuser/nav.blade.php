@@ -41,16 +41,19 @@
                                     <div class="col-6 d-flex justify-content-end align-item-center">
                                     </div>
                                 </div>
-                                @include('include.homeuser.data-notify')
-                                <div>
-                                    <div id="data-wrapper"></div>
-                                    <div id="no-noti"></div>
-                                    <button class="btn btn-white form-control" id="more-notify">
-                                        โหลดเพิ่ม
-                                    </button>
+                                <div id="box-noti-pc">
+                                    <div id="notify-box">
+                                        @include('include.homeuser.data-notify')
+                                        <div>
+                                            <div id="data-wrapper"></div>
+                                            <div id="no-noti"></div>
+                                            <button class="btn btn-white form-control" id="more-notify">
+                                                โหลดเพิ่ม
+                                            </button>
+                                        </div>
+                                        <br>
+                                    </div>
                                 </div>
-                                <br>
-
                             </div>
                         </div>
                     </li>
