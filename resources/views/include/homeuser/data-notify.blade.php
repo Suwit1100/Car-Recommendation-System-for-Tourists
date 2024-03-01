@@ -5,10 +5,17 @@
         ->leftjoin('users', 'notify.user_send_id', '=', 'users.id')
         ->leftjoin('post', 'post.id', '=', 'notify.web_id')
         ->leftjoin('faq', 'faq.id', '=', 'notify.faq_id')
-        ->select('notify.*', 'users.name', 'users.lastname', 'users.imgprofile', 'faq.title AS faqtitle', 'post.title AS posttitle')
+        ->select(
+            'notify.*',
+            'users.name',
+            'users.lastname',
+            'users.imgprofile',
+            'faq.title AS faqtitle',
+            'post.title AS posttitle',
+        )
         ->orderBy('notify.created_at', 'DESC')
         ->where('to_user_id', Auth::user()->id)
-        ->paginate(3);
+        ->paginate(6);
 @endphp
 @foreach ($notify as $inotify)
     <div class="row hovernoti m-1 p-2 click-read-notify" role="button" data-web_id="{{ $inotify->web_id }}"
