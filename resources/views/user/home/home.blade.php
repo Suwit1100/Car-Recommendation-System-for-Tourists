@@ -203,31 +203,30 @@
         <div class="col-10">
             <div class="wrapper p-0 wrapprice">
 
-                <a href="{{ route('car_list_price', '3000', '10') }}/" class="item px-3 p-1 btn border">
-                    <p>ต่ำกว่า 10K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '0', 'maxprice' => '1000']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>น้อยกว่า 1000</p>
                 </a>
-                <a href="test/coupe" class="item px-3 p-1 btn border">
-                    <p>10K-40K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '1000', 'maxprice' => '2000']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>1000-2000</p>
                 </a>
-                <a href="test/hatchback" class="item px-3 p-1 btn border">
-                    <p>40K-80K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '2001', 'maxprice' => '3000']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>2001-3000</p>
                 </a>
-                <a href="test/pickup" class="item px-3 p-1 btn border">
-                    <p>80K-120K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '3001', 'maxprice' => '4000']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>3001-4000</p>
                 </a>
-                <a href="test/sedan" class="item px-3 p-1 btn border">
-                    <p>120K-160K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '4001', 'maxprice' => '5000']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>4001-5000</p>
                 </a>
-                <a href="test/suv" class="item px-3 p-1 btn border">
-                    <p>160K-200K</p>
+                <a href="{{ route('car_list_price', ['minprice' => '5001', 'maxprice' => '0']) }}"
+                    class="item px-3 p-1 btn border">
+                    <p>มากกว่า 5000</p>
                 </a>
-                <a href="test/van" class="item px-3 p-1 btn border">
-                    <p>200K-300K</p>
-                </a>
-                <a href="test/wagon" class="item px-3 p-1 btn border">
-                    <p>มากกว่า 300K</p>
-                </a>
-
 
             </div>
         </div>

@@ -300,14 +300,47 @@ class UserHomeController extends Controller
 
     public function car_list_price(Request $request, $minprice, $maxprice)
     {
-        dd($minprice, $maxprice);
+        // dd($minprice, $maxprice);
+        $MAXPRICEMAX = '';
+        $MINPRICEMIN = '';
+        if ($maxprice == 0) {
+            $maxprice = '';
+            $MINPRICEMIN = $minprice;
+        }
+        if ($minprice == 0) {
+            $minprice = '';
+            $MAXPRICEMAX = $maxprice;
+        }
         $cars = DB::table('car_dataset')
-            ->where('vehicle_style', 'suv')
+            ->when($minprice, function ($query) use ($minprice) {
+                return $query->where('price_rent', '>=', $minprice);
+            })
+            ->when($maxprice, function ($query) use ($maxprice) {
+                return $query->where('price_rent', '<=', $maxprice);
+            })
+            ->when($MINPRICEMIN, function ($query) use ($MINPRICEMIN) {
+                return $query->where('price_rent', '>', $MINPRICEMIN);
+            })
+            ->when($MAXPRICEMAX, function ($query) use ($MAXPRICEMAX) {
+                return $query->where('price_rent', '<', $MAXPRICEMAX);
+            })
             ->paginate(12);
 
         $totalcars = DB::table('car_dataset')
-            ->where('vehicle_style', 'suv')
+            ->when($minprice, function ($query) use ($minprice) {
+                return $query->where('price_rent', '>=', $minprice);
+            })
+            ->when($maxprice, function ($query) use ($maxprice) {
+                return $query->where('price_rent', '<=', $maxprice);
+            })
+            ->when($MINPRICEMIN, function ($query) use ($MINPRICEMIN) {
+                return $query->where('price_rent', '>', $MINPRICEMIN);
+            })
+            ->when($MAXPRICEMAX, function ($query) use ($MAXPRICEMAX) {
+                return $query->where('price_rent', '<', $MAXPRICEMAX);
+            })
             ->count();
-        return view('user.home.carlist-category', compact('cars', 'totalcars', 'category'));
+        // dd($totalcars);
+        return view('user.home.carlist-price', compact('cars', 'totalcars', 'minprice', 'maxprice'));
     }
 }
