@@ -110,7 +110,7 @@
                     <div class="row mt-3">
                         <div class="col-12">
                             <div class="text-welcome">
-                                <span>CAR RECOMMENTDATION</span>
+                                <span>CAR RECOMMENDATION</span>
                                 <p>ยินดีต้อนรับ! กรุณากรอกข้อมูลเพื่อเข้าสู่ระบบของคุณ</p>
                             </div>
                         </div>
