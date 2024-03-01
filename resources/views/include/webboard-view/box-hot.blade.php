@@ -16,7 +16,7 @@
     </div>
     <div class="card-body">
         @foreach ($post_hot as $ipost_hot)
-            <div class="row my-1">
+            <div class="row my-2 click-post text-white" role="button" data-id-post="{{ $ipost_hot->id }}">
                 <div class="col-2 img-hot p-0 d-flex align-items-center justify-content-center">
                     <img src="{{ '/assets/imguser/' . $ipost_hot->imgprofile }}" alt="">
                 </div>

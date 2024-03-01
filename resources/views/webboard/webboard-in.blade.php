@@ -244,5 +244,24 @@
             });
 
         });
+
+        // เปิด post
+        $(document).on('click', '.click-post', function() {
+            let id_post = $(this).data("id-post");
+            console.log(id_post);
+
+            $.ajax({
+                type: "post",
+                url: "{{ route('increment_post') }}",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    idpost: id_post
+                },
+                success: function(response) {
+                    console.log(response);
+                    window.location.href = "/webboard/webborad_in/" + response.idpost;
+                }
+            });
+        });
     </script>
 @endsection
