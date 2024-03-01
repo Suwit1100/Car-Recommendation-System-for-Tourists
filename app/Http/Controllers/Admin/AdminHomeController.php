@@ -19,8 +19,10 @@ class AdminHomeController extends Controller
     public function home_view()
     {
         Paginator::useBootstrap();
-        $log_user = Log::leftJoin('users', 'log.user_id', '=', 'users.id')
-            ->orderBy('log.created_at', 'desc')->get();
+        $log_user = DB::table('log')
+            ->leftJoin('users', 'log.user_id', '=', 'users.id')
+            ->select('users.name', 'users.lastname', 'users.type', 'users.email', 'users.id AS userid', 'log.*')
+            ->orderBy('log.created_at', 'desc')->paginate(8);
         $user_dashboard = User::all();
         $num_user = UseModel::all(); //กำลังใช้งานอยู่
         $total_faq = DB::table('faq')->where('toAdminType', 1)

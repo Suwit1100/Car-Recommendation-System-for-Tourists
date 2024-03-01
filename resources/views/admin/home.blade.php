@@ -179,10 +179,10 @@
 
         <div class="row mt-3 mx-1">
             <div class="box-log">
-                <table id="example" class="table table-striped px-1" style="width: 100%">
-                    <thead class="table-green">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td scope="col">Id</td>
+                            <td scope="col">ไอดีสมาชิก</td>
                             <td scope="col">ชื่อ</td>
                             <td scope="col">นามสกุล</td>
                             <td scope="col">email</td>
@@ -191,31 +191,24 @@
                             <td scope="col" id="time">เวลา</td>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($log_user as $item)
-                            <tr>
-                                <td scope="col">{{ $item->user_id }}</td>
-                                <td scope="col">{{ $item->name }}</td>
-                                <td scope="col">{{ $item->lastname }}</td>
-                                <td scope="col">{{ $item->email }}</td>
-                                <td scope="col">{{ $item->type == 0 ? 'สมาชิก' : 'แอดมิน' }}</td>
-                                <td scope="col">{{ $item->text_detail }}</td>
-                                <td scope="col">{{ $item->created_at }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                    @foreach ($log_user as $item)
+                        <tr>
+                            <td scope="col">{{ $item->userid }}</td>
+                            <td scope="col">{{ $item->name }}</td>
+                            <td scope="col">{{ $item->lastname }}</td>
+                            <td scope="col">{{ $item->email }}</td>
+                            <td scope="col">{{ $item->type == 0 ? 'สมาชิก' : 'แอดมิน' }}</td>
+                            <td scope="col">{{ $item->text_detail }}</td>
+                            <td scope="col">{{ \Carbon\Carbon::parse($item->created_at)->diffForhumans() }}</td>
+                        </tr>
+                    @endforeach
                 </table>
+                {{ $log_user->links() }}
             </div>
         </div>
     </div>
 @endsection
 @section('script')
-    {{-- JS-Table --}}
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    {{-- JS-Table --}}
-
     {{-- CHART.JS --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {{-- CHART.JS --}}
@@ -228,10 +221,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     {{-- plugins --}}
 
-
-    <script>
-        new DataTable('#example');
-    </script>
 
     <script>
         $(document).ready(function() {
