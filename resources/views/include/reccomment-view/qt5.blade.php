@@ -2,7 +2,7 @@
  <div class="qt-income">
      <div class="row ">
          <div class="col-12 mt-5">
-             <h5 class="text-center">โปรดเลือกรายได้ของคุณ 5/18</h5>
+             <h5 class="text-center answertitle">โปรดเลือกรายได้ของคุณ 5/18</h5>
          </div>
      </div>
      <div class="row my-1 pt-3">

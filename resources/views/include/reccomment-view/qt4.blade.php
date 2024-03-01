@@ -2,7 +2,7 @@
         <div class="qt-career">
             <div class="row">
                 <div class="col-12 mt-5">
-                    <h5 class="text-center">โปรดเลือกอาชีพของคุณ 4/18</h5>
+                    <h5 class="text-center answertitle">โปรดเลือกอาชีพของคุณ 4/18</h5>
                 </div>
             </div>
             <div class="row mt-1 pt-3">

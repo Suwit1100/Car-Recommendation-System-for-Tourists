@@ -2,7 +2,7 @@
  <div class="qt-factorrent">
      <div class="row ">
          <div class="col-12 mt-5">
-             <h5 class="text-center">คุณให้ความสำคัญกับปัจจัยใดเมื่อเลือกเช่ารถยนต์ 12/18</h5>
+             <h5 class="text-center answertitle">คุณให้ความสำคัญกับปัจจัยใดเมื่อเลือกเช่ารถยนต์ 12/18</h5>
          </div>
      </div>
      <div class="row my-1 pt-3">

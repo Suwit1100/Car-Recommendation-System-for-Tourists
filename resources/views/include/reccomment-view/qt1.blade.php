@@ -2,7 +2,7 @@
     <div class="qt-sex">
         <div class="row d-flex justify-content-center">
             <div class="col-12 mt-5">
-                <h5 class="text-center">โปรดเลือกเพศของคุณ 1/18</h5>
+                <h5 class="text-center answertitle">โปรดเลือกเพศของคุณ 1/18</h5>
             </div>
         </div>
         {{-- ก่อนหน้า ถัดไป --}}

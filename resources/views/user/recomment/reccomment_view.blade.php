@@ -184,6 +184,12 @@
             pointer-events: none;
         }
 
+        .answertitle {
+            color: #134bc5;
+            font-size: 26px;
+            font-weight: 900;
+        }
+
         @media only screen and (max-width: 500px) {
             #btn-next-review {
                 display: flex;

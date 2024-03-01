@@ -2,7 +2,7 @@
      <div class="qt-ownercar">
          <div class="row ">
              <div class="col-12 mt-5">
-                 <h5 class="text-center">ระยะเวลาในการเป็นเจ้าของรถยนต์ 10/18</h5>
+                 <h5 class="text-center answertitle">ระยะเวลาในการเป็นเจ้าของรถยนต์ 10/18</h5>
              </div>
          </div>
          <div class="row my-1 pt-3">
