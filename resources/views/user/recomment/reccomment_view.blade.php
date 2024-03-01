@@ -358,6 +358,7 @@
                 $('#income40001-50000').prop('disabled', true);
                 $('#income50001-100000').prop('disabled', true);
                 $('#income100000').prop('disabled', true);
+                $('no-income').prop('disabled', false);
             } else {
                 $('#income10000').prop('disabled', false);
                 $('#income10000-20000').prop('disabled', false);
@@ -366,6 +367,7 @@
                 $('#income40001-50000').prop('disabled', false);
                 $('#income50001-100000').prop('disabled', false);
                 $('#income100000').prop('disabled', false);
+                $('no-income').prop('disabled', true);
             }
         });
         // next-4
@@ -539,12 +541,14 @@
                 $('#ownercar_4to6').prop('disabled', true);
                 $('#ownercar_7to10').prop('disabled', true);
                 $('#ownercar_7to10').prop('disabled', true);
+                $('ownercar_no').prop('disabled', false);
             } else {
                 $('#ownercar_1').prop('disabled', false);
                 $('#ownercar_1to3').prop('disabled', false);
                 $('#ownercar_4to6').prop('disabled', false);
                 $('#ownercar_7to10').prop('disabled', false);
                 $('#ownercar_7to10').prop('disabled', false);
+                $('ownercar_no').prop('disabled', true);
             }
         });
         // next-9
