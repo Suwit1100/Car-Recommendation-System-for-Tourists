@@ -5,10 +5,16 @@
             <span id="text_search"></span>
         </span>
     </div>
-    <div class="col-4 col-md-2 mt-1" id="price_select" style="display: none;">
+    <div class="col-4 col-md-2 mt-1" id="price_select" style="">
         <span class="text-truncate bg-light form-control" style="max-width: 100%; font-size:12px;">
-            <i class="fa-solid fa-xmark" style="font-size:12px;" role="button" id="price_close"></i>
-            <span id="text_price"></span>
+            <span id="text_price">
+                {{-- {{ dd($minprice, $maxprice) }} --}}
+                <span
+                    {{ $minprice == '' || $maxprice == '' ? 'hidden' : '' }}>{{ $minprice }}-{{ $maxprice }}</span>
+                <span {{ $maxprice == '' ? 'hidden' : '' }}>ต่ำกว่า {{ $maxprice }}</span>
+                <span {{ $minprice == '' ? 'hidden' : '' }}>มากกว่า {{ $minprice }}</span>
+
+            </span>
         </span>
     </div>
     <div class="col-4 col-md-2 mt-1" id="year_select">

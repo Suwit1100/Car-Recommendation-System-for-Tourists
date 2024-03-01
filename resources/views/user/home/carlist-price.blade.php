@@ -156,14 +156,14 @@
     {{-- เนื้อหา --}}
     <div class="row">
         {{-- ตัวกรอง st --}}
-        @include('include.carlist.filter')
+        @include('include.carlist-price.filter')
         {{-- ตัวกรอง ed --}}
         <div class="col-12 col-md-8">
-            @include('include.carlist.header')
-            @include('include.carlist.valselect')
-            {{-- carlist --}}
+            @include('include.carlist-price.header')
+            @include('include.carlist-price.valselect')
+            {{-- carlist-price --}}
             <div class="row" id="cardata">
-                @include('include.carlist.datacar')
+                @include('include.carlist-price.datacar')
             </div>
             <div class="loader text-center mt-5" style="display: none;">
                 <div class="d-flex justify-content-center">
@@ -178,7 +178,7 @@
         {{-- <div class="testvalue btn green">
             กดสิ
         </div> --}}
-        @include('include.carlist.filtermobile')
+        @include('include.carlist-price.filtermobile')
     </div>
 
     {{-- filter-mobile --}}

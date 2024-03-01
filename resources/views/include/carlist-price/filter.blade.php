@@ -20,12 +20,12 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <input type="number" class="form-control" name="minPrice" placeholder="2,000"
-                                    value="">
+                                <input type="number" class="form-control" name="minPrice" placeholder="700"
+                                    value="{{ $minprice }}" disabled>
                             </div>
                             <div class="col-6">
                                 <input type="number" class="form-control" name="maxPrice" placeholder="150,000"
-                                    value="">
+                                    value="{{ $maxprice }}" disabled>
                             </div>
                         </div>
                     </div>
@@ -300,7 +300,10 @@
 
             {{-- เกียร์ st --}}
             @php
-                $transmission = DB::table('car_dataset')->select('transmission_type')->distinct('transmission_type')->get();
+                $transmission = DB::table('car_dataset')
+                    ->select('transmission_type')
+                    ->distinct('transmission_type')
+                    ->get();
             @endphp
             <div class="accordion-item">
                 <h2 class="accordion-header" id="filter_tranmission">
