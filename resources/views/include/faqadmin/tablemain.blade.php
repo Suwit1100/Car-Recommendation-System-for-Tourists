@@ -20,7 +20,7 @@
                     <tr>
                         <th>ชื่อเรื่อง</th>
                         <th>เนื้อหา</th>
-                        <th>ส่งถึง</th>
+                        <th>จาก</th>
                         <th>เวลาส่ง</th>
                         <th>สถานะ</th>
                         <th>เปิดอ่าน</th>
@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{ $lifaq->title }}</td>
                             <td>{{ $lifaq->content }}</td>
-                            <td>แอดมิน</td>
+                            <td>{{ $lifaq->name }} {{ $lifaq->lastname }}</td>
                             <td>{{ \Carbon\Carbon::parse($lifaq->created_at)->diffForhumans() }}
                             </td>
                             <td>{{ $lifaq->statusAdmin == 'new' ? 'ใหม่' : ($lifaq->statusAdmin == 'send' ? 'ส่งแล้ว' : 'อ่านแล้ว') }}

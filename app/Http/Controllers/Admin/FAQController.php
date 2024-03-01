@@ -36,7 +36,11 @@ class FAQController extends Controller
         }
 
         $faq_count = Faq::where('toAdminType', '1')->where('statusAdmin', 'new')->get();
-        $faq = Faq::where('toAdminType', '1')->where('deleteAdmin', 'not_delete')->get();
+        $faq = Faq::leftJoin('users', 'faq.toUserId', '=', 'users.id')
+            ->where('toAdminType', '1')
+            ->where('deleteAdmin', 'not_delete')
+            ->select('users.name', 'users.lastname', 'faq.*')
+            ->get();
         // dd($faq);
 
         $faq_reply = Faq::where('statusAdmin', 'send')->where('deleteAdmin', 'not_delete')->get();
