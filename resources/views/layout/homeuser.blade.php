@@ -577,7 +577,7 @@
     <div class="box-top">
         <hr>
     </div>
-    <main class="box-content mt-5">
+    <main class="box-content mt-5" id="box-content">
         @yield('slideimg')
         <div class="container-fluid">
             @yield('content')
