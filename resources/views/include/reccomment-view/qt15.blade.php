@@ -24,7 +24,8 @@
                  <label class="box-lable" for="travelwith_family">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
-                         <img src="https://cf.ltkcdn.net/family/images/std/200821-800x533r1-family.jpg">
+                         <img
+                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXCfE6bzWMFTgcllsjC-nlTnYRr-wpUVu5SQ&usqp=CAU">
                      </div>
                      <div class="box-text">
                          <h6 class="text-center">ครอบครัว</h6>
@@ -51,7 +52,8 @@
                  <label class="box-lable" for="travelwith_lover">
                      <i class="bi bi-check px-1 mt-1"></i>
                      <div class="box-img text-center mt-2">
-                         <img src="https://mthai.com/app/uploads/2022/02/couple3.jpg">
+                         <img
+                             src="https://cdn.thecoolist.com/wp-content/uploads/2022/03/Take-a-Drive-and-See-Where-the-Road-Takes-You.png">
                      </div>
                      <div class="box-text">
                          <h6 class="text-center">คู่รัก</h6>

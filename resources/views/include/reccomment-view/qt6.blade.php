@@ -23,7 +23,8 @@
              <label class="box-lable" for="status_singer">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://www.mendetails.com/wp-content/uploads/2020/12/2766782.jpg">
+                     <img
+                         src="https://gaytherapyla.com/wp-content/uploads/2020/05/single-gay-man-on-beach-with-sunglasses-deposit-photo-May-2020.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">โสด</h6>
@@ -37,7 +38,7 @@
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
                      <img
-                         src="https://us-fbcloud.net/wb/data/864/864067-topic-1427185437-0p.jpg">
+                         src="https://www.lovepanky.com/wp-content/uploads/2016/01/cute-things-to-do-for-your-boyfriend-1.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">มีคู่</h6>
@@ -50,7 +51,8 @@
              <label class="box-lable" for="status_married">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://p-u.popcdn.net/attachments/images/000/025/897/large/03_FB.png?1589955191">
+                     <img
+                         src="https://static.wixstatic.com/media/0d5fc8_8b3ab12a5a5e4fb59468d200012eaa85~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/0d5fc8_8b3ab12a5a5e4fb59468d200012eaa85~mv2.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">แต่งงานแล้ว</h6>
@@ -63,7 +65,8 @@
              <label class="box-lable" for="status_widowed">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://d.newsweek.com/en/full/2322412/funeral.jpg">
+                     <img
+                         src="https://www.thestreet.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_768/MTkzNDk2MDY4MDIzOTIwMDY3/pexels-ivan-samkov-8963707.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">หม้าย</h6>
@@ -76,7 +79,8 @@
              <label class="box-lable" for="status_divorce">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img src="https://img.kapook.com/u/2018/sutasinee/06/a16.jpg">
+                     <img
+                         src="https://isaanlawyers.com/wp-content/uploads/2022/02/selective-focus-of-couple-sitting-at-table-with-di-2021-08-30-01-46-31-utc-scaled.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">หย่าร้าง</h6>
@@ -89,7 +93,7 @@
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
                      <img
-                         src="https://futuretrend.co/wp-content/uploads/2022/08/how-to-say-no-to-taking-on-more-work-1.jpg">
+                         src="https://www.shutterstock.com/image-photo/photo-serious-dark-skin-african-600nw-1751553467.jpg">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">ไม่ต้องการระบุ</h6>

@@ -24,8 +24,7 @@
              <label class="box-lable" for="travellevel_no">
                  <i class="bi bi-check px-1 mt-1"></i>
                  <div class="box-img text-center mt-2">
-                     <img
-                         src="https://futuretrend.co/wp-content/uploads/2022/08/how-to-say-no-to-taking-on-more-work-1.jpg">
+                     <img src="https://img5.pic.in.th/file/secure-sv1/Level-0.png">
                  </div>
                  <div class="box-text">
                      <h6 class="text-center">ไม่เคยเดินทางมาก่อน</h6>
