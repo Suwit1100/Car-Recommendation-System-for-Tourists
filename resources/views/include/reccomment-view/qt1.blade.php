@@ -24,8 +24,7 @@
                 <label class="box-lable" for="male">
                     <i class="bi bi-check px-1 mt-1"></i>
                     <div class="box-img text-center mt-2">
-                        <img
-                            src="https://storage.googleapis.com/mv-prod-blog-en-assets/2022/03/5adda5b6-male-body-types-mindvalley-blog-02-midjourney-seo-team.webp">
+                        <img src="https://www.forthwithlife.co.uk/wp-content/uploads/2021/12/Blog-Headers-2.png">
                     </div>
                     <div class="box-text">
                         <h6 class="text-center">ชาย</h6>

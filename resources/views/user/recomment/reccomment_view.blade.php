@@ -15,7 +15,8 @@
             border-radius: 100%;
             color: white;
             position: relative;
-            left: 45%;
+            top: 4px;
+            left: 47%;
             transform: translateX(-50%);
             transition: 0.5s;
             opacity: 0;
@@ -32,9 +33,17 @@
             object-position: center center;
         }
 
-        .box-text>h6 {
+        .box-text {
             color: #000000;
             font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-text>h6 {
+            font-size: 18px !important;
+            font-weight: 700 !important;
         }
 
 
