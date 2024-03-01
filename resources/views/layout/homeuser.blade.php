@@ -579,7 +579,7 @@
     </div>
     <main class="box-content mt-5">
         @yield('slideimg')
-        <div class="container-fluid" id="content-user-layout">
+        <div class="container-fluid">
             @yield('content')
 
             <span class="close-chatbot">

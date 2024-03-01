@@ -53,7 +53,7 @@
             opacity: 1;
         }
 
-        /* .qt-sex, */
+        .qt-sex,
         .qt-old,
         .qt-education,
         .qt-career,
@@ -218,7 +218,7 @@
     @include('include.reccomment-view.qt17')
     @include('include.reccomment-view.qt18')
     @include('include.reccomment-view.re-rec')
-    <div class="box-load" hidden>
+    <div class="box-load">
         <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
@@ -871,9 +871,6 @@
                 if (result.isConfirmed) {
                     $(".qt-factor-attraction").css("display", 'none')
                     $('.box-load').attr('hidden', false);
-                    $('#content-user-layout').css(
-                        'background-color': '#fbfcf6',
-                        'box-shadow': 'none');
                     console.log('ลอง' + answerold);
 
                     $.ajax({
@@ -906,10 +903,6 @@
                             $('#md-result').val(response.result);
                             setTimeout(function() {
                                 $('.box-load').attr('hidden', true);
-                                $('#content-user-layout').css({
-                                    'background-color': '#ffff',
-                                    'box-shadow': '2px 2px 4px 1px rgba(0, 0, 0, 0.2)'
-                                });
                                 if (response.result == 'suv') {
                                     $(".result-suv").css("display", 'block')
                                 } else if (response.result == 'coupe') {
