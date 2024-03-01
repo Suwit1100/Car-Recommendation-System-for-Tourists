@@ -5,9 +5,16 @@
         ->leftJoin('faq', 'notify.faq_id', '=', 'faq.id')
         ->where('to_user_id', Auth::user()->id)
         ->orwhere('to_admin_type', 1)
-        ->select('users.name', 'users.lastname', 'users.imgprofile', 'notify.*', 'faq.title As faqtitle', 'post.title As posttitle')
+        ->select(
+            'users.name',
+            'users.lastname',
+            'users.imgprofile',
+            'notify.*',
+            'faq.title As faqtitle',
+            'post.title As posttitle',
+        )
         ->orderBy('notify.created_at', 'DESC')
-        ->paginate(3);
+        ->paginate(6);
 @endphp
 
 @foreach ($notiadmin as $inotiadmin)
