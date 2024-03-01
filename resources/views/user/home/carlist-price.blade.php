@@ -894,11 +894,11 @@
                 $('#search_select').hide();
 
                 // price reset
-                $('input[name="minPrice"]').val('');
-                $('input[name="maxPrice"]').val('');
-                valPricemin = '';
-                valPricemax = '';
-                $('#price_select').hide();
+                // $('input[name="minPrice"]').val('');
+                // $('input[name="maxPrice"]').val('');
+                // valPricemin = '';
+                // valPricemax = '';
+                // $('#price_select').hide();
 
                 // year reset
                 slider.slider("values", [1990, 2017]);
