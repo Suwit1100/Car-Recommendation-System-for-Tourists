@@ -23,7 +23,8 @@
               <label class="box-lable" for="old20_24">
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
-                      <img src="https://i.insider.com/60cb783f23393a00188e3ce8?width=700">
+                      <img
+                          src="https://media.istockphoto.com/id/1217033111/photo/man-extending-hands-forward-to-hold-something-leaning-to-product-helping-out-friend-carry.jpg?s=612x612&w=0&k=20&c=51I9b80TN54e1q6u1uIbvPSAe5hyrHsaaqO6hv3oNbY=">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">20-24</h6>
@@ -36,7 +37,7 @@
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
                       <img
-                          src="https://imagez.tmz.com/image/bc/4by3/2020/03/19/bcb27643e2af4e8788e17ba30feb447f_xl.jpg">
+                          src="https://st4.depositphotos.com/2208684/20873/i/450/depositphotos_208734482-stock-photo-portrait-middle-aged-businessman-wearing.jpg">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">25-34</h6>
@@ -48,7 +49,8 @@
               <label class="box-lable" for="old35_44">
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
-                      <img src="https://i.dailymail.co.uk/i/pix/2014/08/14/article-0-2084AAB800000578-788_634x788.jpg">
+                      <img
+                          src="https://media.istockphoto.com/id/645075706/photo/mature-businessman-smiling-wearing-classic-suit.jpg?s=612x612&w=0&k=20&c=nwkIaq8_3EJg9fFWMVYMv4y7kLwUuHBL8Np6Nigwhg4=">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">35-44</h6>
@@ -61,7 +63,7 @@
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
                       <img
-                          src="https://hips.hearstapps.com/hmg-prod/images/brad-pitt-winner-outstanding-performance-by-a-male-actor-in-news-photo-1611158903.">
+                          src="https://t4.ftcdn.net/jpg/02/90/56/65/360_F_290566590_jYXKkMrICdQoZHWZXyknM9555EKYvnoV.jpg">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">45-54</h6>
@@ -73,7 +75,8 @@
               <label class="box-lable" for="old55_64">
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
-                      <img src="https://cdn.britannica.com/54/206654-050-31D54746/Kurt-Russell-2017.jpg">
+                      <img
+                          src="https://t3.ftcdn.net/jpg/05/42/05/88/360_F_542058884_WD10jTzyGGiMi40aPQjFYsZg3hXl5K7s.jpg">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">55-64</h6>
@@ -86,7 +89,7 @@
                   <i class="bi bi-check px-1 mt-1"></i>
                   <div class="box-img text-center mt-2">
                       <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu09q8KL1S7PKeQtis6Ue71lpB5YJJCku6L5qiGvYqu4EfdiyBnlW2rC6MLNA4xGoUnPc&usqp=CAU">
+                          src="https://t3.ftcdn.net/jpg/01/59/16/06/360_F_159160697_bL88j66SSnOUeT8ncnbVZRKegwbXBH1c.jpg">
                   </div>
                   <div class="box-text">
                       <h6 class="text-center">65 ปีขึ้นไป</h6>

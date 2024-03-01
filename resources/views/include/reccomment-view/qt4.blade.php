@@ -78,8 +78,7 @@
                     <label class="box-lable" for="tradesman">
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
-                            <img
-                                src="https://i0.wp.com/www.xinhuathai.com/wp-content/uploads/2019/08/XxjpbeE007377_20190808_PEPFN0A001.jpg?resize=696%2C463&ssl=1">
+                            <img src="https://craftnroll.net/wp-content/uploads/2019/06/cover-cnr-1.jpg">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">ช่าง/ฝีมืออาชีพ</h6>
@@ -119,7 +118,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://futuretrend.co/wp-content/uploads/2022/08/how-to-say-no-to-taking-on-more-work-1.jpg">
+                                src="https://www.mindspringconsulting.com/wp-content/uploads/2021/12/mid-career-burnout.jpg">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">ไม่ได้ประกอบอาชีพในขณะนี้</h6>
