@@ -297,4 +297,17 @@ class UserHomeController extends Controller
             ->count();
         return view('user.home.carlist-category', compact('cars', 'totalcars', 'category'));
     }
+
+    public function car_list_price(Request $request, $minprice, $maxprice)
+    {
+        dd($minprice, $maxprice);
+        $cars = DB::table('car_dataset')
+            ->where('vehicle_style', 'suv')
+            ->paginate(12);
+
+        $totalcars = DB::table('car_dataset')
+            ->where('vehicle_style', 'suv')
+            ->count();
+        return view('user.home.carlist-category', compact('cars', 'totalcars', 'category'));
+    }
 }

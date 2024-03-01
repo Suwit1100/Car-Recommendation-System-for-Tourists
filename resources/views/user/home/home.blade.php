@@ -203,7 +203,7 @@
         <div class="col-10">
             <div class="wrapper p-0 wrapprice">
 
-                <a href="test/" class="item px-3 p-1 btn border">
+                <a href="{{ route('car_list_price', '3000', '10') }}/" class="item px-3 p-1 btn border">
                     <p>ต่ำกว่า 10K</p>
                 </a>
                 <a href="test/coupe" class="item px-3 p-1 btn border">

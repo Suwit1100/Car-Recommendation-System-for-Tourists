@@ -48,6 +48,7 @@ Route::middleware(['auth', 'checkuser'])->group(function () {
     Route::get('/car_mylike', [UserHomeController::class, 'car_mylike'])->name('car_mylike');
     Route::get('/car_list_make/{make}', [UserHomeController::class, 'car_list_make'])->name('car_list_make');
     Route::get('/car_list_category/{category}', [UserHomeController::class, 'car_list_category'])->name('car_list_category');
+    Route::get('/car_list_price/{minprice}/{maxprice}', [UserHomeController::class, 'car_list_price'])->name('car_list_price');
 
     Route::get('/read_notify_user', [NotifyController::class, 'read_notify_user'])->name('read_notify_user');
 
