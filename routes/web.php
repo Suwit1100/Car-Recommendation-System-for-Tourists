@@ -102,6 +102,12 @@ Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::get('force_delete_user/{id}', [ManageUserController::class, 'force_delete_user'])->name('force_delete_user');
     Route::get('edit_user/{id}', [ManageUserController::class, 'edit_user'])->name('edit_user');
     Route::post('/edit_profile_post_admin/{id}', [ManageUserController::class, 'edit_profile_post_admin'])->name('edit_profile_post_admin');
+
+    //report
+    Route::get('report_post_view_admin', [ManageUserController::class, 'report_post_view_admin'])->name('report_post_view_admin');
+    Route::get('report_post_comment_admin', [ManageUserController::class, 'report_post_comment_admin'])->name('report_post_comment_admin');
+
+    //report
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -39,4 +39,14 @@ class ReportController extends Controller
             'session' => 'รายงานความคิดเห็นสำเร็จ'
         ]);
     }
+
+    public function report_post_view_admin(Request $request)
+    {
+        return view('admin.report.repost-post');
+    }
+
+    public function report_post_comment_admin(Request $request)
+    {
+        return view('admin.report.repost-comment');
+    }
 }

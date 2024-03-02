@@ -43,6 +43,20 @@
                 </li>
             </ul>
         </li>
+        <li id="test">
+            <a href="#Repost" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-ban icon-remove-margin"></i>
+                รายงาน
+            </a>
+            <ul class="collapse list-unstyled" id="Repost">
+                <li>
+                    <a href="{{ route('report_post_view_admin') }}">รายงานกระทู้</a>
+                </li>
+                <li>
+                    <a href="{{ route('report_post_comment_admin') }}">รายงานความคิดเห็น</a>
+                </li>
+            </ul>
+        </li>
         <li class="{{ request()->path() == 'admin-webborad-view' ? 'active' : '' }}">
             <a href="{{ route('webboard_view') }}">
                 <i class="bi bi-file-post icon-remove-margin"></i>
