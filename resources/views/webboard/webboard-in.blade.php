@@ -281,6 +281,42 @@
 
         });
 
+        //รายงาน post
+        $(document).on('click', '.click-report-post', function() {
+            let id_post = $(this).data("id-post");
+            Swal.fire({
+                title: 'คุณแน่ใจหรือไม่?',
+                text: 'คุณต้องการรายงานกระทู้นี้ใช่หรือไม่ ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'ใช่, รายงาน!',
+                cancelButtonText: 'ยกเลิก'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "get",
+                        url: "{{ route('report_post_user') }}",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            id_post: id_post,
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: response.session_reportpost,
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                            });
+                        }
+                    });
+                }
+            });
+
+        });
+
         // เปิด post
         $(document).on('click', '.click-post', function() {
             let id_post = $(this).data("id-post");

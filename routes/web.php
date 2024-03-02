@@ -122,6 +122,8 @@ Route::middleware(['auth'])->group(function () {
     });
     //report
     Route::get('/report_comment_user', [ReportController::class, 'report_comment_user'])->name('report_comment_user');
+    Route::get('/report_post_user', [ReportController::class, 'report_post_user'])->name('report_post_user');
+
     //report
 
     Route::get('/edit_profile_view', [EditProfileController::class, 'edit_profile_view'])->name('edit_profile_view');

@@ -11,10 +11,16 @@ class ReportController extends Controller
 {
     public function report_post_user(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $id_post =  $request->id_post;
         ReportPost::create([
-            'post_id' => '',
+            'post_id' => $id_post,
             'report_by' => Auth::user()->id,
+        ]);
+
+        return response()->json([
+            'status' => '200',
+            'session_reportpost' => 'รายงานกระทู้สำเร็จ'
         ]);
     }
 
@@ -30,7 +36,7 @@ class ReportController extends Controller
 
         return response()->json([
             'status' => '200',
-            'session' => 'รายงานสำเร็จ'
+            'session' => 'รายงานความคิดเห็นสำเร็จ'
         ]);
     }
 }
