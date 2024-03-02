@@ -32,8 +32,8 @@
 <div class="col-12 mt-3 d-flex justify-content-end">
     <div class="box-like">
         <i class="fa-solid fa-ban click-report-post" style="color: red" role="button"
-            data-id-post="{{ $post->id }}"></i>
-        {{-- {{ $post->post_by == Auth::user()->id ? 'hidden' : '' }} --}}
+            data-id-post="{{ $post->id }}" {{ $post->post_by == Auth::user()->id ? 'hidden' : '' }}></i>
+
         <i class="ms-1 fa-solid fa-eye "></i>
         <span class="ms-1">{{ $post->numview }}</span>
         <i class="fa-solid fa-comment ms-1"></i>
