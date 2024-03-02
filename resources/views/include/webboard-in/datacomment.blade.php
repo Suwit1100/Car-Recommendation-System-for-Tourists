@@ -31,7 +31,7 @@
                                 </a>
                             </li>
                             <li {{ $icomment->comment_by == Auth::user()->id ? 'hidden' : '' }}>
-                                <a class="dropdown-item click-delete-comment" data-id-comment="{{ $icomment->id }}"
+                                <a class="dropdown-item click-report-comment" data-id-comment="{{ $icomment->id }}"
                                     data-id-post = "{{ $post->id }}" role="button">
                                     <i class="fa-solid fa-ban" style="color: red"></i>
                                     <span>รายงาน</span>

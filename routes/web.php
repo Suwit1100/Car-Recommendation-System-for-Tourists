@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\NotifyController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TokenController;
 use App\Http\Controllers\User\FAQUserController;
@@ -119,6 +120,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/webboard_my_like', [WebboardController::class, 'webboard_my_like'])->name('webboard_my_like');
         Route::get('/webboard_my_comment', [WebboardController::class, 'webboard_my_comment'])->name('webboard_my_comment');
     });
+    //report
+    Route::get('/report_comment_user', [ReportController::class, 'report_comment_user'])->name('report_comment_user');
+    //report
+
     Route::get('/edit_profile_view', [EditProfileController::class, 'edit_profile_view'])->name('edit_profile_view');
     Route::post('/edit_profile_post/{id}', [EditProfileController::class, 'edit_profile_post'])->name('edit_profile_post');
     Route::post('/status_token', [TokenController::class, 'status_token'])->name('status_token');

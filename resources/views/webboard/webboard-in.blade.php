@@ -245,6 +245,42 @@
 
         });
 
+        //รายงาน comment
+        $(document).on('click', '.click-report-comment', function() {
+            let id_comment = $(this).data("id-comment");
+            Swal.fire({
+                title: 'คุณแน่ใจหรือไม่?',
+                text: 'คุณต้องการรายงานความคิดเห็นนี้ใช่หรือไม่ ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'ใช่, รายงาน!',
+                cancelButtonText: 'ยกเลิก'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "get",
+                        url: "{{ route('report_comment_user') }}",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            id_comment: id_comment,
+                        },
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: response.session,
+                                showConfirmButton: false,
+                                timer: 2000,
+                                timerProgressBar: true,
+                            });
+                        }
+                    });
+                }
+            });
+
+        });
+
         // เปิด post
         $(document).on('click', '.click-post', function() {
             let id_post = $(this).data("id-post");
