@@ -104,8 +104,8 @@ Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::post('/edit_profile_post_admin/{id}', [ManageUserController::class, 'edit_profile_post_admin'])->name('edit_profile_post_admin');
 
     //report
-    Route::get('report_post_view_admin', [ManageUserController::class, 'report_post_view_admin'])->name('report_post_view_admin');
-    Route::get('report_post_comment_admin', [ManageUserController::class, 'report_post_comment_admin'])->name('report_post_comment_admin');
+    Route::get('report_post_view_admin', [ReportController::class, 'report_post_view_admin'])->name('report_post_view_admin');
+    Route::get('report_post_comment_admin', [ReportController::class, 'report_post_comment_admin'])->name('report_post_comment_admin');
 
     //report
 });
