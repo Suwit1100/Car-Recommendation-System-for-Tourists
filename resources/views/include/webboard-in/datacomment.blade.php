@@ -16,18 +16,25 @@
                             <i class="fa-solid fa-ellipsis"></i>
                         </span>
                         <ul class="dropdown-menu" aria-labelledby="clickMoreComment">
-                            <li>
+                            <li {{ $icomment->comment_by != Auth::user()->id ? 'hidden' : '' }}>
                                 <a class="dropdown-item" role="button" data-bs-toggle="modal"
                                     data-bs-target="#editComment{{ $key }}">
                                     <i class="fa-solid fa-pen"></i>
                                     <span>แก้ไข</span>
                                 </a>
                             </li>
-                            <li>
+                            <li {{ $icomment->comment_by != Auth::user()->id ? 'hidden' : '' }}>
                                 <a class="dropdown-item click-delete-comment" data-id-comment="{{ $icomment->id }}"
-                                    data-id-post = "{{ $post->id }}">
+                                    data-id-post = "{{ $post->id }}" role="button">
                                     <i class="fa-solid fa-trash"></i>
                                     <span>ลบ</span>
+                                </a>
+                            </li>
+                            <li {{ $icomment->comment_by == Auth::user()->id ? 'hidden' : '' }}>
+                                <a class="dropdown-item click-delete-comment" data-id-comment="{{ $icomment->id }}"
+                                    data-id-post = "{{ $post->id }}" role="button">
+                                    <i class="fa-solid fa-ban" style="color: red"></i>
+                                    <span>รายงาน</span>
                                 </a>
                             </li>
                         </ul>
