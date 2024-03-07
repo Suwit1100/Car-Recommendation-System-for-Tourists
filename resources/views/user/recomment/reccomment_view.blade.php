@@ -62,7 +62,7 @@
             opacity: 1;
         }
 
-        .qt-sex,
+        /* .qt-sex, */
         .qt-old,
         .qt-education,
         .qt-career,
@@ -76,7 +76,7 @@
         .qt-factorrent,
         .qt-factordrive,
         .qt-travellevel,
-        /* .qt-travelwith, */
+        .qt-travelwith,
         .qt-typeattraction,
         .qt-attraction,
         .qt-factor-attraction {
