@@ -10,7 +10,7 @@
         }
 
         .imgcar img {
-            max-width: 100%;
+            min-width: 100%;
             object-fit: cover;
             object-position: center center;
         }

@@ -1,5 +1,17 @@
 @extends('layout.homeuser')
 @section('style')
+    <style>
+        .img-car {
+            height: 270px;
+        }
+
+        .img-car img {
+            object-fit: cover;
+            object-position: center center;
+            min-width: 100%;
+            min-height: 100%
+        }
+    </style>
 @endsection
 @section('content')
     <div class="row pt-3">
@@ -14,8 +26,9 @@
         @foreach ($car_like as $icar_like)
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-2">
                 <div class="card">
-                    <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds"
-                        class="card-img-top" alt="">
+                    <div class="img-car">
+                        <img src="{{ asset('assets/imgcar/' . $icar_like->imgcar) }}" class="card-img-top" alt="">
+                    </div>
                     <div class="card-body">
                         <p class="card-title  text-truncate text-20-bolder m-0" style="color: #134bc5">
                             {{ $icar_like->make }}
