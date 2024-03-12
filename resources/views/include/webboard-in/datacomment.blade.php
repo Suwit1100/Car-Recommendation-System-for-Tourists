@@ -12,7 +12,8 @@
                         </div>
                     </div>
                     <div class="dropdown">
-                        <span class="btn mx-2" id="clickMoreComment" data-bs-toggle="dropdown">
+                        <span class="btn mx-2" id="clickMoreComment" data-bs-toggle="dropdown"
+                            {{ $icomment->comment_by != Auth::user()->id ? 'hidden' : '' }}>
                             <i class="fa-solid fa-ellipsis"></i>
                         </span>
                         <ul class="dropdown-menu" aria-labelledby="clickMoreComment">
