@@ -39,7 +39,7 @@
                         <i class="bi bi-check px-1 mt-1"></i>
                         <div class="box-img text-center mt-2">
                             <img
-                                src="https://static.trueplookpanya.com/tppy/member/m_722500_725000/724658/cms/images/11.shutterstock_1708787632.jpg">
+                                src="https://png.pngtree.com/png-vector/20240131/ourlarge/pngtree-man-reading-a-book-against-globe-background-read-a-book-reading-png-image_11521227.png">
                         </div>
                         <div class="box-text">
                             <h6 class="text-center">กิจกรรมที่เกี่ยวกับการเรียนรู้และพัฒนาตนเอง</h6>
