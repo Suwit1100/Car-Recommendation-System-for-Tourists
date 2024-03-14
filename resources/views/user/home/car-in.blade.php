@@ -3,7 +3,6 @@
     <style>
         .imgcar {
             width: 100%;
-            overflow: hidden;
             border-radius: 10px;
             filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
             height: 500px;
@@ -11,6 +10,9 @@
 
         .imgcar img {
             min-width: 100%;
+            min-height: 500px;
+            max-width: 100%;
+            max-height: 500px;
             object-fit: cover;
             object-position: center center;
         }

@@ -242,7 +242,7 @@ class UserHomeController extends Controller
         $car_like = DB::table('like_car')
             ->leftJoin('car_dataset', 'car_dataset.id_cardataset', '=', 'like_car.carpost_id')
             ->where('like_car.likeby_userid', Auth::user()->id)
-            ->where('like_car.likeby_userid', Auth::user()->id)
+            ->where('like_car.status', 'ready')
             ->orderBy('like_car.created_at', 'DESC')
             ->paginate(8);
         // dd($car_like);
