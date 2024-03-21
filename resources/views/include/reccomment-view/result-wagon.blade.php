@@ -21,7 +21,7 @@
 @endphp
 <div class="result-wagon">
     <div class="row">
-        <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
             <div class="text-result">
                 <p class="title">รถยนต์ที่แนะนำWagon</p>
                 <span class="details">
@@ -31,7 +31,7 @@
                 </span>
             </div>
         </div>
-        <div class="col-6 ">
+        <div class="col-lg-6 ">
             <div class="img-result">
                 <img src="https://www.ebaymotorsblog.com/motors/blog/wp-content/uploads/2022/10/Ford_Taurus_Station_Wagon_right_front_profile.jpg"
                     alt="">
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
             <div class="row">
                 <div class="col-4">
                     <div class="box-feture">
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 d-flex justify-content-end align-items-center">
+        <div class="col-lg-6 d-flex justify-content-end align-items-center">
             <button class="btn btn-next-pre" data-bs-toggle="modal" data-bs-target="#myModal">
                 <i class="fa-solid fa-circle-right"></i>
             </button>
