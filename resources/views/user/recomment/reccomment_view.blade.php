@@ -62,7 +62,7 @@
             opacity: 1;
         }
 
-        /* .qt-sex, */
+        .qt-sex,
         .qt-old,
         .qt-education,
         .qt-career,
@@ -96,7 +96,7 @@
         .result-suv,
         .result-sedan,
         .result-coupe,
-        .result-convertible,
+        /* .result-convertible, */
         .result-wagon,
         .result-hatchback,
         .result-van,
